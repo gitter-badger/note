@@ -1,0 +1,32 @@
+#+TITLE: XXXXXXXXXXXXXXXXXXXXX
+#+SUBTITLE: XXXXXXXXXXXXXXX
+#+DATE: 20XX/XX/XX (X)
+#+AUTHOR: fatfingererr (fatfingererr@gmail.com)
+#+EMAIL: fatifngererr.tw@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
+#+COMPANY: fatfingererr
+#+WWW: http://ffe.tw/
+#+GITHUB: http://github.com/fatfingererr
+#+TWITTER: fatfingererr
+
+#+FAVICON: images/fatfingererr.png
+#+ICON: images/fatfingererr.png
+#+HASHTAG: fatfingererr
+
+# Fork me ribbon
+#+BEGIN_HTML
+<a href="https://github.com/fatfingererr/XXXXXXXXXXXXXXXXXXXXXX">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+#+END_HTML

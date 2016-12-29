@@ -1,0 +1,84 @@
+* List
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** Nested List
+- Item 1
+- Item 2
+  + Depth 2
+  + Depth 2
+    * Third
+    * Third
+#+BEGIN_SRC org
+- Item 1
+- Item 2
+  + Depth 2
+  + Depth 2
+    * Third
+    * Third
+#+END_SRC
+
+** Build List
+Show one by one:
+#+ATTR_HTML: :class build
+- Item 1
+- Item 2
+- Item 3
+#+BEGIN_SRC org
+Show one by one:
+,#+ATTR_HTML: :class build
+- Item 1
+- Item 2
+- Item 3
+#+END_SRC
+
+** Build + Fade List
+Show one by one:
+#+ATTR_HTML: :class build fade
+- Item 1
+- Item 2
+- Item 3
+#+BEGIN_SRC org
+Show one by one:
+,#+ATTR_HTML: :class build fade
+- Item 1
+- Item 2
+- Item 3
+#+END_SRC
+
+** Numerated List
+1. First
+2. Second
+3. Third
+   - Item
+   - Item
+#+BEGIN_SRC org
+1. First
+2. Second
+3. Third
+   - Item
+   - Item
+#+END_SRC
+
+** Build Nested List
+#+ATTR_HTML: :class build
+- Build me
+- Build me
+  #+ATTR_HTML: :class build
+  + Build me
+  + Build me
+    * No build
+    * No build
+#+BEGIN_SRC org
+#+ATTR_HTML: :class build
+- Build me
+- Build me
+  #+ATTR_HTML: :class build
+  + Build me
+  + Build me
+    * No build
+    * No build
+#+END_SRC

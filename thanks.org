@@ -1,0 +1,22 @@
+* Thank You Slide
+- Add the following properties to one headline:
+#+BEGIN_SRC org
+:SLIDE: thank-you-slide segue
+:ASIDE: right
+:ARTICLE: flexbox vleft auto-fadein
+#+END_SRC
+
+#+BEGIN_QUOTE
+*Both* =thank-you-slide= and =segue= are necessary!
+#+END_QUOTE
+
+* Thank You ˊ・ω・ˋ
+:PROPERTIES:
+:SLIDE: thank-you-slide segue
+:ASIDE: right
+:ARTICLE: flexbox vleft auto-fadein
+:END:      
+
+* Footnote
+
+[fn:1] Footnote is in here!

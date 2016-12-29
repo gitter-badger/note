@@ -1,0 +1,39 @@
+* Font Size
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** Smaller Arcticle
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+This slide has =:ARTICLE:  smaller= property, so has *smaller* content.
+#+BEGIN_SRC org
+  :PROPERTIES:
+  :ARTICLE:  smaller
+  :END:
+#+END_SRC
+
+** Larger Arcticle
+  :PROPERTIES:
+  :ARTICLE:  larger
+  :END:
+This slide has =:ARTICLE:  larger= property, so has *larger* content.
+#+BEGIN_SRC org
+  :PROPERTIES:
+  :ARTICLE:  larger
+  :END:
+#+END_SRC
+
+** Large Arcticle
+  :PROPERTIES:
+  :ARTICLE:  large
+  :END:
+This slide has =:ARTICLE:  large= property, so has *large* content.
+#+BEGIN_SRC org
+  :PROPERTIES:
+  :ARTICLE:  larger
+  :END:
+#+END_SRC

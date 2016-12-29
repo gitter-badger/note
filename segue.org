@@ -1,0 +1,39 @@
+* Segue Page
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** What Segue?
+*Segue* ([`segwe]) page is passing page.
+
+#+BEGIN_SRC org
+     :SLIDE: segue dark quote
+     :ASIDE: right bottom
+     :ARTICLE: flexbox vleft auto-fadein
+#+END_SRC
+
+** This Is A "Segue Page" Demo
+:PROPERTIES:
+:SLIDE: segue dark quote
+:ASIDE: right bottom
+:ARTICLE: flexbox vleft auto-fadein
+:END:      
+   Text content of *Segue page* will appear here.
+
+** Segue (Hide Title)
+:PROPERTIES:
+:TITLE: hide
+:SLIDE: segue dark quote
+:ASIDE: right bottom
+:ARTICLE: flexbox vleft auto-fadein
+:END:
+
+#+BEGIN_QUOTE
+This is what a normal QUOTE block looks like, which under a segue slide.
+
+The second paragraph.
+
+  -- Name Sign
+#+END_QUOTE

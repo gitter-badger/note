@@ -1,0 +1,119 @@
+#+TITLE: 成為優秀的工程師
+#+SUBTITLE: 本簡報是關於「成為優秀的工程師」的相關資訊與筆記
+#+DATE: 2016/12/30 (五)
+#+AUTHOR: fatfingererr (fatfingererr@gmail.com)
+#+EMAIL: fatifngererr.tw@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
+#+COMPANY: fatfingererr
+#+WWW: http://ffe.tw/
+#+GITHUB: http://github.com/fatfingererr
+#+TWITTER: fatfingererr
+
+#+FAVICON: images/fatfingererr.png
+#+ICON: images/fatfingererr.png
+#+HASHTAG: fatfingererr
+
+# Fork me ribbon
+#+BEGIN_EXPORT html
+<a href="https://github.com/fatfingererr/note">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+#+END_EXPORT
+
+* How to be a Star Engineer (Robert E. Kelley, 1999)
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+***  How to be a Star Engineer (Robert E. Kelley, 1999)
+
+    - 大部分的工程師在進入職場時，早已具有足夠的潛力可以表現得卓越非凡，然而最後卻成就普通。
+    - Stars are made, not born.
+
+*** 工程師的九種工作策略
+
+**** 閃亮的軌跡 Blazing trails
+
+    - 主動追求超過自己職權範圍的更大責任，同時仍能夠完成自己的主要任務。
+    - 能夠額外付出心力來幫助其他同事或是團隊。
+    - 當有重要任務出現在個人職權中間的灰色地帶時，能夠種動擔起責任並完美達成。
+    - 對於認定的目標或是計畫，堅持直到成功地執行完畢。
+
+**** 知道要問誰 Knowing who knows
+
+    - 有效的人際網路：1.包含對的人 2.能快速獲得回覆           
+    - 成功的人際關係建立在一對一的直接溝通，網路往往效果不佳。
+
+**** 主動自我管理 Proactive self-management
+
+    - 主動的自我管理源自於不輕易放棄
+    - 在休息時間向同事介紹、在不經意的地方向同事提醒（備忘錄、便利貼）
+    - 往往會受到許多質疑，但可能會有一兩項提議受到青睞
+
+**** 掌握全局 Getting the big pucture
+
+    - 常常跳脫出自己的角度，從不同觀點看待事情。
+
+**** 正確地追隨 The right kind of followership
+
+    - 了解主管最關心的問題。同時，也試著將自己的觀點轉移到他們共同的整體目標。
+    - 能稍微修正他們的方向使得他們的努力和公司的目標吻合。
+
+**** 團隊合作 Teamwork as joint ownership of a project
+
+    - 一般的員工所了解的團隊合作是在計畫進行中或是解決問題時和他人合作，並且做好自己的部份。
+    - 他們將之視為一連串複雜的技巧，包含了參與設定共有的計畫目標，團隊承諾，工作紀律，時程，及分享團隊成就。
+    - 同時，這也包含了主動促進團隊的互動--讓每個人都覺得是團體的一分子，處理衝突，並幫助其他成員解決問題。
+ 
+
+**** 小領導者領導風格 Small-l leadership
+
+    - 小領導者通常對於他所領導的團體沒有正式的職權。
+    - 小領導者了解人與人之間微妙的關係，考慮所有團隊成員的需求、技能與渴望。
+    - 一個願意和所有團隊成員同甘共苦的小領導者，往往比最有魅力的大領導者主管更能獲得成員的忠誠及信任。
+    - 傑出的小領導者總是會先詢問成員的意見，即使他們覺得他們已經知道結果。
+    - 經常暫停自己的假設推論，提出一些開放性的問題，讓成員們可以表達他們目前具備的技能以及他們對於計畫的期望及需求。
+    - 沒有正式職權的小領導者可以藉由真誠的聆聽及試著滿足部份的需求來贏得認同。
+    - 小領導者知道階層的力量並不能延伸到人際關係這一方面。他們會試著創造出一種氣氛，讓成員們感受到『我們是在同一艘船上』。
+
+**** 精明 Street smarts
+
+    - 了解任何的組織中都有許多正當而互相競爭的利益。
+    - 知道何時該避免衝突，何時該正面對決，同時知道如何將可能的敵人轉化為盟友。
+      
+**** 呈現 Show and tell 
+
+    - 會仔細篩選所要表達的資訊，以最有效，最友善的格式來傳遞訊息並說服特定的聽眾。
+    - 呈現的意義在於對於特定的聽眾選擇適當的訊息，或是對特定的訊息選擇適當的聽眾。
+    - 將相同的資訊塑造成完全不同的表現方式。
+
+** 影響傑出表現的主要因素
+
+    - 認知
+    - 個性
+    - 社交
+    - 
+
+** break-in project
+
+
+
+* Model Story
+
+** Sarah
+
+  Sarah在她獲得電腦科學的碩士學位之後在矽谷找了一個軟體開發的工作。在求學以及工作的期間，她用一本筆記本來紀錄她對時常發生的問題及解決方式的觀察。每天晚上，她會仔細閱讀她的筆記本，像偵探一樣尋找問題的模式及其中的線索。
+  - How to be a Star Engineer (Robert E. Kelley, 1999)

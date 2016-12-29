@@ -1,0 +1,34 @@
+* Image
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+** Insert Image
+#+BEGIN_CENTER
+#+ATTR_HTML: :width 400px
+[[file:images/sky.jpg]]
+#+END_CENTER
+
+#+BEGIN_SRC org
+,#+BEGIN_CENTER
+,#+ATTR_HTML: :width 400px
+[[file:images/sky.jpg]]
+,#+END_CENTER
+#+END_SRC
+
+** Fill Image
+  :PROPERTIES:
+  :FILL:     images/sky.jpg
+  :TITLE:    white
+  :SLIDE:    white
+  :END:
+Text is in white.
+#+BEGIN_SRC org
+  :PROPERTIES:
+  :FILL:     images/sky.jpg
+  :TITLE:    white
+  :SLIDE:    white
+  :END:
+#+END_SRC
