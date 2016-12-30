@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
    // Slide Settings
    settings: {
-     title: '成為優秀的工程師', 
-     subtitle: '本簡報是關於「成為優秀的工程師」的相關資訊與筆記', 
+     title: '開放源瑪', 
+     subtitle: '本簡報室關於「開放源瑪」的相關資訊與筆記', 
      useBuilds: true, // Default: true. False will turn off slide animation builds. 
      usePrettify: true, // Default: true 
      enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
