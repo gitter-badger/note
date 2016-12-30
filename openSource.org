@@ -31,10 +31,18 @@
 </a>
 #+END_EXPORT
 
-* How to be a Star Engineer (Robert E. Kelley, 1999)
+* 怎樣做開源才有意義？
   :PROPERTIES:
   :SLIDE:    segue dark quote
   :ASIDE:    right bottom
   :ARTICLE:  flexbox vleft auto-fadein
   :END:
+
+前阿里雲CTO章文嵩，2016-05-26
+
+** 開源的價值
+- 開源往往有一個「共用」價值
+- 因此可以挪到其他應用場景復用的，開源才有意義
+- 所以開源往往也是相對偏底層與基礎的東西
+- 或者公司項目已經有足夠大的競爭優勢，那開源也有可能
 
