@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
    // Slide Settings
    settings: {
-     title: '近期研究概況', 
-     subtitle: '關於近期的各項研究方向的進度與發展 ( 2016 / 1 / 14 )', 
+     title: 'LSTM Neural Network', 
+     subtitle: '長短期記憶類神經網路', 
      useBuilds: true, // Default: true. False will turn off slide animation builds. 
      usePrettify: true, // Default: true 
      enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
