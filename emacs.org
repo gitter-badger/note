@@ -1,0 +1,187 @@
+#+TITLE: Emacs編輯器學習之旅
+#+SUBTITLE: 本簡報是關於 Emacs 的相關資訊與學習筆記
+#+DATE: 2016/12/31 (六)
+#+AUTHOR: fatfingererr ( RICKY )
+#+EMAIL: fatifngererr.tw@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
+#+COMPANY: fatfingererr@gmail.com
+#+WWW: http://ffe.tw/
+#+GITHUB: http://github.com/fatfingererr
+#+TWITTER: fatfingererr
+
+#+FAVICON: images/fatfingererr.png
+#+ICON: images/fatfingererr.png
+#+HASHTAG: fatfingererr
+
+# Fork me ribbon
+#+BEGIN_EXPORT html
+<a href="https://github.com/fatfingererr/note/blob/master/emacs.org">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+#+END_EXPORT
+
+* Learn Emacs in 21 Days
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:
+
+#+BEGIN_EXPORT html
+<a href="https://github.com/emacs-china/Spacemacs-rocks">GitHub : emacs-china/Spacemacs-rocks</a>
+#+END_EXPORT
+
+** 常用的熱鍵
+
+- C-v : view next screen
+- M-v : view previs screen
+- C-l : middle screen
+
+- C-P : 前一行
+- C-b : 向後
+- C-f : 向前
+- C-n : 後一行
+
+- M-f : 前一個標點
+- M-b : 後一個標點
+
+- C-a : 移到行首
+- C-e : 移到行末
+
+- C-j : enter
+
+
+
+
+- M-a : 
+- M-e :
+
+- C-h k :
+- C-h v :
+- C-h f :
+
+(+ 2 2)
+
+(setq my-name "yoyoyoyo")
+(message my-name)
+
+(defun my-func ()
+   (interactive)
+   (message "hello, %s" my-name))
+
+(my-func)
+
+(global-set-key (kbd "<f2>") 'my-func)
+
+其實經常會忘記這些熱鍵,但這些熱鍵還不錯
+
+
+(defun open-my-init-file ()
+    (interactive)
+    (find-file "~/.emacs.d/init.el"))
+
+(global-set-key (kbd "<f2>") 'open-my-init-file)
+
+這是很重要的,隨時hack Emacs 進去init 改config
+
+Company install and 自動補全
+
+(global-company-mode t)
+1 和 t 是一樣的
+
+install happen 
+
+C-h m 顯示所有 minor mode
+
+*** 滑鼠變成 bar
+(setq-default cursor-type 'bar)
+
+
+C-x C-r 最近使用的檔案
+
+** setq 與 setq-default 差別
+ - setq 只影響當前 buffer
+ - setq-default 是影響全部的值
+
+** Git 管理然後扔掉輩分tuda 檔案
+
+(setq make-backup-files nil)
+
+就不會產生 tuda 檔案
+
+
+** electric-indent-mode
+(electric-indent-mode t)
+
+** 開啟的時候是全螢幕的
+
+(setq initial-frame-alist (quote ((fullscreen, maximized))))
+
+** 加鉤子：Major Mode 啟動會啟動所有鉤子
+
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+
+
+
+** delete-selection-mode
+
+(delete-selection-mode t)
+
+
+
+** code-block 中打開 block buffer
+
+在 #+BEGIN_SRC 到 #+END_SRC 中按 C-c ' 進入 block buffer
+就可以在 code block 的語言的 major-mode 來做, 可以有些高亮
+按 C-c '回來
+#+BEGIN_SRC emacs-lisp
+  (require 'org)
+#+END_SRC
+  
+
+** Org-mode
+
+C-c C-t 切換 TODO/DONE
+
+
+
+** define-advice
+
+lisp 的 macro , 可以類比於一個模板, 類似JAVA的AOT
+
+example:
+
+#+BEGIN_SRC emacs-lisp
+  (defun-advice show-paren-function (:around (fn) fix-show-paren-function)
+    "Highlight enclosing parens."
+    (cond ((looking-at-p "\\s(") (funcall fn))
+          (t (save-excursion
+               (ignore-errors (backward-up-lost))
+               ;; funcall 會呼叫函數
+               (funcall fn))))) 
+
+#+END_SRC
+
+
+
+
+* TODO yyoyo
+    
+
+
+
+**** 什麼是 interactive
+
+**** 什麼是 setq 為什麼是 set + q 
+
