@@ -1,4 +1,4 @@
-#+TITLE: Emacs編輯器學習之旅
+
 #+SUBTITLE: 本簡報是關於 Emacs 的相關資訊與學習筆記
 #+DATE: 2016/12/31 (六)
 #+AUTHOR: fatfingererr ( RICKY )
@@ -78,7 +78,7 @@
 
 (defun my-func ()
    (interactive)
-   (message "hello, %s" my-name))
+   (message "     , %s" my-name))
 
 (my-func)
 
@@ -154,7 +154,7 @@ C-x C-r 最近使用的檔案
 
 C-c C-t 切換 TODO/DONE
 
-
+C-c C-e org 導出
 
 ** define-advice
 
@@ -175,13 +175,68 @@ example:
 
 
 
+** occur
+
+- M-s o 輸入東西就會搜尋這個檔案中的這個東西出現的地方
+- 會記憶上次你搜尋的東西
+- 在 Occur-mode 底下你可以按 e 就可以進入 Occur-Edit mode 可以直接改rrr
+- 比起一般編輯器用 find and replace 會快很多
+
+** popwin
+   
+- 執行 customize-gruop 然後搜尋 popwin
+- popwin 中可以設定 Popup Window 的位置和大小
+- 最後用 C-x C-s 儲存設定
+
+** imenu
+
+- 會列出現在這裡面所有的函數, 在 org 中可以依 outline 跳躍
+- 在 counsel 中也可以用 imenu : counsel-imenu (需安裝)
+
+** expand-region (M-m v)
+
+- 用滑鼠選擇區塊很慢
+- 一般來說用 C-x sp 慢慢滑範圍選取，或 M-shift-f 一個個詞跳
+- M-m v 從游標位置左右擴充做選取，適合要選擇一個區塊的時候
+
+** iedit-mode
+
+- 在一個單字或變量前面執行 iedit-mode 就會全文件對應的單字或變量一起改
+- 搭配 expand-region 就會很方便
+- 可在 customize-group 中修改 Face
+
+rrrrrrhelrrrrrrryoyoylo
+
+
+
+rrrrrrhelrrrrrrryoyoylo      
+
+
+** 創建 Layer   
+
+M-x configuration-layer/create-layer
+
+
+
+
+
+
+
+
+
+
 
 * TODO yyoyo
-    
-
-
-
 **** 什麼是 interactive
 
 **** 什麼是 setq 為什麼是 set + q 
 
+
+
+
+* Learnrr Emacs in 21 Days
+  :PROPERTIES:
+  :SLIDE:    segue dark quote
+  :ASIDE:    right bottom
+  :ARTICLE:  flexbox vleft auto-fadein
+  :END:

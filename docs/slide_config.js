@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
    // Slide Settings
    settings: {
-     title: 'LSTM Neural Network', 
-     subtitle: '長短期記憶類神經網路', 
+     title: 'Recurrent Neural Netowrks', 
+     subtitle: 'RNN 的基本數學原理', 
      useBuilds: true, // Default: true. False will turn off slide animation builds. 
      usePrettify: true, // Default: true 
      enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.

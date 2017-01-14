@@ -1,0 +1,59 @@
+#+TITLE:  Recurrent Neural Netowrks
+#+SUBTITLE: RNN 的基本數學原理
+#+DATE: 20XX/XX/XX (X)
+#+AUTHOR: ffe (fatfingererr@gmail.com)
+#+EMAIL: fatifngererr.tw@gmail.com
+#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
+#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
+#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
+#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+
+#+DESCRIPTION:
+#+EXCLUDE_TAGS: noexport
+#+KEYWORDS:
+#+LANGUAGE: en
+#+SELECT_TAGS: export
+
+#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
+#+COMPANY: <a href="http://www.ffe.tw/">http://www.ffe.tw/</a>
+#+WWW: http://ffe.tw/
+#+GITHUB: http://github.com/fatfingererr
+#+TWITTER: fatfingererr
+
+#+FAVICON: images/fatfingererr.png
+#+ICON: images/fatfingererr.png
+#+HASHTAG: fatfingererr
+
+# Fork me ribbon
+#+BEGIN_EXPORT html
+<a href="https://github.com/fatfingererr/XXXXXXXXXXXXXXXXXXXXXX">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+#+END_EXPORT
+
+** 連續時間的微分系統
+
+- RNN 基本上是可以看成是一個動態的連續時間微分系統
+
+#+BEGIN_EXPORT html
+$$
+\frac{dx}{dt} = f(x(t))\ ,\ \ \ t \leq 0
+$$
+<br/>
+#+END_EXPORT
+
+當我們這樣去思考 RNN 的時候，就可以深入來討論 RNN 其中的數學性質，我們可以透過微分系統既有的理論，直接來分析 RNN。
+
+** 連續時間的微分系統
+
+- Time Delays 時間延遲
+  - RNN 中有個重要的參數，就是時間延遲。
+  - RNN網路因為增加了時間延遲，而造成網路不穩定性。
+
+** RNN 的收斂性
+
+
+
+** 連續時間的微分系統
+
+** 連續時間的微分系統
