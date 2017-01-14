@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
    // Slide Settings
    settings: {
-     title: '成為優秀的工程師', 
-     subtitle: '本簡報是關於「成為優秀的工程師」的相關資訊與筆記', 
+     title: 'LSTM Neural Network', 
+     subtitle: '長短期記憶類神經網路', 
      useBuilds: true, // Default: true. False will turn off slide animation builds. 
      usePrettify: true, // Default: true 
      enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -16,8 +16,8 @@ var SLIDE_CONFIG = {
  
    // Author information
    presenters: [{
-     name: 'fatfingererr (fatfingererr@gmail.com)', 
-     company: 'fatfingererr', 
+     name: 'ffe (fatfingererr@gmail.com)', 
+     company: '<a href="http://www.ffe.tw/">http://www.ffe.tw/</a>', 
      gplus: 'https://plus.google.com/fatfingererr', 
      twitter: 'fatfingererr', 
      www: 'http://ffe.tw/', 
