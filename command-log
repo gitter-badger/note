@@ -1,0 +1,123 @@
+r          org-self-insert-command [24 times] 
+DEL        org-delete-backward-char [24 times] 
+RET        org-return
+-          org-self-insert-command [3 times] 
+DEL        org-delete-backward-char
+d          org-self-insert-command [4 times] 
+DEL        org-delete-backward-char [4 times] 
+可         org-self-insert-command [10 times] 
+C-x C-s    save-buffer
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+M-x        helm-M-x
+<down-mouse-1>
+           mouse-drag-region
+<drag-mouse-1>
+           mouse-set-region
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+M-x        helm-M-x
+DEL        org-delete-backward-char [12 times] 
+C-x u      undo-tree-visualize
+RET        org-return
+-          org-self-insert-command [10 times] 
+DEL        org-delete-backward-char
+m          org-self-insert-command
+DEL        org-delete-backward-char
+x          org-self-insert-command [5 times] 
+DEL        org-delete-backward-char
+e          org-self-insert-command [4 times] 
+<company-dummy-event>
+           company-ignore
+e          org-self-insert-command [9 times] 
+<company-dummy-event>
+           company-ignore
+m          org-self-insert-command [8 times] 
+<company-dummy-event>
+           company-ignore
+f          org-self-insert-command
+<return>   company-complete-selection
+C-x C-s    save-buffer
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+r          org-self-insert-command [6 times] 
+C-x C-s    save-buffer
+M-x        helm-M-x
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+*          org-self-insert-command [4 times] 
+<M-left>   org-metaleft
+C          org-self-insert-command [4 times] 
+C-x C-s    save-buffer
+<wheel-up> mwheel-scroll [9 times] 
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  org-cycle
+<wheel-down>
+           mwheel-scroll
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<tab>      org-cycle
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+<left>     left-char
+DEL        org-delete-backward-char [4 times] 
+M          org-self-insert-command [2 times]
+<company-dummy-event>
+           company-ignore
+c          org-self-insert-command [5 times] 
+DEL        org-delete-backward-char
+聚         org-self-insert-command [2 times]
+DEL        org-delete-backward-char [2 times]
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+聚         org-self-insert-command [3 times] 
+RET        org-return
+DEL        org-delete-backward-char
+宏         org-self-insert-command
+<left>     left-char
+DEL        org-delete-backward-char
+SPC        org-self-insert-command
+DEL        org-delete-backward-char
+o          org-self-insert-command [2 times]
+<down-mouse-1>
+           mouse-drag-region
+<mouse-1>  mouse-set-point
+RET        org-return [2 times]
+-          org-self-insert-command [6 times] 
+DEL        org-delete-backward-char [2 times]
+程         org-self-insert-command [7 times] 
+<left>     left-char [9 times] 
+透         org-self-insert-command [6 times] 
+RET        org-return
+DEL        org-delete-backward-char [2 times]
+，         org-self-insert-command
+<left>     left-char [2 times]
+<deletechar>
+           delete-forward-char
+器         org-self-insert-command
+C-x C-s    save-buffer
+M-x        helm-M-x [2 times]
+<mode-line> <down-mouse-1>
+           (lambda (event) (interactive @e) (minor-mode-menu-from-indicator command-log))
+<down-mouse-1>
+           mouse-drag-region

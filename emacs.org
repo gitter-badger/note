@@ -156,6 +156,8 @@ C-c C-t 切換 TODO/DONE
 
 C-c C-e org 導出
 
+M-Ret 指令都要换掉变成 esc-Ret
+
 ** define-advice
 
 lisp 的 macro , 可以類比於一個模板, 類似JAVA的AOT
@@ -217,9 +219,211 @@ rrrrrrhelrrrrrrryoyoylo
 M-x configuration-layer/create-layer
 
 
+** Org-pomodoro (esc-RET p)
+- 一樣可以到 customize-group 有很多可以修改
+  -
+
+** customize-group
+
+- 都會放到 custom.el
 
 
 
+
+** Org-capture (C-c c)
+
+- 快速記筆記的方法
+
+#+BEGIN_SRC emacs-lisp
+  (setq org-capture-templates
+   '(("i" "Idea" entry (file+headline "~/note/idea.org" "Idea")
+    "* TODO [#B] %?\n %i\n"
+    :empty-lines 1)))
+#+END_SRC
+
+- 只要按 C-c c 就會自動幫你紀錄
+
+
+** insert-chrome-web-url
+
+
+** dired :shitf+6 回到上面
+
+
+** editalbe dired (C-c C-q)
+
+就可以直接在 dired 上面批次修改檔名
+
+** helm-ag (一次修改整個 folder多個檔)
+
+search speed: ag > pt > ack > grep
+windows 10 下支持了 ag 那 windows 也可以使用 pt
+
+helm加載速度不夠, 城市太多的時候, 搜索速度很低
+但是helm-ag很好用
+
+
+
+
+
+
+
+
+** yasnippet ( M-m i s )
+
+- 指令 yas-insert-snippet 可以對經常使用的文字或程式碼段落建立模板
+- 根據不同 major-mode 你會在 private layer 中建立放模板檔案的不同資料夾
+- 模板中的 key 是敲 M-m i s <key> 用的，可以多個字母
+- name 是在 M-m i s 中尋找時幫助你更精確找到對應模板
+- 模板可放多個 $1 表示模板建立後的游標位置
+- TODO : $0 $2 的意思還沒弄明白
+    - 參考：http://oremacs.com/2015/01/30/auto-yasnippet/  
+
+** delete backward ( C-backspc )
+
+
+** Evil-mode (class7)
+
+
+** org-mode insert code block ( <s + tab )
+
+** whichkey-mode ( M-m )
+
+
+** serach org node ( C-c a s)
+
+
+** mwe-log-commands
+
+- 可以記錄你打字的效率
+- package-install mwe-log-commands
+- 使用命令 M-x mwe:open-log-command-buffer
+
+
+rrgrgr
+
+#+begin_src dot :file file :cmdline -Tpdf :exports none :results silent
+
+#+end_src
+
+[[file:file]]
+
+happpy~ gogo~ yoyo~
+
+
+
+test
+ 
+
+** Universal args ( C-u )
+- 可以重複執行命令
+
+
+
+** Macro 聚集or宏
+
+- 透過解釋器，生成程式碼的程式碼
+
+#+BEGIN_SRC emacs-lisp
+
+  ;; 先令一個變數為 1, 可用 C-c C-e eval 看看
+  (setq my-var 1)
+
+  ;; 再定義一個 macro
+  (defmacro inc (var)
+    (list 'setq var (list '1+ var)))
+  (inc my-var)
+
+  ;; 我們可以把 inc 這個 macro 展開, 看看是什麼
+  (macroexpand '(inc my-var))
+
+  ;; 但是我們也可以定義函數達到這個效果
+  (defun inc-v2 (var)
+    (setq var (1+ var)))
+
+  (inc-v2 my-var)
+#+END_SRC
+
+- 那 macro 和 function 有什麼差別呢?
+  - macro 展開完表達式之後，才會解釋並執行
+  - function 則是會先執行
+  - macro 返回的是表達式，返回之後就會立即執行
+  - function 返回的是值
+
+- backquote : 在 macro 中提前 eval
+
+- macroexpand-all : 展開所有級的macro ( macro of macro )
+
+
+** use-package 
+
+ - 更安全的 require
+   - 無效的 require 在 use-package 不會報錯
+   - 可以透過 macroexpand 看 use-package 做什麼事情
+ - init : 想在使用package之前先設定一些東西, 不讓設定亂散在各個地方
+ - config :
+ - load : 
+ - refer :
+ - bind : 也可以綁定 kbd
+ - ensure : true->沒有的話會自動去安裝(會從最新去下載)
+   - 如果不想要最新版怎辦? :pin melpa-stable
+     - 要用 melpa-stable 要
+       - (source "melpa-stable" "http://elpa......../melpa-stable/")
+
+#+BEGIN_SRC emacs-lisp
+(use-package xxxx
+    :init
+    (progn
+      (setq my-name "ffe")
+      (setq my-age "20")
+    :config
+    (setq my-dog "peter")
+))
+
+#+END_SRC
+
+
+** pretty print ( pp 指令 )
+
+ - pretty print the lisp Object
+
+** company-mode　
+
+- 當打幾個字母自動補全的時候, 推薦的補全字詞稱作 frontend 所有補全字詞稱作 backends
+- company-backends 指令是返回列表，因為裡面放了各種 company 自動補全分類
+- 在這個列表中，會依序去找合適於當前 major-mode 的自動補全
+- 找到之後就會給予當前自動補全的項 
+- 其中 company-dabrev 擺在最後查詢，因為它會找所有當前打開的 buffer 的字詞協助補全, 除了 scrach buffer
+- 也可以到 customize-group 看 company-dabrev 設定搜尋的 buffer 範圍, 建議 all,因為在 org 下要記錄其他 buffer 的資訊這樣比較方便
+- 也可以手動激活各種 company-XXXX 例如打路徑時可以激活 company-files
+- company-ispell 會調用英文字典自動補全
+- 想自己建立 company 可以看 company-ispell 的命令, 記得擺在 company-dabbrev 之前
+- 或是 add-hook 對 XXXX-mode-hook 住一個 company-backends
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'python-mode-hook
+   (lambda()
+     (set (make-local-variable 'company-backends '(company-anaconda company-dabbrev)))))
+#+END_SRC
+
+- 自己做 backend : Writing the Simplest Emacs company-mode backend (這是系列文章,還有補全更多訊息)
+- http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend
+
+** group backend
+
+- 當我們補全的時候，會希望在代碼時能補全代碼，在註解中補全註解，這就需要 group-backend
+- 例如 : '((company-anaconda company-dabbrev-code) company-dabbrev)
+- 由於在代碼中 company-anconda 擁有主權，因此會給予沒有補全的結果，而在註解中才會執行 company-dabbrev
+
+
+** think
+
+*** 或許可以做個 company-matlab
+*** prelude-search 好酷,可以搜尋網站
+
+
+ 
+*** toggle 是什麼
 
 
 

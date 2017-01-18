@@ -1,4 +1,4 @@
-#+TITLE:     Example
+#+TITLE:     RNN 的收斂性分析
 #+AUTHOR:    fatfingererr - www.ffe.tw
 #+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
 #+DATE:      2015-04-28
@@ -10,27 +10,103 @@
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
 <div class="right">
-  <a href="https://github.com/fniessen/org-html-themes/blob/master/demo/example.org" class="fa fa-github"> Edit on GitHub</a>
+  <a href="https://github.com/fatfingererr/note/blob/master/rnn-doc.org" class="fa fa-github"> GitHub</a>
 </div>
 #+end_EXPORT
 
 
 #+BEGIN_EXPORT html
 $$
-\begin{bmatrix}
-0 & \color{red}1 & \color{red}1\\
-0 & \color{red}1 & 0\\
-\color{red}1 & \color{red}1 & 0
-\end{bmatrix}
-\cdot
-\begin{bmatrix}
-\color{blue}1 & 0 & 0\\
-0 & \color{blue}1 & 0\\
-0 & 0 & \color{blue}1
-\end{bmatrix} = 1
+\frac{1}{2}
 $$
 #+END_EXPORT
------
+
+
+* RNN 的收斂性質
+
+- 當你瞭解了RNN的收斂性質，你才能做出一個好的RNN應用出來
+- 那什麼又是收斂性質呢？基本上RNN的收斂行為分為兩種：
+  1. **單穩態 Monostability**
+     - 單穩態代表所有 RNN 的訓練過程中，網路權重最後會收斂到一組穩定的參數
+     - 在這個問題後續會借用 Lyapunov 的穩態理論來討論
+  2. **多穩態 Multistability**
+     - 單穩態的缺點在於真正日常生活中的問題，可能不存在標準答案
+     - 多穩態考量網路權重可能不存在特定參數，因此網路訓練過程的參數會來回震盪
+     - 而這些震盪可能徘徊在幾個合理參數之間，此即為多穩態
+
+** 收斂性分析方法
+
+- Lyapunov 分析法
+- 不等式分析法
+
+*** 能量函數分析法
+
+- 由於 RNN 和時間有關，所以可以考慮一個類神經網路的作用，就好像是一個微分方程式：
+
+#+BEGIN_EXPORT html
+$$
+\frac{dx}{dt} = f(x)
+$$
+#+END_EXPORT
+
+- trajectory 軌跡：指訓練過程中存在唯一路徑
+- 如果一個微分方程式是 *足夠光滑* （sufficiently smooth）則我們可以確定軌跡存在且唯一。
+
+
+
+* Hopfield RNN
+
+- Hopfield 在研究類神經網路的時候，他有兩個發現：
+  - 神經元在模型中存在高度互聯的關係（Highly interconnected）
+  - 高度互聯關係會產生 *【集體計算性質】* （Collective computational roperties）
+  - 一種簡單的 *集體計算性質* 就是 *結合存儲* （Content addressable memory）
+
+
+- Hopfield 模型被描述成如下：
+
+#+BEGIN_EXPORT html
+$$
+\left\{\begin{matrix}
+C_i \frac{du_i(t)}{dt}=-\frac{u_i(t)}{R_i}+\sum_{j=1}^{n}T_ijv_i(t)+I_i\\ 
+\\
+v_i(t) = g_i(u_i(t))\ ,\ \ i = 1,..., n
+\end{matrix}\right.
+$$
+#+END_EXPORT
+
+- 這邊你會發現 Hopfield 提出的的模型描述起來怎麼那麼數學，而不是給你一個簡單的網路圖，看起來更接近隨機模型，這主要是與他想解決的問題有關。
+
+
+- 這個模型中：
+  - $u_i$ 是神經元輸入，$v_i$ 是神經元輸出，$g(\cdot)$ 是神經元權重計算後帶入傳遞函數
+  - 這邊的 $g(\cdot)$ 是 Sigmoid 函數
+  - $v_i$ 可以看成是短期平均神經元的活耀度
+  - $T_{ij}$ 表示了神經元 $i$ 與神經元 $j$ 之間的連結強度
+  - $I_i$ 為神經元 $i$ 的外部常數輸入
+  - $C_i$ 與 $R_i$ 都是神經元放大器（Neural amplifier）
+    - $C_i$ 為輸入電容（Input capacitance）
+    - $R_i$ 為輸入電阻（Input resistance）
+
+** 均衡點 Equilibrium
+
+- 什麼是均衡點呢？簡單來說就是滿足下式的 $u^*$ ：
+
+#+BEGIN_EXPORT html
+$$
+-\frac{1}{R_i} u_i^* + \sum_{j=1}^{n} T_{ij}g_j(u_j^*)+I_i=0\ ,\ \ \ i=1,...,n
+$$
+#+END_EXPORT
+
+- 對一個類神經網路來說，均衡點扮演兩件事情：
+  - 一個好的類神經網路，應該至少要有一個均衡點
+  - 假如類神經網路有一個以上的均衡點，這些均衡點必須孤立存在（isolated）
+
+** 完全穩定性 Complete Stability
+
+
+
+
+
 
 * Work                                                                    :work:
   :PROPERTIES:

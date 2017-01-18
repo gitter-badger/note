@@ -1,0 +1,88 @@
+#+TITLE:     創業家的量化指南 Quant Guide for Startups
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2016-01-17
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/quant-guide-for-startups.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
+
+* 簡介
+
+** 緣起
+
+最近 (2016) 社會吹起了創業風，看到許多朋友都想去創業或正在創業，讓我有了一個點子，想蒐集各種創業過程中需要使用到的衡量指標，整理成一本給創業家的量化指南。
+
+本身專業是在金融方面，工作是需要進行各種量化分析，然而我對於新創事業其實並不瞭解，因此個人只是想要多認識創業方面的量化模型，看看能否給工作帶來靈感。
+
+如果這份文件能對你有幫助我會很高興，如果文件中有地方你能提供更好的建議，也請不要吝嗇地與我聯絡，也歡迎任何人參與這份文件的編輯與製作。
+
+
+
+* TODO 【AARRR】
+
+** 獲得使用者 Acquisition
+
+** 擁有有效客戶 Activation
+
+** 客戶留存與回訪 Retention
+
+** 客戶推薦他人 Referral
+
+** 客戶付費 Revenue
+
+
+-----
+
+* TODO 【TTPPRC】
+
+** 趨勢 Trend
+
+** 流量 Traffic
+
+** 包裝 Package
+
+** 產品 Product
+
+** 重複性消費 Revisit
+
+** 相應成本 Cost
+
+-----
+
+* 【細分客群】
+
+- 因為細分客群人數有限，正常情況的流量分析方法，用在細分客群上面不太適合。
+
+** DAU/MAU
+
+- 這個指標一定程度反映了客戶生命週期內的黏著性，需要搭配留存率與使用時間長，
+- 如果應用場景有複合的需求需要滿足，DAU/MAU 也會有對應的表現情況。
+
+** 用戶獲取成本遞減率
+
+- 用戶獲取成本遞減可以推論：
+  - 產生口碑與品牌效應
+
+** 單一用戶價值
+
+- 細分客群人數整體少，但是單價可能可以更高，彌補總營業額的不足。
+
+
+
+
+
+-----
+
+* 【員工終身價值 ELTV】
+
+- 員工終身價值 (Employee Lifetime Value, ELTV)
+　
+
+
+
+參考資料：https://www.linkedin.com/pulse/how-understand-roi-investing-people-maia-josebachvili?utm_content=bufferedfa2&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer

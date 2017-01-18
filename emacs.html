@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-01-15 週日 19:22 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title></title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="fatfingererr ( RICKY )" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<a href="https://github.com/fatfingererr/note/blob/master/emacs.org">
+<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+</a>
+
+<div id="outline-container-org3101d8f" class="outline-2">
+<h2 id="org3101d8f">Learn Emacs in 21 Days</h2>
+<div class="outline-text-2" id="text-org3101d8f">
+<a href="https://github.com/emacs-china/Spacemacs-rocks">GitHub : emacs-china/Spacemacs-rocks</a>
+</div>
+
+<div id="outline-container-org71efe82" class="outline-3">
+<h3 id="org71efe82">常用的熱鍵</h3>
+<div class="outline-text-3" id="text-org71efe82">
+<ul class="org-ul">
+<li>C-v : view next screen</li>
+<li>M-v : view previs screen</li>
+<li>C-l : middle screen</li>
+
+<li>C-P : 前一行</li>
+<li>C-b : 向後</li>
+<li>C-f : 向前</li>
+<li>C-n : 後一行</li>
+
+<li>M-f : 前一個標點</li>
+<li>M-b : 後一個標點</li>
+
+<li>C-a : 移到行首</li>
+<li>C-e : 移到行末</li>
+
+<li>C-j : enter</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>M-a :</li>
+<li>M-e :</li>
+
+<li>C-h k :</li>
+<li>C-h v :</li>
+<li>C-h f :</li>
+</ul>
+
+<p>
+(+ 2 2)
+</p>
+
+<p>
+(setq my-name "yoyoyoyo")
+(message my-name)
+</p>
+
+<p>
+(defun my-func ()
+   (interactive)
+   (message "     , %s" my-name))
+</p>
+
+<p>
+(my-func)
+</p>
+
+<p>
+(global-set-key (kbd "&lt;f2&gt;") 'my-func)
+</p>
+
+<p>
+其實經常會忘記這些熱鍵,但這些熱鍵還不錯
+</p>
+
+
+<p>
+(defun open-my-init-file ()
+    (interactive)
+    (find-file "~/.emacs.d/init.el"))
+</p>
+
+<p>
+(global-set-key (kbd "&lt;f2&gt;") 'open-my-init-file)
+</p>
+
+<p>
+這是很重要的,隨時hack Emacs 進去init 改config
+</p>
+
+<p>
+Company install and 自動補全
+</p>
+
+<p>
+(global-company-mode t)
+1 和 t 是一樣的
+</p>
+
+<p>
+install happen 
+</p>
+
+<p>
+C-h m 顯示所有 minor mode
+</p>
+</div>
+
+<div id="outline-container-orgcbf3a9f" class="outline-4">
+<h4 id="orgcbf3a9f">滑鼠變成 bar</h4>
+<div class="outline-text-4" id="text-orgcbf3a9f">
+<p>
+(setq-default cursor-type 'bar)
+</p>
+
+
+<p>
+C-x C-r 最近使用的檔案
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orge06d16e" class="outline-3">
+<h3 id="orge06d16e">setq 與 setq-default 差別</h3>
+<div class="outline-text-3" id="text-orge06d16e">
+<ul class="org-ul">
+<li>setq 只影響當前 buffer</li>
+<li>setq-default 是影響全部的值</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org328ec87" class="outline-3">
+<h3 id="org328ec87">Git 管理然後扔掉輩分tuda 檔案</h3>
+<div class="outline-text-3" id="text-org328ec87">
+<p>
+(setq make-backup-files nil)
+</p>
+
+<p>
+就不會產生 tuda 檔案
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orge64abe0" class="outline-3">
+<h3 id="orge64abe0">electric-indent-mode</h3>
+<div class="outline-text-3" id="text-orge64abe0">
+<p>
+(electric-indent-mode t)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org49d365a" class="outline-3">
+<h3 id="org49d365a">開啟的時候是全螢幕的</h3>
+<div class="outline-text-3" id="text-org49d365a">
+<p>
+(setq initial-frame-alist (quote ((fullscreen, maximized))))
+</p>
+</div>
+</div>
+
+<div id="outline-container-org91a1517" class="outline-3">
+<h3 id="org91a1517">加鉤子：Major Mode 啟動會啟動所有鉤子</h3>
+<div class="outline-text-3" id="text-org91a1517">
+<p>
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org8152c94" class="outline-3">
+<h3 id="org8152c94">delete-selection-mode</h3>
+<div class="outline-text-3" id="text-org8152c94">
+<p>
+(delete-selection-mode t)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org9962f56" class="outline-3">
+<h3 id="org9962f56">code-block 中打開 block buffer</h3>
+<div class="outline-text-3" id="text-org9962f56">
+<p>
+在 #+BEGIN<sub>SRC</sub> 到 #+END<sub>SRC</sub> 中按 C-c ' 進入 block buffer
+就可以在 code block 的語言的 major-mode 來做, 可以有些高亮
+按 C-c '回來
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">require</span> '<span style="color: #a45bad;">org</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9fe674f" class="outline-3">
+<h3 id="org9fe674f">Org-mode</h3>
+<div class="outline-text-3" id="text-org9fe674f">
+<p>
+C-c C-t 切換 TODO/DONE
+</p>
+
+<p>
+C-c C-e org 導出
+</p>
+
+<p>
+M-Ret 指令都要换掉变成 esc-Ret
+</p>
+</div>
+</div>
+
+<div id="outline-container-org239982f" class="outline-3">
+<h3 id="org239982f">define-advice</h3>
+<div class="outline-text-3" id="text-org239982f">
+<p>
+lisp 的 macro , 可以類比於一個模板, 類似JAVA的AOT
+</p>
+
+<p>
+example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>defun-advice show-paren-function <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:around</span> <span style="color: #2d9574;">(</span>fn<span style="color: #2d9574;">)</span> fix-show-paren-function<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2d9574;">"Highlight enclosing parens."</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">cond</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>looking-at-p <span style="color: #2d9574;">"\\s("</span><span style="color: #67b11d;">)</span> <span style="color: #67b11d;">(</span>funcall fn<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span>t <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span>
+             <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">ignore-errors</span> <span style="color: #4f97d7;">(</span>backward-up-lost<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+             <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">funcall &#26371;&#21628;&#21483;&#20989;&#25976;</span>
+             <span style="color: #b1951d;">(</span>funcall fn<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org471a72b" class="outline-3">
+<h3 id="org471a72b">occur</h3>
+<div class="outline-text-3" id="text-org471a72b">
+<ul class="org-ul">
+<li>M-s o 輸入東西就會搜尋這個檔案中的這個東西出現的地方</li>
+<li>會記憶上次你搜尋的東西</li>
+<li>在 Occur-mode 底下你可以按 e 就可以進入 Occur-Edit mode 可以直接改rrr</li>
+<li>比起一般編輯器用 find and replace 會快很多</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3c3b049" class="outline-3">
+<h3 id="org3c3b049">popwin</h3>
+<div class="outline-text-3" id="text-org3c3b049">
+<ul class="org-ul">
+<li>執行 customize-gruop 然後搜尋 popwin</li>
+<li>popwin 中可以設定 Popup Window 的位置和大小</li>
+<li>最後用 C-x C-s 儲存設定</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcab60fe" class="outline-3">
+<h3 id="orgcab60fe">imenu</h3>
+<div class="outline-text-3" id="text-orgcab60fe">
+<ul class="org-ul">
+<li>會列出現在這裡面所有的函數, 在 org 中可以依 outline 跳躍</li>
+<li>在 counsel 中也可以用 imenu : counsel-imenu (需安裝)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge0a99bc" class="outline-3">
+<h3 id="orge0a99bc">expand-region (M-m v)</h3>
+<div class="outline-text-3" id="text-orge0a99bc">
+<ul class="org-ul">
+<li>用滑鼠選擇區塊很慢</li>
+<li>一般來說用 C-x sp 慢慢滑範圍選取，或 M-shift-f 一個個詞跳</li>
+<li>M-m v 從游標位置左右擴充做選取，適合要選擇一個區塊的時候</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga463ce4" class="outline-3">
+<h3 id="orga463ce4">iedit-mode</h3>
+<div class="outline-text-3" id="text-orga463ce4">
+<ul class="org-ul">
+<li>在一個單字或變量前面執行 iedit-mode 就會全文件對應的單字或變量一起改</li>
+<li>搭配 expand-region 就會很方便</li>
+<li>可在 customize-group 中修改 Face</li>
+</ul>
+
+<p>
+rrrrrrhelrrrrrrryoyoylo
+</p>
+
+
+
+<p>
+rrrrrrhelrrrrrrryoyoylo      
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org9dd6e70" class="outline-3">
+<h3 id="org9dd6e70">創建 Layer</h3>
+<div class="outline-text-3" id="text-org9dd6e70">
+<p>
+M-x configuration-layer/create-layer
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgf819563" class="outline-3">
+<h3 id="orgf819563">Org-pomodoro (esc-RET p)</h3>
+<div class="outline-text-3" id="text-orgf819563">
+<ul class="org-ul">
+<li>一樣可以到 customize-group 有很多可以修改</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org45149d0" class="outline-3">
+<h3 id="org45149d0">Org-capture</h3>
+<div class="outline-text-3" id="text-org45149d0">
+<ul class="org-ul">
+<li>快速記筆記的方法</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq org-capture-templates
+ '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"t"</span> <span style="color: #2d9574;">"Todo"</span> entry <span style="color: #67b11d;">(</span>file+headline <span style="color: #2d9574;">"~/note/todo.org"</span> <span style="color: #2d9574;">"&#24037;&#20316;&#23433;&#25490;"</span><span style="color: #67b11d;">)</span>
+  <span style="color: #2d9574;">" * </span><span style="color: #cc9393;">TODO</span><span style="color: #2d9574;"> [#B] %?\n %i\n"</span>
+  <span style="color: #4f97d7;">:empty-lines</span> <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="outline-container-org126a227" class="outline-2">
+<h2 id="org126a227"><span class="todo TODO">TODO</span> yyoyo</h2>
+<div class="outline-text-2" id="text-org126a227">
+</div><ul class="org-ul"><li><a id="org74b0432"></a>什麼是 interactive<br  /></li>
+
+<li><a id="orge5a29a0"></a>什麼是 setq 為什麼是 set + q<br  /></li></ul>
+</div>
+
+
+
+
+<div id="outline-container-org8f5cdcc" class="outline-2">
+<h2 id="org8f5cdcc">Learnrr Emacs in 21 Days</h2>
+<div class="outline-text-2" id="text-org8f5cdcc">
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Date: 2016/12/31 (六)</p>
+<p class="author">Author: fatfingererr ( RICKY )</p>
+<p class="date">Created: 2017-01-15 週日 19:22</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.5.1 (<a href="http://orgmode.org">Org</a> mode 9.0.3)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+* Idea
+
+** TODO [#B] happppp
+
+** TODO [#B] tempyoyo
+   SCHEDULED: <2017-01-15 週日 21:00>
+   
+** TODO [#B] 用 flycheck 來做看看 Matlab 的囉
+
+** TODO [#B] 修改 mendeley 的架構與維護 ocf
+
+** TODO [#B] 用emacs做dll去找一些东西来看
+
+** TODO [#B] 創業家指南可以補齊
+
+** TODO [#B] 
+
+** TODO [#B] 新增常用的mt4函数到yasnippet
+
+** TODO [#B] 查詢 latex 打法在 emacs 中怎麼用
+

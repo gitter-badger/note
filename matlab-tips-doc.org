@@ -1,0 +1,26 @@
+#+TITLE:     Matlab 小秘訣 - Matlab Tips
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2015-01-17
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/matlab-tips-doc.org" class="fa fa-github">GitHub</a></div>
+#+end_EXPORT
+
+* 字串處理
+
+** 字串文字中間每個間隔插入新字串
+
+#+BEGIN_SRC matlab
+strExample = ['a','p','p','l','e'];
+insertStr = ['<'];
+strrep(strrep(strjoin(cellstr(strcat([strExample;strcat(repmat(insertStr,1,length(strExample)-1),'_')]'))'),'_',' '),' ','')
+% ans = 
+%    a< p< p< l< e 
+#+END_SRC
+
+
