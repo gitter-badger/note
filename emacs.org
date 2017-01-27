@@ -183,6 +183,22 @@ squash ( r l ) 當有兩個 commit 還沒 push 想結合起來變成一個的時
 test test
 test test
 
+reset ( l l # ) l l 進入到當前分支, 把游標放到要回退的 commit 再按 # 
+
+select 行 commit : 在 unstage 的檔案前面按 tab 然後滑到要選的行前面按 v 就可以開始選, 選完按 s 做 stage
+文件前面按 x 就可以直接丟掉, 或是 v 進入選擇模式, 
+
+revert 
+
+以後再多練習囉
+
+*** bench 
+
+b B -> 從哪個分支再建立一個分支出來
+b b  切換到其他分支
+m m merge回來分支
+
+
 
 
 
