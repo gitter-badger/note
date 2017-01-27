@@ -1,0 +1,61 @@
+#+TITLE:     Blog SOP
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-01-22
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/blob/master/blog.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
+
+
+-----
+* 工作流
+
+** 開啟本地伺服器
+
+#+BEGIN_SRC emacs-lisp
+(async-shell-command (concat "cd " blog-dir " && lein ring server"))
+#+END_SRC
+
+
+
+
+
+-----
+* 基本操作
+
+** posts
+
+** pages
+
+
+-----
+* 上傳文章
+
+#+BEGIN_SRC emacs-lisp
+;; autoupdate 是一個簡單上傳部落格文章的 bat
+(async-shell-command (concat "cd " blog-dir "&& autoupdate"))
+#+END_SRC
+
+
+
+
+
+
+
+-----
+* 寫作材料
+
+
+
+
+
+
+
+-----
+* 待辦清單
+

@@ -1,0 +1,22 @@
+#+TITLE:     有趣的主題
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2015-04-28
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/topic.org" class="fa fa-github">GitHub</a></div>
+#+end_EXPORT
+
+
+*  TODO 待完成的項目
+
+- Why do traders in investment banks feel their jobs are immune from AI, etc?
+  - https://news.ycombinator.com/item?id=13299311
+- LSTM Neural Networks for Time Series Prediction
+  - https://news.ycombinator.com/item?id=13258056
+- Backpropagation is a leaky abstraction
+  - https://news.ycombinator.com/item?id=13215590

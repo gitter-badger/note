@@ -1,2 +1,144 @@
-* work
+#+TITLE:     Work SOP
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2015-01-23
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/XXXXXXXX.org" class="fa fa-github">GitHub</a></div>
+#+end_EXPORT
+
+
+-----
+* Today
+**  last day Plan
+***** TODO [#A] setup @timeSeries ( original @TSData )
+***** TODO [#A] setup repo "minastir-database" ( original TSData, so TSData will seperate to two part )
+***** TODO [#A] setup @Signal ( original @TSSignal )
+****** default : 1. no target data 2. have trade target data
+***** TODO [#A] seyup @experiment ( original @NNExperiment )
+***** TODO [#B] all gitthub project need setup 'tests' folder
+***** TODO [#C] all github project need setup 'demos' folder
+***** TODO [#C] [ PLAN ] think how to build backtesting process with Matlab Testing Framework and Jenkins CI
+
+* 工作流
+
+
+** 常用目錄
+
+#+BEGIN_SRC emacs-lisp
+(dired (concat user-path "LSTM"))
+(dired "C:\\Users\\rcwan\\LSTM\\")
+(dired mt4-dir)
+(dired mt4-terminal-dir)
+(dired (concat mt4-terminal-dir "MQL4\\Experts"))
+#+END_SRC
+
+
+#+BEGIN_SRC emacs-lisp
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
+#+END_SRC
+        
+
+
+
+** 常用指令 ( 請用 C-x C-e 執行 )
+#+BEGIN_SRC emacs-lisp
+;; XXXX-dir 請到 user-config 設定
+(async-shell-command (concat "cd " XXXX-dir " && <cmd>")
+; C:\Users\rcwan\AppData\Roaming\MetaQuotes\Terminal\2010C2441A263399B34F537D91A53AC9\MQL4\Experts
+#+END_SRC
+
+*** 開啟 MATLAB
+
+#+BEGIN_SRC emacs-lisp
+(call-process-shell-command "matlab" nil 0)
+#+END_SRC
+
+*** 開啟 HPC Cluster Manager
+
+#+BEGIN_SRC emacs-lisp
+(call-process-shell-command HPC-cluster-manager nil 0)
+#+END_SRC
+
+*** 開啟工作流
+
+#+BEGIN_SRC emacs-lisp
+(call-process-shell-command (concat "start chrome "  note-dir "\\work.html"))
+#+END_SRC
+
+
+-----
+* 基本操作
+
+** 操作一
+
+** 操作二
+
+
+
+-----
+* 工作材料
+
+** 材料一
+
+** 材料二
+
+** 材料三
+
+
+
+-----
+* snippet
+
+
+-----
+* memo
+
+-----
+* todo
+
+** TODO [#A] LSTM rolling / Metatrder Rolling 
+*** model class
+*** [#A] fetch data and analysis
+**** TODO dev analysis code
+     :LOGBOOK:
+     CLOCK: [2017-01-24 週二 12:40]--[2017-01-24 週二 13:01] =>  0:21
+     :END:
+
+** TODO [#A] LSTM merge original dev framework
+*** model class
+*** diff insample 
+*** train report 
+*** send message
+
+** TODO write utility function
+*** DONE creaete repo
+    CLOSED: [2017-01-24 週二 14:46]
+    :LOGBOOK:
+    CLOCK: [2017-01-24 週二 14:33]--[2017-01-24 週二 14:46] =>  0:13
+    :END:
+*** TODO merge old function
+    :LOGBOOK:
+    CLOCK: [2017-01-24 週二 14:46]--[2017-01-24 週二 15:45] =>  0:59
+    :END:
+*** TODO write some basic useage and information & use snippet
+
+
+** TODO [#B] LSTM auto run job 
+
+** TODO [#C] clockwork 
+
+** TODO [#B] sizeX , nX 
+
+** [[https://github.com/mobeets/mpm][GitHub - mobeets/mpm: Simple Matlab package management inspired by pip]]
+
+** [[https://www.npmjs.com/package/matpack][matpack]]
+
+** gitlab DNS problem
+
 

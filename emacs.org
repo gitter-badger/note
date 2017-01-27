@@ -1,35 +1,18 @@
+#+TITLE:     Emacs 個人筆記
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2015-04-28
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
 
-#+SUBTITLE: 本簡報是關於 Emacs 的相關資訊與學習筆記
-#+DATE: 2016/12/31 (六)
-#+AUTHOR: fatfingererr ( RICKY )
-#+EMAIL: fatifngererr.tw@gmail.com
-#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
-#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
-#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
-#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+SETUPFILE: theme-readtheorg.setup
 
-#+DESCRIPTION:
-#+EXCLUDE_TAGS: noexport
-#+KEYWORDS:
-#+LANGUAGE: en
-#+SELECT_TAGS: export
-
-#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
-#+COMPANY: fatfingererr@gmail.com
-#+WWW: http://ffe.tw/
-#+GITHUB: http://github.com/fatfingererr
-#+TWITTER: fatfingererr
-
-#+FAVICON: images/fatfingererr.png
-#+ICON: images/fatfingererr.png
-#+HASHTAG: fatfingererr
-
-# Fork me ribbon
-#+BEGIN_EXPORT html
-<a href="https://github.com/fatfingererr/note/blob/master/emacs.org">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
-</a>
-#+END_EXPORT
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+  <a href="https://github.com/fatfingererr/note/blob/master/rnn-doc.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
 
 * Learn Emacs in 21 Days
   :PROPERTIES:
@@ -175,6 +158,32 @@ example:
 
 #+END_SRC
 
+** magit
+
+M-m g s -> unstage 前面按 s
+M-m g i : init
+s-1
+tab to view diffs 
+
+
+c c -> c-c c-c commit
+
+*** commits in action
+
+Ammend (c - a ) stage之後還沒commit的修改添加進去已經stage的東西, 一些臨時操作很有用
+第一行不要超過72字符, 好處是看gitlog不會被截斷
+更詳細的說明要空一行再添加
+
+M-m g s -> l l 可以看 commit 消息
+
+set-upstream 這樣之後 git push 就不用再加上分支了
+
+squash ( r l ) 當有兩個 commit 還沒 push 想結合起來變成一個的時候
+
+test test
+test test
+
+
 
 
 ** occur
@@ -183,6 +192,7 @@ example:
 - 會記憶上次你搜尋的東西
 - 在 Occur-mode 底下你可以按 e 就可以進入 Occur-Edit mode 可以直接改rrr
 - 比起一般編輯器用 find and replace 會快很多
+- occur-dwim 
 
 ** popwin
    
@@ -221,7 +231,7 @@ M-x configuration-layer/create-layer
 
 ** Org-pomodoro (esc-RET p)
 - 一樣可以到 customize-group 有很多可以修改
-  -
+  - TODO 做個各國開盤時間倒數
 
 ** customize-group
 
@@ -242,6 +252,7 @@ M-x configuration-layer/create-layer
 #+END_SRC
 
 - 只要按 C-c c 就會自動幫你紀錄
+- Todo / notes / blog ideas / code snippet / work / chrome / links / Journal Entry
 
 
 ** insert-chrome-web-url
@@ -277,7 +288,9 @@ helm加載速度不夠, 城市太多的時候, 搜索速度很低
 - name 是在 M-m i s 中尋找時幫助你更精確找到對應模板
 - 模板可放多個 $1 表示模板建立後的游標位置
 - TODO : $0 $2 的意思還沒弄明白
-    - 參考：http://oremacs.com/2015/01/30/auto-yasnippet/  
+  - 參考：http://oremacs.com/2015/01/30/auto-yasnippet/
+- TODO : 轉換首字母大寫
+  - 參考:http://emacs.stackexchange.com/questions/12613/convert-the-first-character-to-uppercase-capital-letter-using-yasnippet
 
 ** delete backward ( C-backspc )
 
@@ -416,20 +429,520 @@ test
 - 由於在代碼中 company-anconda 擁有主權，因此會給予沒有補全的結果，而在註解中才會執行 company-dabbrev
 
 
+
+** 這裡開始是 spacemacs
+
+** .spacemacs.d
+
+
+** spacemacs 增加啟動速度
+
+- 從 FAQ 可得
+- 在 user-init 中添加
+
+#+BEGIN_SRC emacs-lisp
+(setq tramp-ssh-controlmaster-options
+      "-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+#+END_SRC
+
+
+
+** fullscreen
+
+- dotspacemacs-maximized-at-startup nil 改成 t
+- 而不是改 dotspacemacs-fullscreen-at-startup 這樣才會在當前螢幕最大化
+
+** dotspacemacs-excluded-packages
+
+- 需要去除掉的預設 package 可以在這邊新增
+
+
+** 查找各種 layer ( M-m h spc )
+
+- 查找 layer 之後進去會看到 readme.org
+- 每個 layer 都是需要 readme 這樣才能簡單了解是做什麼用
+- 有哪些 package 怎麼配置和有哪些快捷鍵
+
+** 還不會用 layer 之前先用 user-config 當作 init.el
+
+
+** 讓 customize-group 的個人設定存到 .spacemacs.d 當作 custom.elpa
+
+** 安裝 doom-themes
+
+
+
+- 在 user-config 中 加上兩行:
+
+#+BEGIN_SRC emacs-lisp
+(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+(load custom-file 'no-error 'no-message)
+#+END_SRC
+
+** dotspacemacs-themes
+
+** TODO M-x align-regexp
+
+
+
+** 自訂自己的 layer
+
+- 每個 layer 都可以自訂一些變量 variable
+- 每一個 layer 底下會有 config.el (可以看better-defaults layer參考)
+- 在 config.el 中可以先令 defvar 為 nil 或預設值
+- 然後在 .spacemacs 中的 init.el 中的 configuration-layers 可以加上去:
+
+#+BEGIN_SRC emacs-lisp
+dotspacemacs-configuration-layers
+'(
+  ;; ...
+  (ffe :variables XXXXXXX t)
+  ;; ...
+)
+#+END_SRC
+
+- create-layer 在 .spacemacs.d 底下建立
+  - package.el 主要是在 elpa 上面下載包
+  - funcs.el 主要是定義一些函數,也可以在 package.el 底下寫 use-package, 但是全局函數還是在 func.el 比較好
+  - keybindings.el 可以定義一些 keybindings
+  - config.el 聲明的變量是可以在 load layer 時去修改變量的, 或是聲明一些 global mode 或是默認的配置
+  - funcs 與keybindings 一般是成對出現的
+  - layers.el
+
+** 修改狀態列波浪區隔變成 powerline arrow
+
+- 在 user-config 中
+#+BEGIN_SRC emacs-lisp
+(setq powerline-default-separator 'arrow)
+#+END_SRC
+
+
+
+
+** ERROR : enabling flyspell mode
+
+
+
+** leader-key
+
+- 可以在 use-package 中的 :init 後面設定
+#+BEGIN_SRC emacs-lisp
+(spacemacs/set-leader-keys "key" 'youdao-dictionary-search-at-point+)
+#+END_SRC
+- 這樣只要按 M-m k e y 就能執行對應的函數了
+
+** use-package 的 macroexpand
+
+- 把游標放在 use-package 前面 M-x macrostep-expand
+- progn 是組合語句的意思
+
+
+** help ( M-m h SPC )
+
+** post-init 與 pre-init
+
+- 在建立 layer 之後, 如果想在 layer 中對已經讀取的 package 重新設定
+- 可以使用 post-init-XXXXX 來定義, 記得也要添加 package name 到 defconst
+- 一般來說執行順序是 pre-init 再來 init 再來 post-init 通常我們只會用到 post-init
+- pre-init 例如可以先添加窗口, 或是先添加 hook, 基本上沒什麼太大區別
+- post-init 因為已經有 requrie 了, 所以在做更動比較不會有問題
+
+** :location 用法
+
+- 學習做 package 可以先看其他 package
+
+** 沒有在 melpa 上的 package 安裝方法
+
+- 到 Github 上面去他的 el 裡面看 provide 後面的名字
+- 在自己的 XXX-packages 裡面用 recipe 來做
+
+#+BEGIN_SRC emacs-lisp
+(defconst XXXX-packages
+    (<套件名稱> :location (recipe :fetcher github :repo "who/packageName"))
+)
+#+END_SRC
+
+- 記得也要建立對應的 init 的 defun
+- 這樣安裝有好處, 可以先這樣測試在還沒上 melpa 之前安裝是不是有問題
+- 或是有些套件還在開發中還沒上 melpa 也可以透過這個方式安裝他的 package
+
+** 大量配置需要重新設定 ( layer.el )
+
+- 當很多套件你都需要做某些修改，就可以在 layer.el 而不在 init.el 中來做
+- 例如 remove-layer 然後接上套件名稱, 就不會執行該 layer 的套件 init 與 config
+- 例如不同 layer 會打架, layer.el 專門適合處理 layer 與 package 層級的處理
+- 也可以在 .spacemacs init.el 中 excluded-packages 中去除
+
+
+** 查詢目前所有生成的變數與文檔 ( M-m h d v )
+
+** 查詢目前所有的keymap (M-m h d k )
+
+** 文件內搜尋 (M-s o)
+
+** 自訂配置的方向
+
+- 自訂 mode line
+- 大量排除用不到的 package ( 可能有 bug, 或是降低啟動速度 )
+
+** 檔案處理的相關操作
+
+- M-m f f : Find File
+- M-m p f : 在當前目錄以下搜尋文件
+  - 山人有 hack
+- M-m f o : 用外部軟體開啟檔案 ( 例如開 html )
+- M-m f D : 刪除當前文件並關閉buffer
+- M-m f r : 最近使用的文件
+- M-m f R : 重命名當前buffer的文件
+- M-m f e l : 開啟 emacs 讀取的 el 文件
+- M-m f b : 開啟書籤
+
+** buffer 的相關操作
+
+- M-m b . : 進入前後 buffer 選擇(n/p前進後退), 類似 alt-tab 選好按 q 結束 (hydra)
+- M-m b h : 進入 home
+- M-m b N : 開新的空白文件
+- M-m b m : 刪除除了目前 buffer 以外的 buffer
+- M-m b R : 復原自尚未儲存最初的結果
+- M-m TAB : 直接切換 buffer, 類似 alt-tab
+
+** hack elisp 的叫巧
+
+1. hooks 在 major or minor mode 都可以 hook
+
+#+BEGIN_SRC emacs-lisp
+(add-hook 'xxx-mode-hook .....)
+#+END_SRC
+
+當一個 minor mode 啟用的時候, 他不會回傳 nil
+
+1. write elisp 的基礎
+
+   - Generic tips
+
+- regexp-quote
+
+
+** Advice
+
+- 可以在執行前後
+
+#+BEGIN_SRC emacs-lisp
+(defun XXXXX (x)
+ (message "in XXXXX")
+ (+ x 1))
+(XXXXX 1)
+
+(defadvice XXXXX (before my-XXXXX-hack activate)
+(message "before XXXXX"))
+(XXXXX 2)
+;; after 就會在後面出現
+
+;; 若要去掉 defadvice
+(ad-deactivate 'XXXXX)
+(XXXXX 2)
+
+;;
+(ad-activate 'XXXXX)
+(XXXXX 2)
+
+;; 除了 before/after 還有 around
+(defadvice XXXXX (around my-XXXXX-around activate)
+(setq ad-return-value
+(if (= x 1)
+42
+(+ 1 ad-do-it))))
+
+(XXXXX 1) ;; 42
+(XXXXX 3) ;; 5
+
+
+#+END_SRC
+
+- Advice 就像插在中間
+ 
+** edebug - elisp-debug (C-x X ...)
+
+- (debug)
+
+
+** 自己做 minor mode
+
+- 很重要
+- http://nullprogram.com/blog/2013/02/06/
+
+#+BEGIN_SRC emacs-lisp
+(define-minor-mode
+  XXXXXXX-mode
+  :global t
+  :init-value nil
+  :lighter " SS" ;; mode-line 顯示的東西
+  (if XXXXXXX-mode 
+        .............))
+
+(define-global-minor-mode
+   YYYY1-mode YYYY2-mode YYYY3-mode
+   :group 'XXXXXXX)
+#+END_SRC
+
+- 通常散落在各地的 global-set-key 可能因為啟動加載之後被 minor mode 覆蓋掉
+- 因此可以用一個自己為名稱的 minor-mode 來設定 global-set-key 做最後啟動
+- 這樣就能避免 global-set-key 被覆蓋掉
+
+
+** layer design
+
+- 單依職責原則: 5 個 layer
+  - 在 layer.el 聲明好
+    - better-defaults
+    - misc
+    - org
+    - programming
+    - ui
+
+- 每個 layer 裡面
+  - config.el
+  - funcs.el
+  - layers.el
+  - packages
+
+保持 user-config 盡量少
+- 若要最後加仔的, 或是最高優先集的, 放到這裡
+- 臨時配置也是放在這, 使用一段時間會在搬到 layer 裡面
+- 啟動等寬字體
+- 加一些 hook
+- 設定 custom-file 並讀取且不要顯示 error 或 message
+
+#+BEGIN_SRC emacs-lisp
+(setq custom-file (expand-file-name "custom.el" dotspacemacs-directory))
+(load custom-file 'no-error 'no-message)
+#+END_SRC
+
+經常同步 dev 分支到最新
+
+- user-init
+  - 添加各種 source 的源
+  - 忽略或提示一些啟動時的資訊
+  - 忽略在編譯時的警告
+
+
+- better-default
+  - lambda 變成 lambda 符號
+  - clojure 會更多在用
+
+#+BEGIN_SRC emacs-lisp
+(global-prettify-symbols-mode 1)
+;; lambda 會變成符號
+(lambda ....)
+#+END_SRC
+
+- fill-column ( C-x f)
+#+BEGIN_SRC emacs-lisp
+(setq-default fill-column 80)
+#+END_SRC
+
+- check large file
+  - 例如大於 500K 的文件, 例如 log 只需要瀏覽就行了
+  - 不需要開到其他 mode 可以只用 fundamental mode
+  - 避免不必要的文法解析, emacs 又是單線程就會很卡
+
+
+** prelude/purcell/prelude/abo-abo/github/spacemacs/Elisp入門(葉文斌,2007)翻譯得不錯,2-3小時看完
+
+- reddit
+- twitter 一兩禮拜搜索關鍵字
+- github 牛人
+- RSS訂閱: planet emacsen shacha chua
+- youtube: emacsrock, emacs hangout(shacha chua),
+- 每一段時間去查看 custom-group 的設置, 很多默認行為多數考慮依般情況, 瞭解可以知道怎麼零食修改, 也不用去看他的程式碼, 這個裡面是作者希望怎麼擴展
+- 不太爽有沒有辦法更高效, 一直思考 
+
+
+** TODO twitter 應該也要個 org 一個禮拜搜索一兩次
+
+
+** TODO 仿照 lambda 一樣做一些特殊符號
+** prodigy 方便啟動 web 服務
+
+** Deft 可以搜索配置
+
+
+
+
+
+
+
+
+** emacs 做 data analysis 的各種 hack 找看看
+** Dired Mode
+
+
+** Layout 功能 ( M-m l )
+
+- M-m l l 選擇 layer
+- M-m l tab 可以在不同 layout 切換
+- M-m l o 自定義 layout
+- 可以在 post-init 某些 mode 之後定義 custom layout
+
+#+BEGIN_SRC emacs-lisp
+(spacemacs|define-custom-layout "@XXXXXXX"
+    :binding "c"
+    :body
+...
+)
+#+END_SRC
+
+- 當你這樣定義之後, 只要按 M-m l o 後接著按 binding 就會開啟對應 layout
+- M-m l ? 了解更多 layout 細節資訊 再按一次 ? 就消失了
+
+
+** window 操作 ( M-m ** )
+
+- M-m w . : Micro State ( Transient State ) 列出一些快捷鍵和簡單的說明 
+- M-m w u/U : 前一個 window 展開
+- M-m w h : 游標亂點跑掉的時候，可以恢復
+- M-m w l/r : 和右邊/左邊窗口切換
+- M-m w w : 切換窗口
+- M-m t g : 黃金分割窗口(很多窗口要開,又不方便關掉,但又需要專注一個)
+- M-m t - : 游標永遠都在窗口正中間，方便跳轉(C-l 就不能用了)
+
+** project 操作 ( M-m p ** )
+
+- M-m p f : 可以綁定一個方便的
+- M-m p b : 每次都用 find-file 會很浪費時間, 如果你只在 project 操作 buffer
+- M-m p p : 可以切換不同 project 的資料夾, 根據你訪問過文件就會新增
+- M-m p l : 開始一個 project 並針對這個 project 開新的 layout
+- find-file-in-project 在項目中查找, 可以來綁定, 會跳過不必要的系統文件, 可以去查看看他跳過那些文件
+- 
+
+** TODO 針對不同螢幕數啟用不同layout
+
+
+
+
+** Ctags for auto-completion (感覺我用不到)
+
+- 方便對大的程式碼庫進行跳轉
+- 一些動態語言無法用精確的語意補全, 也不需要
+- 可以先看 M-m h d v 看看 tags-table-list 的說明
+
+** ielm ( 可綁個 global key)
+
+- M-x ielm 會開啟一個 elisp 的 console
+- 可以立即修改當前的各種 variable 可搭配 M-m h d v 使用
+- 還可以綁 shell
+
+** lispy ( vi-like Paredit )
+
+- 針對程式碼進行結構操作, 是使用LISP語言不得少的工具
+- barf and slurp
+  - 當你打lisp 時可以啟動 lispy-mode 然後也可以搭配 command-log-mode (C-c o) 來看和練習
+  - 當在一個輸入最末尾按 [ 會跳到前一個括號最頭, [ + d 會跳到前一個括號最尾
+  - 接著按 < 會讓括號往前縮一個吐(barf)出 arg , 按 > 會讓括號擴展一個吃(slurp)掉 arg
+- raise
+  - 這是讓一個括號擴展吃掉上一個層級的括號, 在括號按 r
+- kill
+  - 按 C-k 會刪除括號中當前 arg 和後面所有 arg 若在函數上 kill 就會留下空括號
+- copy yank
+  - 在左括號上按 m 會選擇整個括號內容, 並再按 n 會複製, 搭配 C-y 貼上(yank)
+- ace
+  - 在右括號上按 a 會把括號中的各個變量位置前面顯示英文字母, 可以跳轉到該變量做操作
+- up down
+  - j/k 就可以在上下不同的表達式跳動, 但會在同一個層級裡面跳轉, 要跳到其他層級可以 2 h 跳兩次出去,
+- lispy 前面可以加數字
+- flow
+  - f 跳進去括號裡面
+- lispy-describe-inline
+  - C-1 可以看到函數敘述
+- lispy-arglist-inline
+  - 可設置快捷鍵
+  - C-2 可以看到函數使用要放入的 arg
+- lispy-follow
+  - F : 可以看到函數的定義, 進入到 el 檔案裡面
+- split
+  - 可以用 C-j 分開並換行
+  - lispy-splice-sexp-killing-backward 把括號去掉
+- alt-multiline & oneline
+  - [ m : 整理成多行, 註解會通通被提到最上頭外面
+  - [ O : [ 跳轉到括號最頭前, 然後把一個多行表達式變成一行
+- wrap-round
+  - lispy-wrap-round 就可以直接對一個單詞加上括號
+- goto
+  - g : 直接跳轉到指定當前文檔中其他括號
+- eval
+  - e : 就可以直接eval
+
+** 看山人 keybinding 了解怎麼自己來綁定
+** reddit 訂閱大神 blog
+** TODO GTD(Get Thing Done)工具
+** TODO 文學編程
+** TODO arxiv 在 emacs 中的用法
+** TODO etag 用法
+
+** TODO Highlight-symbol-mode
+
+
+** 快速開啟 .spacemacs.d 的 init.el ( M-m f e d)
+
+- 如果是要在 .emacs.d 的話就要用 M-m f e i
+
+** fasd (一直裝不起來以後再研究)
+- M-m f a d : 最近經常使用的目錄
+
+** command-log-mode ( C-c o )
+
+- 先安裝吧 
+*** TODO 固定輸出存到一個資料夾, 每個月去分析自己的使用狀況
+
+
+
+
+
+** telegram 與 emacs/IRC
+** 給當前目錄底下的文件建立特別設置
+
+- M-m f v : 添加一個設定的變數, 他會在當前目錄下建立 .dir-locals.el 紀錄
+- 每次執行到包含有.dir-locals.el 的檔案的 buffer 就會自動啟動
+
+
+** latex 顯示 有沒有套件呢
+
+** bookmark 怎麼用呢
+** 外匯的cal 怎麼用呢
+*** 
+** 檔案裡面怎麼跳轉函數呢
+** counsel-git
+
+** 安裝 package 之前可以先查是否有安裝了 ( M-m h SPC )
+
+
+
+** 更多的工作
+
+- spacemacs 的文檔和 FAQ 一定要看
+
+
+- 預設 spacemacs 會在目錄下建立 .spacemacs 檔案，可以建立 .spacemacs.d 資料夾並把 .spacemacs 移入改名為 init.el 來做 github 管理
+
 ** think
 
 *** 或許可以做個 company-matlab
 *** prelude-search 好酷,可以搜尋網站
 
 
- 
+*** 寫作者的編輯器裡面寫什麼呢
 *** toggle 是什麼
 
 
 
 
 
+*** ispell 的快捷鍵 
 
+*** 仿照 yodao-directory 做個 quant-directory, 可以抄 bloomberg 的定義
+*** 怎麼用helm呢
+*** defer 的用法
+*** 為什麼上下左右不好用:因為在C-u重複時不好按
 * TODO yyoyo
 **** 什麼是 interactive
 

@@ -19,3 +19,18 @@
 
 ** TODO [#B] 查詢 latex 打法在 emacs 中怎麼用
 
+** TODO [#B] 買列表機
+
+** TODO [#B] 弄一個 buy 的 capture
+
+** TODO [#B] hack無蝦米 https://github.com/Superbil/boshiamy-mule/blob/master/boshiamy.el
+
+** TODO [#B] 漏洞與漏洞的利用方法和金融很像 http://www.leiphone.com/news/201611/vDM8ddmUWGbc0vp3.html
+
+** TODO [#B] neotree可以參考做個外匯測攔
+** 參考萬得, bloomberg 來做 el 
+** 之乎上所有量化文章看過一遍Quant
+* todo
+
+** TODO [#B] jobs計程車司機的好一點, 資工匯差好幾倍
+
