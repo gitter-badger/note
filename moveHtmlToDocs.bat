@@ -1,8 +1,9 @@
 IF EXIST "README.html" (
     ren "README.html" "index.html"
+    del "README.html"
 )
 IF EXIST "*.html" (
-    robocopy "*.html" "docs"  /E /IS /MOVE
+    move /y "*.html" "docs"
 )
 IF EXIST "images" (    
     robocopy "images" "docs"  /E /IS /MOVE
