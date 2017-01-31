@@ -24,6 +24,7 @@
 
 #+BEGIN_SRC emacs-lisp
 (progn
+    (org-html-export-to-html)
     (save-window-excursion
         (async-shell-command "moveHtmlToDocs") nil 0)
     (ffe/auto-git-push)
