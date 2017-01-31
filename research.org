@@ -1,34 +1,72 @@
-#+TITLE: 近期研究概況
-#+SUBTITLE: 關於近期的各項研究方向的進度與發展 ( 2016 / 1 / 14 )
-#+DATE: 2016/01/14 (六)
-#+AUTHOR: ffe (fatfingererr@gmail.com)
-#+EMAIL: fatifngererr.tw@gmail.com
-#+OPTIONS: ':nil *:t -:t ::t <:t H:3 \n:nil ^:t arch:headline
-#+OPTIONS: author:t c:nil creator:comment d:(not "LOGBOOK") date:t
-#+OPTIONS: e:t email:nil f:t inline:t num:nil p:nil pri:nil stat:t
-#+OPTIONS: tags:t tasks:t tex:t timestamp:t toc:nil todo:t |:t
+#+TITLE:     研究近況 Research
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+#+STARTUP:   showall
 
-#+DESCRIPTION:
-#+EXCLUDE_TAGS: noexport
-#+KEYWORDS:
-#+LANGUAGE: en
-#+SELECT_TAGS: export
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/XXXXXXXX.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
 
-#+GOOGLE_PLUS: https://plus.google.com/fatfingererr
-#+COMPANY: <a href="http://www.ffe.tw/">http://www.ffe.tw/</a>
-#+WWW: http://ffe.tw/
-#+GITHUB: http://github.com/fatfingererr
-#+TWITTER: fatfingererr
-#+FAVICON: images/fatfingererr.png
-#+ICON: images/fatfingererr.png
-#+HASHTAG: fatfingererr
+* 用 Eamacs 做研究
 
-# Fork me ribbon
-#+BEGIN_EXPORT html
-<a href="https://github.com/fatfingererr/note/blob/master/research.org">
-<img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
-</a>
-#+END_EXPORT
 
-yoyo
+rrrr[fn:1] tethe
+
+
+
+
+
+
+
+
+
+
+
+
+* 搜尋引擎
+
+- [[https://www.semanticscholar.org/][Semantic Scholar]]
+
+
+
+
+
+
+
+
+
+
+
+
+
+** zotero
+- [[http://yimi.pixnet.net/blog/post/23376833-推薦&教學：免費的文獻管理工具-zotero][推薦&教學：免費的文獻管理工具-zotero @ yimi :: 痞客邦 PIXNET ::]]
+- [[http://www.mkbehr.com/posts/a-research-workflow-with-zotero-and-org-mode/][A research workflow with Zotero and Org mode | mkbehr.com]]
+
+
+
+
+
+
+
+
+
+
+
+* Footnotes
+
+[fn:1] [[https://github.com/vikasrawal/orgpaper/blob/master/orgpapers.org][Using Emacs, Org-mode and R for Research Writing in Social Sciences: A Toolkit for Writing Reproducible Research Papers and Monographs]]
+[fn:2] [[http://www.draketo.de/english/emacs/writing-papers-in-org-mode-acpd][Tutorial: Writing scientific papers for ACPD using emacs org-mode | Zwillingssterns Weltenwald | 1w6]]
+[fn:3] [[http://nickjudd.com/blog/2016/02/13/emacs-notes/][Notes on an Emacs workflow for academic documents - Nick Judd]]
+[fn:4] [[https://www.researchgate.net/post/What_reference_manager_is_used_for_Emacs_users][What reference manager is used for Emacs users? - ResearchGate]]
+[fn:5] [[http://www.draketo.de/english/emacs/writing-papers-in-org-mode-acpd][Tutorial: Writing scientific papers for ACPD using emacs org-mode | Zwillingssterns Weltenwald | 1w6]]
+[fn:6] [[http://sachachua.com/blog/2007/04/how-to-use-emacs-to-keep-track-of-your-bibliography-and-notes-anatomy-of-an-emacs-hack/][How to use Emacs to keep track of your bibliography and notes: anatomy of an Emacs hack &#8211; ]]
+[fn:7] [[http://karl-voit.at/2015/12/26/reference-management-with-orgmode/][Reference Management with Org-mode]] 優先看
+
+
+
 

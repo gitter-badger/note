@@ -1,0 +1,74 @@
+* HackingThursday 固定聚會
+  :PROPERTIES:
+  :LOCATION: 田中園 光華店, No. 1, Línyí St, Zhongzheng District Taipei City, Taiwan 100, Taipei, Taipei City, tw, 100
+  :LINK: [[https://www.google.com/calendar/event?eid=XzZ0bG5hcXJsZTVwNmNwYjRkaG1qNHBocGVob200ZGo1ZGxpbWFzajNlMWpqOHJiaDY1am1lcDFoYzlsbWtxams2dG9qNmMxajYwcWoycXBvNzRvN2FzcGxlcGszMHIzaWNnbzcwY2pkZWxuNmUgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: _6tlnaqrle5p6cpb4dhmj4phpehom4dj5dlimasj3e1jj8rbh65jmep1hc9lmkqjk6toj6c1j60qj2qpo74o7asplepk30r3icgo70cjdeln6e
+  :END:
+
+  <2017-01-19 Thu 19:30-22:30>
+
+如要查看系統自動為您建立的活動詳細資訊 (例如本活動)，請使用官方 Google 日曆應用程式：https://g.co/calendar
+* Clojure Taiwan 一月聚會
+  :PROPERTIES:
+  :LOCATION: http://moztw.org/space/, 地址：100 台北市中正區八德路一段 94 號 3F  //  3rd Fl., No. 94, Sec. 1, Ba-de Rd., Zhongzheng District, Taipei City 100, Taiwan, Taipei, tw
+  :LINK: [[https://www.google.com/calendar/event?eid=XzZ0bG5hcXJsZTVwNmNwYjRkaG1qNHBocGVoaDZxZWI5Y2hpNmtzcG9kMWkzZ3FqNWVncm4ycnBnNnBrNjRjYmdlcGo2MmNqaWRka21jcmprNmNzbWdyYmtkOWszZXEzYWNoaWphcTluZGxtbWUgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: _6tlnaqrle5p6cpb4dhmj4phpehh6qeb9chi6kspod1i3gqj5egrn2rpg6pk64cbgepj62cjiddkmcrjk6csmgrbkd9k3eq3achijaq9ndlmme
+  :END:
+
+  <2017-01-23 Mon 19:00-22:00>
+
+如要查看系統自動為您建立的活動詳細資訊 (例如本活動)，請使用官方 Google 日曆應用程式：https://g.co/calendar
+* test gcal
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=MXJmbWtncWhvbXQ1dmRjZHY1cnZkOWtzbDAgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 1rfmkgqhomt5vdcdv5rvd9ksl0
+  :END:
+
+  <2017-01-30 Mon 19:00-22:00>
+* test gcal agian
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=ZmRmZzNnZDUxN29wdGQwcjJvaDBrdDl0bWcgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: fdfg3gd517optd0r2oh0kt9tmg
+  :END:
+
+  <2017-01-31 Tue 19:00-22:00>
+
+test 內文
+* test gcal agian 3 rr333
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=OGk2Z25wdWQ5MGUxNnNtcTUwZGRudTJnMHMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 8i6gnpud90e16smq50ddnu2g0s
+  :END:
+
+  <2017-02-01 Wed 19:00-21:45>
+
+test 內文 3 3
+* test gcal agian 3 rr333
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=c2d0aHIwM2lkaHQyZHU4NTM5OWltbTliNnMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: sgthr03idht2du85399imm9b6s
+  :END:
+
+  <2017-02-01 Wed 19:00-21:45>
+
+  CLOSED: [2017-01-30 Mon 01:08]
+<2017-02-01 Wed 19:00-21:45>
+test 內文 3 3
+* test gcal agian3 3
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=dTc0aWYwZDU2bmRxMjU0azZwaHU3Nmdyc3MgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: u74if0d56ndq254k6phu76grss
+  :END:
+
+  <2017-02-01 Wed 19:00-22:00>
+
+test 內文33
+* test gcal agian 3 3 33333
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=ZzhqcmRqOXVibWMzdTFibzFyNzV1a3BzdmcgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: g8jrdj9ubmc3u1bo1r75ukpsvg
+  :END:
+
+  <2017-02-02 Thu 19:00-22:00>
+
+test 內文 3 3

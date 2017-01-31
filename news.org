@@ -1,0 +1,30 @@
+#+TITLE:     新聞資訊 News
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+#+STARTUP:   showall
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/news.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
+
+* avy-open-url 開啟連結
+
+* Twitter
+** Matlab
+
+- https://twitter.com/search?q=%23matlab%20-simulink
+- https://twitter.com/matlab
+
+** 
+** 
+
+
+
+(save-excursion (spacemacs/avy-goto-url) (browse-url-at-point))
+
+
+* http://www.ppthunter.com/

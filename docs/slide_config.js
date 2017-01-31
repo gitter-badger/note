@@ -1,8 +1,8 @@
 var SLIDE_CONFIG = {
    // Slide Settings
    settings: {
-     title: 'Recurrent Neural Netowrks', 
-     subtitle: 'RNN 的基本數學原理', 
+     title: '', 
+     subtitle: '本簡報是關於 Emacs 的相關資訊與學習筆記', 
      useBuilds: true, // Default: true. False will turn off slide animation builds. 
      usePrettify: true, // Default: true 
      enableSlideAreas: true, // Default: true. False turns off the click areas on either slide of the slides.
@@ -16,8 +16,8 @@ var SLIDE_CONFIG = {
  
    // Author information
    presenters: [{
-     name: 'ffe (fatfingererr@gmail.com)', 
-     company: '<a href="http://www.ffe.tw/">http://www.ffe.tw/</a>', 
+     name: 'fatfingererr ( RICKY )', 
+     company: 'fatfingererr@gmail.com', 
      gplus: 'https://plus.google.com/fatfingererr', 
      twitter: 'fatfingererr', 
      www: 'http://ffe.tw/', 

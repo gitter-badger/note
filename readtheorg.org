@@ -1,0 +1,173 @@
+#+TITLE:     org html 主題 readtheorg
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
+#+LANGUAGE:  zh_TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+-----
+* GitHub 連結
+
+#+Begin_EXPORT html
+<div class="right">
+  <a href="https://github.com/fatfingererrfniessen/org-html-themes/blob/master/demo/example.org" class="fa fa-github"> Edit on GitHub</a>
+</div>
+#+end_EXPORT
+
+-----
+* sidebar 側欄小區塊
+#+begin_sidebar
+*You will learn to:*
+
+- write your docs in Org mode
+- create tables
+- create custom code blocks
+- and much more!
+#+end_sidebar
+
+
+*You will learn to:*
+
+- write your docs in Org mode
+- create tables
+- create custom code blocks
+- and much more!
+
+*You will learn to:*
+
+- write your docs in Org mode
+- create tables
+- create custom code blocks
+- and much more!
+
+-----
+* 藍色資訊區塊 Note
+#+BEGIN_SRC emacs-lisp
+#+begin_note
+The ~ALT_TITLE~ property allows to set an alternate title (shorter, for example)
+for a given headline in the table of contents and other running heads.
+#+end_note
+#+END_SRC
+#+begin_note
+The ~ALT_TITLE~ property allows to set an alternate title (shorter, for example)
+for a given headline in the table of contents and other running heads.
+#+end_note
+
+-----
+* 橘色警告區塊 Admonitiontodo
+#+BEGIN_SRC emacs-lisp
+#+begin_admonitiontodo
+Admonitiontodo
+#+end_admonitiontodo
+#+END_SRC
+#+begin_admonitiontodo
+Admonitiontodo
+#+end_admonitiontodo
+
+-----
+* 橘色警告區塊 Warning
+#+BEGIN_SRC emacs-lisp
+#+begin_warning
+Double dollar signs (~$$~) should not be used.
+#+end_warning
+#+END_SRC
+#+begin_warning
+Double dollar signs (~$$~) should not be used.
+#+end_warning
+
+-----
+* 綠色資訊區塊 tip
+#+BEGIN_SRC emacs-lisp
+#+begin_tip
+If you have tables (for example) that you want to ignore during export, one possibility
+is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
+*use* non-exported *drawers* (see #+OPTIONS: d:).
+#+end_tip
+#+END_SRC
+#+begin_tip
+If you have tables (for example) that you want to ignore during export, one possibility
+is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
+*use* non-exported *drawers* (see #+OPTIONS: d:).
+#+end_tip
+
+-----
+* 自訂巨集 Macro (記得空行換行)
+#+BEGIN_SRC emacs-lisp
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+
+{{{color(blue, This text is colored in blue.)}}}
+
+{{{color(red, This other text is in red.)}}}
+#+END_SRC
+
+#+MACRO: color @@html:<span style="color: $1">$2</span>@@
+
+{{{color(blue, This text is colored in blue.)}}}
+
+{{{color(red, This other text is in red.)}}}
+
+-----
+* tag
+** http://shields.io/
+#+BEGIN_SRC emacs-lisp
+#+begin_export html
+<a href="http://opensource.org/licenses/GPL-3.0">
+  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+<br/>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+#+end_export
+#+END_SRC
+#+begin_export html
+<a href="http://opensource.org/licenses/GPL-3.0">
+  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+<br/>
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+#+end_export
+** http://www.issuestats.com/
+** https://gitter.im/
+** https://codeclimate.com/
+** https://coveralls.io/
+
+-----
+* GitHub repo card
+#+BEGIN_SRC emacs-lisp
+#+begin_export html
+<div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
+<script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
+#+end_export
+#+END_SRC
+#+begin_export html
+<div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
+<script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
+#+end_export
+
+------
+* ditaa
+
+#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa2.png :cmdline -r
+      +--------+   +-------+    +-------+
+      |        | --+ ditaa +--> |       |
+      |  Text  |   +-------+    |diagram|
+      |Document|   |!magic!|    |       |
+      |     {d}|   |       |    |       |
+      +---+----+   +-------+    +-------+
+          :                         ^
+          |       Lots of work      |
+          +-------------------------+
+#+END_SRC
+
+#+RESULTS: [[images/orgmode-babel-ditaa2.png]]
+
+
+#+BEGIN_SRC calc :exports both
+x*2+x=4
+#+END_SRC
+
+#+results:
+

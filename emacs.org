@@ -14,6 +14,19 @@
 </div>
 #+end_EXPORT
 
+#+BEGIN_SRC ditaa :file foo.png :cmdline -E
+                              /-----\
+----------------------------->| foo |<-----------------------------
+                              \-----/
+#+END_SRC
+
+#+CAPTION: Foo
+#+LABEL: [[fig:foo]]
+#+RESULTS:
+[[file:foo.png]]
+
+
+
 * Learn Emacs in 21 Days
   :PROPERTIES:
   :SLIDE:    segue dark quote
