@@ -16,7 +16,7 @@
 
 * 筆記列表
 
-[[/note/emacs.html][News]]
+[[http://www.ffe.tw/note/emacs.html][emacs]]
 
 -----
 * 快捷鍵
