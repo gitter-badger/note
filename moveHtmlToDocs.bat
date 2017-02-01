@@ -6,13 +6,13 @@ IF EXIST "*.html" (
     move /y "*.html" "docs"
 )
 IF EXIST "images" (    
-    robocopy "images" "docs"  /E /IS /MOVE
+    robocopy "images" "docs/images"  /E /IS /MOVE
 )
 IF EXIST "js" (    
-    robocopy "js" "docs"  /E /IS /MOVE
+    robocopy "js" "docs/js"  /E /IS /MOVE
 )
 IF EXIST "theme" (    
-    robocopy "theme" "docs"  /E /IS /MOVE
+    robocopy "theme" "docs/theme"  /E /IS /MOVE
 )
 IF EXIST "slide_config.js" (    
     robocopy "slide_config.js" "docs" /E /IS /MOVE

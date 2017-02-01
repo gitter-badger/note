@@ -8,8 +8,33 @@
 
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
-<div class="right"><a href="https://github.com/fatfingererr/note/XXXXXXXX.org" class="fa fa-github"> GitHub</a></div>
+<div class="right"><a href="https://github.com/fatfingererr/note/blob/master/research.org" class="fa fa-github"> GitHub</a></div>
 #+end_EXPORT
+
+* 工作流
+
+#+BEGIN_SRC ditaa :file images/research-workflow.png
+
+  +--------------+      +-------------------------------------+   +-------------------+    +--------------+
+  |   Browser    |      |              Zotero                 |   |  posts            +----|  blog        |
+  | +----------+ |      | +-----------+                       |   +---------+---------+    +--------------+
+  | | article  +-+------+-+ reference +---  +--------------+  |   +---------+---------+
+  | +----------+ |      | +-----------+   X-+ project      +--+---+ notes / equations |
+  |              |      | +-----------+ /-  +--------------+  |   +---------+---------+
+  |              |      | | reference +-                      |             |
+  |              |      | +-----------+                       |   +---------+---------+   +---------------+
+  |              |      |                                     |   |     code          +---+  GitHub       |
+  |              |      |                                     |   +-------------------+   +---------------+
+  |              |      |                                     |
+  +--------------+      +-------------------------------------+
+
+#+END_SRC
+
+#+RESULTS:
+[[file:images/research-workflow.png]]
+
+
+
 
 * 用 Eamacs 做研究
 
@@ -66,7 +91,3 @@ rrrr[fn:1] tethe
 [fn:5] [[http://www.draketo.de/english/emacs/writing-papers-in-org-mode-acpd][Tutorial: Writing scientific papers for ACPD using emacs org-mode | Zwillingssterns Weltenwald | 1w6]]
 [fn:6] [[http://sachachua.com/blog/2007/04/how-to-use-emacs-to-keep-track-of-your-bibliography-and-notes-anatomy-of-an-emacs-hack/][How to use Emacs to keep track of your bibliography and notes: anatomy of an Emacs hack &#8211; ]]
 [fn:7] [[http://karl-voit.at/2015/12/26/reference-management-with-orgmode/][Reference Management with Org-mode]] 優先看
-
-
-
-

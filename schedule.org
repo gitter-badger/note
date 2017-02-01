@@ -18,71 +18,72 @@
   <2017-01-23 Mon 19:00-22:00>
 
 如要查看系統自動為您建立的活動詳細資訊 (例如本活動)，請使用官方 Google 日曆應用程式：https://g.co/calendar
-* test gcal
+* 深入了解 org-agenda
   :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=MXJmbWtncWhvbXQ1dmRjZHY1cnZkOWtzbDAgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: 1rfmkgqhomt5vdcdv5rvd9ksl0
+  :LINK: [[https://www.google.com/calendar/event?eid=NDIxZTlkNHM3ZzRndDZtN29yNjlyZTR1aGsgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 421e9d4s7g4gt6m7or69re4uhk
   :END:
 
-  <2017-01-30 Mon 19:00-22:00>
-* test gcal agian
+  <2017-02-01 Wed 15:00-16:00>
+
+
+* Blog 技術細節寫作
   :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=ZmRmZzNnZDUxN29wdGQwcjJvaDBrdDl0bWcgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: fdfg3gd517optd0r2oh0kt9tmg
+  :LINK: [[https://www.google.com/calendar/event?eid=ODZ1NnR0aW5xcXBsN2Q4cTYzc2ptOHVtcWMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 86u6ttinqqpl7d8q63sjm8umqc
   :END:
 
-  <2017-01-31 Tue 19:00-22:00>
+  <2017-02-01 Wed 22:00>
 
-test 內文
-* 目標：一年一百篇文章（一周兩篇）
+
+
+*** 技術細節
+- 技術細節／每天N次／15-30 分鐘／讀者來自搜尋引擎／產生流量
+- 技術細節是希望讓其他技術人員透過搜尋引擎用你想要的關鍵字搜尋到。
+  - 因此可以用前半段為術語或關鍵字，後半段為指向意圖的標題來寫文章。
+- 對於尚未出名或擁有光環之前，這類文章會是主要的流量來源。
+- 這種文章的材料是源自於日常工作遇到的各種技術問題，例如：
+  - 第三方套件的更新
+  - 對各種新技術進行的嘗試
+  - 運行環境或更新版本造成的Bug
+- 寫作之前可以先用關鍵字搜尋是否有類似文章，有又是高手寫的那就不要重複。
+- 如果你打算開始寫，那要多注意幾點：
+  - 技術的細節表達需要過濾，不要什麼都打很細，但也不要關鍵步驟不說明。
+  - 站在一個學習者的角度寫下一步步的思考流程。
+  - 和技術文件不同，可以放入一些個人主觀意見或情緒。
+  - 最終回頭檢視整篇文章，是否達到簡潔明瞭，因為文章面對的是搜尋資訊的人。
+- 如果沒有類似文章然後你寫了一篇，也可能出現文章被剽竊的情況，因此也可以在一段時間後進行檢舉。
+* Emacs 檢查配置
   :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=YzN2a3UyOGg5bDVkcnRrNzV1MmYxMTZtZ2MgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: c3vku28h9l5drtk75u2f116mgc
+  :LINK: [[https://www.google.com/calendar/event?eid=YjV1N210bDhlajNrcWRrYzM2ZTR1NHFuNjQgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: b5u7mtl8ej3kqdkc36e4u4qn64
   :END:
 
-  <2017-02-01 Wed 17:55>
+  <2017-02-04 Sat 14:00-16:30>
 
 
-** 習慣使用 Spacemacs 寫 Blog
-
-- 為什麼不習慣：
-  - 開新的post不方便 -> 寫一個 key 快速新增文章
-  - 上傳不方便 -> layout 提醒自己 blog 操作
-* test gcal agian 3 rr333
+* Note 更新筆記
   :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=OGk2Z25wdWQ5MGUxNnNtcTUwZGRudTJnMHMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: 8i6gnpud90e16smq50ddnu2g0s
+  :LINK: [[https://www.google.com/calendar/event?eid=dG9wZm1wdWVzaWYzdjhtYXQxMjZ0YnFoaTQgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: topfmpuesif3v8mat126tbqhi4
   :END:
 
-  <2017-02-01 Wed 19:00-21:45>
+  <2017-02-04 Sat 16:30-17:00>
 
-test 內文 3 3
-* test gcal agian 3 rr333
+
+
+
+
+
+
+** TODO 深入了解 org-agenda
+* 德國第33屆混亂通訊大會 (33C3) 經驗分享
   :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=c2d0aHIwM2lkaHQyZHU4NTM5OWltbTliNnMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: sgthr03idht2du85399imm9b6s
+  :LOCATION: 100 台北市中正區八德路一段 94 號 3F
+  :LINK: [[https://www.google.com/calendar/event?eid=OXI1cHBkZTd1YnF0c2kwdGRpM250YWVtNGMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 9r5ppde7ubqtsi0tdi3ntaem4c
   :END:
 
-  <2017-02-01 Wed 19:00-21:45>
+  <2017-02-04 Sat 19:30-22:00>
 
-  CLOSED: [2017-01-30 Mon 01:08]
-<2017-02-01 Wed 19:00-21:45>
-test 內文 3 3
-* test gcal agian3 3
-  :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=dTc0aWYwZDU2bmRxMjU0azZwaHU3Nmdyc3MgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: u74if0d56ndq254k6phu76grss
-  :END:
-
-  <2017-02-01 Wed 19:00-22:00>
-
-test 內文33
-* test gcal agian 3 3 33333
-  :PROPERTIES:
-  :LINK: [[https://www.google.com/calendar/event?eid=ZzhqcmRqOXVibWMzdTFibzFyNzV1a3BzdmcgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
-  :ID: g8jrdj9ubmc3u1bo1r75ukpsvg
-  :END:
-
-  <2017-02-02 Thu 19:00-22:00>
-
-test 內文 3 3
+http://pellaeon-a9aa66.kktix.cc/events/33c3-sharing
