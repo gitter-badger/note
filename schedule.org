@@ -25,8 +25,6 @@
   :END:
 
   <2017-02-01 Wed 15:00-16:00>
-
-
 * Blog 技術細節寫作
   :PROPERTIES:
   :LINK: [[https://www.google.com/calendar/event?eid=ODZ1NnR0aW5xcXBsN2Q4cTYzc2ptOHVtcWMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
@@ -53,6 +51,23 @@
   - 和技術文件不同，可以放入一些個人主觀意見或情緒。
   - 最終回頭檢視整篇文章，是否達到簡潔明瞭，因為文章面對的是搜尋資訊的人。
 - 如果沒有類似文章然後你寫了一篇，也可能出現文章被剽竊的情況，因此也可以在一段時間後進行檢舉。
+* 整理代辦清單
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=ZmZmNzNmMjUwbG9vMW5zYms5ZG4xMXUzODQgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: fff73f250loo1nsbk9dn11u384
+  :END:
+
+  <2017-02-02 Thu 23:00-23:30>
+
+** 消化平日工作登記到 Home 的 todo 事項
+** 評估是否要新增為 task
+* Graphiz 的使用操作
+  :PROPERTIES:
+  :LINK: [[https://www.google.com/calendar/event?eid=MXFycW9rdTlraWNoNDcxbzZqcnFrYmFyYnMgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: 1qrqoku9kich471o6jrqkbarbs
+  :END:
+
+  <2017-02-03 Fri 09:00-09:30>
 * Emacs 檢查配置
   :PROPERTIES:
   :LINK: [[https://www.google.com/calendar/event?eid=YjV1N210bDhlajNrcWRrYzM2ZTR1NHFuNjQgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
@@ -60,8 +75,6 @@
   :END:
 
   <2017-02-04 Sat 14:00-16:30>
-
-
 * Note 更新筆記
   :PROPERTIES:
   :LINK: [[https://www.google.com/calendar/event?eid=dG9wZm1wdWVzaWYzdjhtYXQxMjZ0YnFoaTQgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]

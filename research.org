@@ -33,6 +33,38 @@
 #+RESULTS:
 [[file:images/research-workflow.png]]
 
+#+BEGIN_SRC dot :file images/graphviz-example.png :exports results
+  digraph G {
+          subgraph cluster_0 {
+                  style=filled;
+                  color=lightgrey;
+                  node [style=filled,color=white];
+                  a0 -> a1 -> a2 -> a3;
+                  label = "process #1";
+          }
+
+          subgraph cluster_1 {
+                  node [style=filled];
+                  b0 -> b1 -> b2 -> b3;
+                  label = "process #2";
+                  color=blue
+          }
+          start -> a0;
+          start -> b0;
+          a1 -> b3;
+          b2 -> a3;
+          a3 -> a0;
+          a3 -> end;
+          b3 -> end;
+
+          start [shape=Mdiamond];
+          end [shape=Msquare];
+  }
+#+END_SRC
+
+#+RESULTS:
+[[file:images/graphviz-example.png]]
+
 
 
 
@@ -57,7 +89,7 @@ rrrr[fn:1] tethe
 - [[https://www.semanticscholar.org/][Semantic Scholar]]
 
 
-
+** TODO [#C] [[http://ndltd.ncl.edu.tw/cgi-bin/gs32/gsweb.cgi/login?o=dnclcdr&s=id="096NTNU5392002".&searchmode=basic][資料選取方法於鑑別式聲學模型訓練之研究__臺灣博碩士論文知識加值系統]]
 
 
 

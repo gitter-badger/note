@@ -1,0 +1,142 @@
+#+TITLE:     Graphviz 基本操作
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-03
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+#+STARTUP:   showall
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/graphviz.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
+
+
+
+* 簡單的圖例
+
+#+BEGIN_SRC shell
+graph graphname { 
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
+#+END_SRC
+
+#+BEGIN_SRC dot :file images/simple-graph.png
+graph graphname { 
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
+#+END_SRC
+
+* Rank Direction : Left to Right
+#+BEGIN_SRC shell
+graph graphname {
+    rankdir=LR;  //Rank Direction Left to Right
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
+#+END_SRC
+
+#+BEGIN_SRC dot :file images/simple-left-to-right.png
+graph graphname {
+    rankdir=LR;  //Rank Direction Left to Right
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/simple-left-to-right.png]]
+
+* 簡單的有向圖
+#+BEGIN_SRC shell
+digraph graphname{
+    a -> b;
+    b -> c;
+    a -> c;
+}
+#+END_SRC
+
+#+BEGIN_SRC dot :file images/simple-digraph.png
+digraph graphname{
+    a -> b;
+    b -> c;
+    a -> c;
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/simple-digraph.png]]
+
+* Label 的使用
+
+#+BEGIN_SRC shell
+digraph graphname{
+
+    T [label="Teacher"]      // node T
+    P [label="Pupil"]  // node P
+
+    T->P [label="Instructions", fontcolor=darkgreen] // edge T->P
+}
+#+END_SRC
+
+#+BEGIN_SRC dot :file images/simple-digraph-with-label.png
+digraph graphname{
+
+    T [label="Teacher"]      // node T
+    P [label="Pupil"]  // node P
+
+    T->P [label="Instructions", fontcolor=darkgreen] // edge T->P
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:images/simple-digraph-with-label.png]]
+
+* 形狀與顏色
+#+BEGIN_SRC shell
+digraph graphname {
+    T [label="Teacher" color=Blue, fontcolor=Red, fontsize=24, shape=box]      // node T
+    P [label="Pupil" color=Blue, fontcolor=Red, fontsize=24, shape=box]  // node P
+
+    T->P [label="Instructions", fontcolor=darkgreen] // edge T->P
+}
+#+END_SRC
+
+#+BEGIN_SRC dot :file simple-digraph-with-color.png
+digraph graphname {
+    T [label="Teacher" color=Blue, fontcolor=Red, fontsize=24, shape=box]      // node T
+    P [label="Pupil" color=Blue, fontcolor=Red, fontsize=24, shape=box]  // node P
+
+    T->P [label="Instructions", fontcolor=darkgreen] // edge T->P
+}
+#+END_SRC
+
+#+RESULTS:
+[[file:simple-digraph-with-color.png]]
+
+
+* 參考資料
+
+1. [[http://casatwy.com/shi-yong-dotyu-yan-he-graphvizhui-tu-fan-yi.html][使用DOT语言和Graphviz绘图(翻译) - Casa Taloyum]]
+   - 很不錯的詳細介紹，本筆記多數來自於此
+2. [[http://hustlijian.github.io/tutorial/2015/05/29/graphviz-learn.html][绘图工具graphviz学习使用 | lijian]]
+3. [[https://www.ibm.com/developerworks/cn/aix/library/au-aix-graphviz/][使用 Graphviz 生成自动化系统图]]
+4. [[http://blog.csdn.net/stormdpzh/article/details/14648827][DOT + graphviz 轻松画图神器 - stormdpzh的专栏 - 博客频道 - CSDN.NET]]
+5. [[http://icodeit.org/2012/01/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/][使用graphviz绘制流程图 - I code it]]
+6. [[https://program-think.blogspot.com/2016/02/opensource-review-graphviz.html][开源项目：【自动】绘图工具 Graphviz——《太子党关系网络》就是用它制作]]
+7. [[http://www.magicsite.cn/blog/other/other162165.html][绘图神器  —— Graphviz dot 语言介绍]]
+8. [[http://www.coin163.com/it/x2164633625352757490][Graphviz简介 - Coin163]]
+9. [[http://www.cnblogs.com/sld666666/archive/2010/06/25/1765510.html][利用Graphviz 画结构图 - sld666666 - 博客园]]
+10. [[http://www.aichengxu.com/other/10659814.htm][graphviz dot简介 - 爱程序网]]
+11. [[http://workspace.fx114.net/qa-209-148563.aspx][DOT + graphviz 轻松画图]]

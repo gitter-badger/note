@@ -5,7 +5,7 @@
 #+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
 #+SETUPFILE: theme-readtheorg.setup
-
+#+STARTUP: showall
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
 <div class="right"><a href="https://github.com/fatfingererr/note/XXXXXXXX.org" class="fa fa-github">GitHub</a></div>
@@ -13,19 +13,80 @@
 
 
 -----
+* Notice
+
+- 目前以將舊框架拆成多個小repo方式進行
+- 請開啟 80 字元限制線 ( M-m t l )
+
+
 * Today
-**  last day Plan
-***** TODO [#A] setup @timeSeries ( original @TSData )
-***** TODO [#A] setup repo "minastir-database" ( original TSData, so TSData will seperate to two part )
-***** TODO [#A] setup @Signal ( original @TSSignal )
-****** default : 1. no target data 2. have trade target data
-***** TODO [#A] seyup @experiment ( original @NNExperiment )
-***** TODO [#B] all gitthub project need setup 'tests' folder
-***** TODO [#C] all github project need setup 'demos' folder
-***** TODO [#C] [ PLAN ] think how to build backtesting process with Matlab Testing Framework and Jenkins CI
+** 2017-02-02 Thu
+*** Work
+***** START setup @timeSeries ( original @TSData )
+      - State "START"      from              [2017-02-02 Thu 14:47] \\
+        start after finish database setting
+      :LOGBOOK:
+      CLOCK: [2017-02-02 Thu 14:46]--[2017-02-02 Thu 15:06] =>  0:20
+      :END:
+****** <2017-02-02 Thu 12:55> start to build @timeSeries class
+****** <2017-02-02 Thu 13:11> now I will look @TSData
+****** <2017-02-02 Thu 13:23> now I will checkout "minastir-database" because I need to use database
+****** <2017-02-02 Thu 14:45> okay now I am back, and I will update minastir-database
+****** <2017-02-02 Thu 14:58> update finished, now I wil rebuild ts class
+****** <2017-02-02 Thu 15:05> I think this task can be suspend because database is good to use
+***** DONE setup repo "minastir-database" ( original TSData, so TSData will seperate to two part )
+      - State "DONE"       from "START"      [2017-02-02 Thu 14:44]
+      - State "START"      from              [2017-02-02 Thu 13:27] \\
+        start!
+      :LOGBOOK:
+      CLOCK: [2017-02-02 Thu 13:24]--[2017-02-02 Thu 14:45] =>  1:21
+      :END:
+***** setuo @signal ( original @TSSignal )
+      :LOGBOOK:
+      CLOCK: [2017-02-02 Thu 15:07]--[2017-02-02 Thu 16:39] =>  1:32
+      :END:
+****** <2017-02-02 Thu 15:07> okay now I am going to simplify original class code
+****** <2017-02-02 Thu 15:40> now I will test LSTM model output combine signal
+****** <2017-02-02 Thu 16:15> take a break, restart now 
+****** <2017-02-02 Thu 16:38> face some problem, so change to another work
+***** LSTM -> USDJPY M5/M10 , label:price-change(4bar,5bar,6bar,7bar,8bar)
+      :LOGBOOK:
+      CLOCK: [2017-02-02 Thu 16:57]
+      :END:
+****** <2017-02-02 Thu 16:57> create a new repo "pretty-kitchen" 
+******  
+*** Problem
+***** <2017-02-02 Thu 15:08> do we need to create a repo for signal handling? 
+****** <2017-02-02 Thu 15:09> yes I think so, because the limit of model is signal, model can not do anymore behaviour.
+****** <2017-02-02 Thu 15:11> so we have to let signal handling work for another file
+****** <2017-02-02 Thu 16:37> still have problem about signal calc, how to calc right signal?
+*** Try
+*** Plan
+***** we need to check all repo on gitlab and decide how to organise them
+***** I think our repo need a std README ( like TODO, who will need this repo )
+***** rolling 
+
+
+
 
 * 工作流
 
+- 先到 Work layout
+  - 確認 Annual Plan (annual.org) 目前的目標
+  - 再到 diary logbook (diary.org) 看上次未完成的項目
+  - 到 work page (work.org<note>) 中 Today 插入 WPTP 模板
+    - 根據今日狀況安排 TODO 並排優先順序並新增至 Work 記得切到小藍點
+- 切到 Work-MATLAB layout
+  - 先注意 Work page 的 Notice 並更新
+  - 每項工作開始前先 clock-in 產生 :LOGBOOK:
+    - 每項更屋做應 log 在該項目底下, 以日期時間 + 敘述紀錄
+
+** 工作結束前
+- git push 各個分支
+- 檢查所有註解的 TODO ( 可用 Matlab 搜尋 )
+
+
+* 快捷鍵
 
 ** 常用目錄
 
