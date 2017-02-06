@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
 <head>
-<!-- 2017-02-06 Mon 23:23 -->
+<!-- 2017-02-06 Mon 23:43 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Clojure for Machine Learning 筆記</title>
@@ -239,28 +239,28 @@ for the JavaScript code in this tag.
 <h2>&#30446;&#37636;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org8fd2e5d">關於筆記</a></li>
-<li><a href="#org244cb10">開發環境</a>
+<li><a href="#org321d9f0">關於筆記</a></li>
+<li><a href="#orgb04f568">開發環境</a>
 <ul>
-<li><a href="#orge10024e">1. 安裝 NightCode</a></li>
-<li><a href="#org0340772">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</a></li>
-<li><a href="#orge18c5df">3. 選擇專案要存放的目錄與輸入專案名稱</a></li>
+<li><a href="#orga0165fa">1. 安裝 NightCode</a></li>
+<li><a href="#orgca6d75c">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</a></li>
+<li><a href="#org738ab65">3. 選擇專案要存放的目錄與輸入專案名稱</a></li>
 </ul>
 </li>
-<li><a href="#org99090ad">矩陣</a>
+<li><a href="#orgf384d1a">矩陣</a>
 <ul>
-<li><a href="#org9b0b452">下載矩陣函式庫，並在專案中引入</a></li>
-<li><a href="#org30eb2a6">開啟互動式命令行介面 REPL</a></li>
-<li><a href="#orge70142c">建立矩陣 matrix</a></li>
-<li><a href="#orgbacda5b">定義矩陣 def</a></li>
-<li><a href="#org4d0be53">顯示定義的矩陣 pm</a></li>
-<li><a href="#org0093b6c">確認是否為矩陣 matrix?</a></li>
-<li><a href="#orgb7cc6e2">得到矩陣的行數與列數 row-count &amp; column-count</a></li>
-<li><a href="#orgfdc9b5a">自定義方陣生成函數</a></li>
+<li><a href="#orgb1c97b5">下載矩陣函式庫，並在專案中引入</a></li>
+<li><a href="#orgfc3d4bd">開啟互動式命令行介面 REPL</a></li>
+<li><a href="#orgb47e26e">建立矩陣 matrix</a></li>
+<li><a href="#org91cfb74">定義矩陣 def</a></li>
+<li><a href="#org8c4873b">顯示定義的矩陣 pm</a></li>
+<li><a href="#org21c160e">確認是否為矩陣 matrix?</a></li>
+<li><a href="#orgcb0aa16">得到矩陣的行數與列數 row-count &amp; column-count</a></li>
+<li><a href="#orgcd6359b">自定義方陣生成函數&#xa0;&#xa0;&#xa0;<span class="tag"><span class="___15_">目前到15頁</span></span></a></li>
 </ul>
 </li>
-<li><a href="#org68b6343">todo</a></li>
-<li><a href="#org6f09872">參考資料</a></li>
+<li><a href="#org74cdbc0">todo</a></li>
+<li><a href="#orgc27b942">參考資料</a></li>
 </ul>
 </div>
 </div>
@@ -268,54 +268,54 @@ for the JavaScript code in this tag.
 <div class="right"><a href="https://github.com/fatfingererr/note/blob/master/clojure-for-machine-learning.org" class="fa fa-github"> GitHub</a></div>
 
 <hr  />
-<div id="outline-container-org8fd2e5d" class="outline-2">
-<h2 id="org8fd2e5d">關於筆記</h2>
-<div class="outline-text-2" id="text-org8fd2e5d">
-</div><ul class="org-ul"><li><a id="orgcbdb885"></a>這份筆記主要是對書籍 <a href="https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning">Clojure for Machine Learning</a> 的個人筆記<br  /></li>
-<li><a id="org4ebb738"></a>筆記中的實際操作是在 Windows 10 使用 <a href="https://github.com/oakes/Nightcode">NightCode 2.0.0</a> 完成<br  /></li>
-<li><a id="orgdda6265"></a>筆記內容會著重在 Neural Network 的部分<br  /></li>
-<li><a id="org537aae4"></a>在 Clojure 語言上使用是初學者，有任何建議或批評請不吝給予指教，謝謝！<br  /><div class="outline-text-6" id="text-org537aae4">
+<div id="outline-container-org321d9f0" class="outline-2">
+<h2 id="org321d9f0">關於筆記</h2>
+<div class="outline-text-2" id="text-org321d9f0">
+</div><ul class="org-ul"><li><a id="org5c9c512"></a>這份筆記主要是對書籍 <a href="https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning">Clojure for Machine Learning</a> 的個人筆記<br  /></li>
+<li><a id="org6b0358a"></a>筆記中的實際操作是在 Windows 10 使用 <a href="https://github.com/oakes/Nightcode">NightCode 2.0.0</a> 完成<br  /></li>
+<li><a id="orgdc2422e"></a>筆記內容會著重在 Neural Network 的部分<br  /></li>
+<li><a id="org711ceff"></a>在 Clojure 語言上使用是初學者，有任何建議或批評請不吝給予指教，謝謝！<br  /><div class="outline-text-6" id="text-org711ceff">
 <hr  />
 </div></li></ul>
 </div>
-<div id="outline-container-org244cb10" class="outline-2">
-<h2 id="org244cb10">開發環境</h2>
-<div class="outline-text-2" id="text-org244cb10">
-</div><div id="outline-container-orge10024e" class="outline-3">
-<h3 id="orge10024e">1. 安裝 NightCode</h3>
-<div class="outline-text-3" id="text-orge10024e">
-</div><ul class="org-ul"><li><a id="org8c69ca8"></a>請到 <a href="https://sekao.net/nightcode/"><a href="https://sekao.net/nightcode/">https://sekao.net/nightcode/</a></a> 選擇符合作業系統的版本下載<br  /><ul class="org-ul"><li><a id="org4bd723a"></a>2017-02-06：目前到版本 2.3.0<br  /></li></ul></li></ul>
+<div id="outline-container-orgb04f568" class="outline-2">
+<h2 id="orgb04f568">開發環境</h2>
+<div class="outline-text-2" id="text-orgb04f568">
+</div><div id="outline-container-orga0165fa" class="outline-3">
+<h3 id="orga0165fa">1. 安裝 NightCode</h3>
+<div class="outline-text-3" id="text-orga0165fa">
+</div><ul class="org-ul"><li><a id="org470148b"></a>請到 <a href="https://sekao.net/nightcode/"><a href="https://sekao.net/nightcode/">https://sekao.net/nightcode/</a></a> 選擇符合作業系統的版本下載<br  /><ul class="org-ul"><li><a id="org43971fd"></a>2017-02-06：目前到版本 2.3.0<br  /></li></ul></li></ul>
 </div>
-<div id="outline-container-org0340772" class="outline-3">
-<h3 id="org0340772">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</h3>
+<div id="outline-container-orgca6d75c" class="outline-3">
+<h3 id="orgca6d75c">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</h3>
 </div>
-<div id="outline-container-orge18c5df" class="outline-3">
-<h3 id="orge18c5df">3. 選擇專案要存放的目錄與輸入專案名稱</h3>
-<div class="outline-text-3" id="text-orge18c5df">
-</div><div id="outline-container-org2ae9a12" class="outline-4">
-<h4 id="org2ae9a12">～ 恭喜你！成功建立了一個 Clojure 專案 ～</h4>
-<div class="outline-text-4" id="text-org2ae9a12">
+<div id="outline-container-org738ab65" class="outline-3">
+<h3 id="org738ab65">3. 選擇專案要存放的目錄與輸入專案名稱</h3>
+<div class="outline-text-3" id="text-org738ab65">
+</div><div id="outline-container-org7bd41c6" class="outline-4">
+<h4 id="org7bd41c6">～ 恭喜你！成功建立了一個 Clojure 專案 ～</h4>
+<div class="outline-text-4" id="text-org7bd41c6">
 <hr  />
 </div>
 </div>
 </div>
 </div>
-<div id="outline-container-org99090ad" class="outline-2">
-<h2 id="org99090ad">矩陣</h2>
-<div class="outline-text-2" id="text-org99090ad">
-</div><div id="outline-container-org9b0b452" class="outline-3">
-<h3 id="org9b0b452">下載矩陣函式庫，並在專案中引入</h3>
-<div class="outline-text-3" id="text-org9b0b452">
-</div><ul class="org-ul"><li><a id="orga558433"></a>於 NightCode 左側檔案樹中，點開專案目錄點選 project.clj<br  /></li>
-<li><a id="orged2c871"></a>在 project.clj 中將 :dependencies 後加入矩陣函式庫 core.matrix<br  /></li>
-<li><a id="org75f0966"></a>2017-02-06：目前 core.matrix 版本為 0.57.0<br  /><div class="outline-text-6" id="text-org75f0966">
+<div id="outline-container-orgf384d1a" class="outline-2">
+<h2 id="orgf384d1a">矩陣</h2>
+<div class="outline-text-2" id="text-orgf384d1a">
+</div><div id="outline-container-orgb1c97b5" class="outline-3">
+<h3 id="orgb1c97b5">下載矩陣函式庫，並在專案中引入</h3>
+<div class="outline-text-3" id="text-orgb1c97b5">
+</div><ul class="org-ul"><li><a id="org05738fd"></a>於 NightCode 左側檔案樹中，點開專案目錄點選 project.clj<br  /></li>
+<li><a id="orgd52127b"></a>在 project.clj 中將 :dependencies 後加入矩陣函式庫 core.matrix<br  /></li>
+<li><a id="org0e70dce"></a>2017-02-06：目前 core.matrix 版本為 0.57.0<br  /><div class="outline-text-6" id="text-org0e70dce">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #a45bad;">:dependencies</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #ce537a; font-weight: bold;">org.clojure</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span>clojure <span style="color: #2d9574;">"1.8.0"</span><span style="color: #bc6ec5;">]</span>
                <span style="color: #bc6ec5;">[</span><span style="color: #ce537a; font-weight: bold;">net.mikera</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span>core.matrix <span style="color: #2d9574;">"0.57.0"</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>&#12288; <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#35531;&#28155;&#21152;&#36889;&#19968;&#34892;, &#30041;&#24847;&#25324;&#34399;</span>
 </pre>
 </div>
 </div></li>
-<li><a id="org6a5b587"></a>接著點選 src &gt; 專案目錄名稱 &gt; core.clj 在專案中使用含式庫<br  /><div class="outline-text-6" id="text-org6a5b587">
+<li><a id="orgc269b6e"></a>接著點選 src &gt; 專案目錄名稱 &gt; core.clj 在專案中使用含式庫<br  /><div class="outline-text-6" id="text-orgc269b6e">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">ns</span> &#23560;&#26696;&#21517;&#31281;<span style="color: #bc6ec5;">.core</span>
   <span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">:use</span> <span style="color: #ce537a; font-weight: bold;">clojure.core.matrix</span><span style="color: #bc6ec5;">)</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#35531;&#28155;&#21152;&#36889;&#19968;&#34892;</span>
@@ -326,11 +326,11 @@ for the JavaScript code in this tag.
 </div>
 
 
-<div id="outline-container-org30eb2a6" class="outline-3">
-<h3 id="org30eb2a6">開啟互動式命令行介面 REPL</h3>
-<div class="outline-text-3" id="text-org30eb2a6">
-</div><ul class="org-ul"><li><a id="org8eb5625"></a>點選 NightCode 中間下方 Run with REPL 開啟互動命令行介面<br  /></li>
-<li><a id="org85f3feb"></a>你應該會看到一個等待輸入的命令行<br  /><div class="outline-text-6" id="text-org85f3feb">
+<div id="outline-container-orgfc3d4bd" class="outline-3">
+<h3 id="orgfc3d4bd">開啟互動式命令行介面 REPL</h3>
+<div class="outline-text-3" id="text-orgfc3d4bd">
+</div><ul class="org-ul"><li><a id="org529d46f"></a>點選 NightCode 中間下方 Run with REPL 開啟互動命令行介面<br  /></li>
+<li><a id="org42be55a"></a>你應該會看到一個等待輸入的命令行<br  /><div class="outline-text-6" id="text-org42be55a">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">Running</span> with REPL...
 <span style="color: #ce537a; font-weight: bold;">Compiling</span> <span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>
@@ -348,13 +348,13 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </pre>
 </div>
 </div></li>
-<li><a id="org1682be8"></a>我使用的專案名稱是 clojure-for-machine-learning<br  /></li></ul>
+<li><a id="org3c88a14"></a>我使用的專案名稱是 clojure-for-machine-learning<br  /></li></ul>
 </div>
 
-<div id="outline-container-orge70142c" class="outline-3">
-<h3 id="orge70142c">建立矩陣 matrix</h3>
-<div class="outline-text-3" id="text-orge70142c">
-</div><ul class="org-ul"><li><a id="orgfd02590"></a>類神經網路不可或缺的基本元素－矩陣，試著輸入吧<br  /><div class="outline-text-6" id="text-orgfd02590">
+<div id="outline-container-orgb47e26e" class="outline-3">
+<h3 id="orgb47e26e">建立矩陣 matrix</h3>
+<div class="outline-text-3" id="text-orgb47e26e">
+</div><ul class="org-ul"><li><a id="orgcb0ea1a"></a>類神經網路不可或缺的基本元素－矩陣，試著輸入吧<br  /><div class="outline-text-6" id="text-orgcb0ea1a">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>matrix <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #2d9574;">]</span> <span style="color: #2d9574;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
 <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span> <span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>
@@ -363,11 +363,11 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div></li></ul>
 </div>
 
-<div id="outline-container-orgbacda5b" class="outline-3">
-<h3 id="orgbacda5b">定義矩陣 def</h3>
-<div class="outline-text-3" id="text-orgbacda5b">
-</div><ul class="org-ul"><li><a id="org2e4d59f"></a>嘗試來定義一個矩陣 A<br  /></li>
-<li><a id="org840221f"></a>通常在 Clojure 中定義的名稱往往都是小寫，這裡為了直覺起見用大寫<br  /><div class="outline-text-6" id="text-org840221f">
+<div id="outline-container-org91cfb74" class="outline-3">
+<h3 id="org91cfb74">定義矩陣 def</h3>
+<div class="outline-text-3" id="text-org91cfb74">
+</div><ul class="org-ul"><li><a id="org06ea445"></a>嘗試來定義一個矩陣 A<br  /></li>
+<li><a id="org131f1a0"></a>通常在 Clojure 中定義的名稱往往都是小寫，這裡為了直覺起見用大寫<br  /><div class="outline-text-6" id="text-org131f1a0">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #7590db;">A</span> <span style="color: #bc6ec5;">(</span>matrix <span style="color: #2d9574;">[</span><span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #67b11d;">]</span> <span style="color: #67b11d;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
 #'<span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span><span style="color: #a45bad;">A</span>
@@ -376,9 +376,9 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div></li></ul>
 </div>
 
-<div id="outline-container-org4d0be53" class="outline-3">
-<h3 id="org4d0be53">顯示定義的矩陣 pm</h3>
-<div class="outline-text-3" id="text-org4d0be53">
+<div id="outline-container-org8c4873b" class="outline-3">
+<h3 id="org8c4873b">顯示定義的矩陣 pm</h3>
+<div class="outline-text-3" id="text-org8c4873b">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>pm <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
 <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
@@ -389,9 +389,9 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div>
 </div>
 
-<div id="outline-container-org0093b6c" class="outline-3">
-<h3 id="org0093b6c">確認是否為矩陣 matrix?</h3>
-<div class="outline-text-3" id="text-org0093b6c">
+<div id="outline-container-org21c160e" class="outline-3">
+<h3 id="org21c160e">確認是否為矩陣 matrix?</h3>
+<div class="outline-text-3" id="text-org21c160e">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>matrix? <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
 <span style="color: #a45bad;">true</span>
@@ -400,9 +400,9 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div>
 </div>
 
-<div id="outline-container-orgb7cc6e2" class="outline-3">
-<h3 id="orgb7cc6e2">得到矩陣的行數與列數 row-count &amp; column-count</h3>
-<div class="outline-text-3" id="text-orgb7cc6e2">
+<div id="outline-container-orgcb0aa16" class="outline-3">
+<h3 id="orgcb0aa16">得到矩陣的行數與列數 row-count &amp; column-count</h3>
+<div class="outline-text-3" id="text-orgcb0aa16">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>row-count <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
 <span style="color: #a45bad;">2</span>
@@ -413,12 +413,12 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div>
 </div>
 
-<div id="outline-container-orgfdc9b5a" class="outline-3">
-<h3 id="orgfdc9b5a">自定義方陣生成函數</h3>
-<div class="outline-text-3" id="text-orgfdc9b5a">
-</div><div id="outline-container-orgb720b32" class="outline-4">
-<h4 id="orgb720b32"><span class="todo TODO">TODO</span> 簡單說明 let / # / -&gt; 功能</h4>
-<div class="outline-text-4" id="text-orgb720b32">
+<div id="outline-container-orgcd6359b" class="outline-3">
+<h3 id="orgcd6359b">自定義方陣生成函數&#xa0;&#xa0;&#xa0;<span class="tag"><span class="___15_">目前到15頁</span></span></h3>
+<div class="outline-text-3" id="text-orgcd6359b">
+</div><div id="outline-container-orgbbca1c1" class="outline-4">
+<h4 id="orgbbca1c1"><span class="todo TODO">TODO</span> 簡單說明 let / # / -&gt; 功能</h4>
+<div class="outline-text-4" id="text-orgbbca1c1">
 <div class="org-src-container">
 <pre class="src src-clojure"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defn</span> <span style="color: #bc6ec5; font-weight: bold;">square-mat</span>
     <span style="color: #2aa1ae;">"Creates a square matrix of size n x n whose elements are all e"</span>
@@ -442,20 +442,20 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div>
 </div>
 </div>
-<div id="outline-container-org68b6343" class="outline-2">
-<h2 id="org68b6343">todo</h2>
-<div class="outline-text-2" id="text-org68b6343">
-</div><ul class="org-ul"><li><a id="org074329e"></a>補多一點圖片，最好還有操作的 gif<br  /></li>
-<li><a id="org6cef765"></a>善用 readtheorg 的各種資訊方塊<br  /></li></ul>
+<div id="outline-container-org74cdbc0" class="outline-2">
+<h2 id="org74cdbc0">todo</h2>
+<div class="outline-text-2" id="text-org74cdbc0">
+</div><ul class="org-ul"><li><a id="org70f0e58"></a>補多一點圖片，最好還有操作的 gif<br  /></li>
+<li><a id="org513e5ff"></a>善用 readtheorg 的各種資訊方塊<br  /></li></ul>
 </div>
 
 
 
 
 
-<div id="outline-container-org6f09872" class="outline-2">
-<h2 id="org6f09872">參考資料</h2>
-<div class="outline-text-2" id="text-org6f09872">
+<div id="outline-container-orgc27b942" class="outline-2">
+<h2 id="orgc27b942">參考資料</h2>
+<div class="outline-text-2" id="text-orgc27b942">
 <ol class="org-ol">
 <li><a href="https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning">Wali, A. (2014). Clojure for Machine Learning. Packt Publishing Ltd.</a></li>
 </ol>
@@ -464,7 +464,7 @@ REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;"
 </div>
 <div id="postamble" class="status">
 <p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
-<p class="date">Created: 2017-02-06 Mon 23:23</p>
+<p class="date">Created: 2017-02-06 Mon 23:43</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

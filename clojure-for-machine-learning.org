@@ -110,7 +110,7 @@ clojure-for-machine-learning.core=> (column-count A)
 3
 #+END_SRC
 
-** 自定義方陣生成函數
+** 自定義方陣生成函數                                            :目前到15頁:
 *** TODO 簡單說明 let / # / -> 功能
 
  #+BEGIN_SRC clojure
