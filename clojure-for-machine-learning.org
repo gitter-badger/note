@@ -14,7 +14,7 @@
 -----
 * 關於筆記
 ***** 這份筆記主要是對書籍 [[https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning][Clojure for Machine Learning]] 的個人筆記
-***** 筆記中的實際操作是在 Windows 10 使用 [[https://github.com/oakes/Nightcode][NightCode 2.0.0]] 完成
+***** 筆記中的實際操作是在 Windows 10 使用 [[https://github.com/oakes/Nightcode][NightCode .0.0]] 完成
 ***** 筆記內容會著重在 Neural Network 的部分
 ***** 在 Clojure 語言上使用是初學者，有任何建議或批評請不吝給予指教，謝謝！
 
