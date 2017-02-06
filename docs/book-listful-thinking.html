@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+<head>
+<!-- 2017-02-06 Mon 09:21 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>〈為什麼菁英都是清單控〉書摘</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="fatfingererr - www.ffe.tw" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">〈為什麼菁英都是清單控〉書摘</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#37636;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8e88ba0">清單扮演的角色&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_33_">第33頁</span></span></a></li>
+<li><a href="#org6e91f5e">避免忘性的最佳辦法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_40_">第40頁</span></span></a>
+<ul>
+<li><a href="#orgfa89ebc">一想到重要事情就要隨手紀錄</a></li>
+</ul>
+</li>
+<li><a href="#org5c1d913">生產力小提醒&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_41_">第41頁</span></span></a>
+<ul>
+<li><a href="#org2c6aa9d">不接臨時電話</a></li>
+</ul>
+</li>
+<li><a href="#orgc8865f1">檢查表&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_58_">第58頁</span></span></a>
+<ul>
+<li><a href="#org6691dc6">事業標準的作業宣言</a></li>
+</ul>
+</li>
+<li><a href="#orgd6c219a">利弊得失表&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_62_">第62頁</span></span></a>
+<ul>
+<li><a href="#org896a8c6">重大決定之前都應深思熟慮</a></li>
+</ul>
+</li>
+<li><a href="#org5a5902b">行程清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_70_">第70頁</span></span></a>
+<ul>
+<li><a href="#org1ceaee3">可以依據不同活動設計不同清單</a></li>
+</ul>
+</li>
+<li><a href="#org1960a0b">研究清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_80_">第80頁</span></span></a>
+<ul>
+<li><a href="#org4e2ca67">不論每天計畫做什麼，都可以幫助釐清各種細節</a></li>
+</ul>
+</li>
+<li><a href="#org531575d">分類備忘清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_82_">第82頁</span></span></a>
+<ul>
+<li><a href="#orgb042308">分類備忘清單不一定是要完成的任務</a></li>
+</ul>
+</li>
+<li><a href="#org3557093">日誌清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_87_">第87頁</span></span></a>
+<ul>
+<li><a href="#org8c0314f">將過去一段時間的經歷用清單呈現</a></li>
+</ul>
+</li>
+<li><a href="#org38c6187">目標視覺化&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_89_">第89頁</span></span></a>
+<ul>
+<li><a href="#org7e6ebeb">願景版暫存你想做的事情與想去的地方</a></li>
+</ul>
+</li>
+<li><a href="#orgef5cccd">感激清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_94_">第94頁</span></span></a>
+<ul>
+<li><a href="#orgb869e7f">感激清單能協助抵禦負面情緒</a></li>
+</ul>
+</li>
+<li><a href="#org8ee473b">清單的列法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_99_">第99頁</span></span></a>
+<ul>
+<li><a href="#orgaa005e8">清單和吃藥一樣需要「最佳劑量」</a></li>
+</ul>
+</li>
+<li><a href="#orgbb77586">倒推在生活中的運用&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_186_">第186頁</span></span></a>
+<ul>
+<li><a href="#org930073e">基本上任何事情都可以用倒推的</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/book-listful-thinking.org" class="fa fa-github"> GitHub</a></div>
+<br/>
+
+<p>
+當初買這本書的動機就是因為自己也是一個清單控，因此把這本書中我覺得重要的點摘錄下來，主要是給自己偶爾查詢用的。這本書我受益最多的地方是在最後一點「倒推法」和利弊得失表，因為以前紀錄清單都沒有針對重要決定紀錄紀錄利弊，而倒推法則是會經常忘記的一個違反直覺的方法，因為正常都是一路往後安排，除非有Deadline，那沒有Deadline的事情也要用倒推法看起來就要練習。
+</p>
+
+
+<hr  />
+<div id="outline-container-org8e88ba0" class="outline-2">
+<h2 id="org8e88ba0">清單扮演的角色&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_33_">第33頁</span></span></h2>
+<div class="outline-text-2" id="text-org8e88ba0">
+</div><ul class="org-ul"><li><a id="org22d0520"></a>按摩師：幫忙舒緩日常壓力<br  /></li>
+<li><a id="org3b93d77"></a>鐵血教練：督促自己完成工作<br  /></li>
+<li><a id="org5576d20"></a>救生員：避免錯誤行事<br  /><div class="outline-text-6" id="text-org5576d20">
+<hr  />
+</div></li></ul>
+</div>
+<div id="outline-container-org6e91f5e" class="outline-2">
+<h2 id="org6e91f5e">避免忘性的最佳辦法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_40_">第40頁</span></span></h2>
+<div class="outline-text-2" id="text-org6e91f5e">
+</div><div id="outline-container-orgfa89ebc" class="outline-3">
+<h3 id="orgfa89ebc">一想到重要事情就要隨手紀錄</h3>
+<div class="outline-text-3" id="text-orgfa89ebc">
+</div><ul class="org-ul"><li><a id="orgdcfed7b"></a>磁鐵壓在冰箱門上<br  /></li>
+<li><a id="org81a4d95"></a>便利貼黏在辦公桌前<br  /></li>
+<li><a id="orga3fa10f"></a>寄Email給自己　<br  /></li>
+<li><a id="org609d573"></a>輸入到手機APP<br  /><div class="outline-text-6" id="text-org609d573">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org5c1d913" class="outline-2">
+<h2 id="org5c1d913">生產力小提醒&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_41_">第41頁</span></span></h2>
+<div class="outline-text-2" id="text-org5c1d913">
+</div><div id="outline-container-org2c6aa9d" class="outline-3">
+<h3 id="org2c6aa9d">不接臨時電話</h3>
+<div class="outline-text-3" id="text-org2c6aa9d">
+</div><ul class="org-ul"><li><a id="org5b46a71"></a>中斷是效率的死敵<br  /></li>
+<li><a id="org3edf359"></a>任何聯絡都應該採取預約制<br  /><div class="outline-text-6" id="text-org3edf359">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-orgc8865f1" class="outline-2">
+<h2 id="orgc8865f1">檢查表&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_58_">第58頁</span></span></h2>
+<div class="outline-text-2" id="text-orgc8865f1">
+</div><div id="outline-container-org6691dc6" class="outline-3">
+<h3 id="org6691dc6">事業標準的作業宣言</h3>
+<div class="outline-text-3" id="text-org6691dc6">
+</div><ul class="org-ul"><li><a id="orgc9bdd37"></a>檢查表能幫助人們專心<br  /></li>
+<li><a id="org8fa9ddf"></a>檢查表能維持衝勁<br  /></li>
+<li><a id="orgd7c468e"></a>檢查表能有條理的處理事情<br  /><div class="outline-text-6" id="text-orgd7c468e">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-orgd6c219a" class="outline-2">
+<h2 id="orgd6c219a">利弊得失表&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_62_">第62頁</span></span></h2>
+<div class="outline-text-2" id="text-orgd6c219a">
+</div><div id="outline-container-org896a8c6" class="outline-3">
+<h3 id="org896a8c6">重大決定之前都應深思熟慮</h3>
+<div class="outline-text-3" id="text-org896a8c6">
+</div><ul class="org-ul"><li><a id="org6addbf6"></a>首先把腦袋中的直覺通通寫下來，不論大小或感覺<br  /></li>
+<li><a id="orgb0170dc"></a>善用5W：<br  /><ul class="org-ul"><li><a id="orgfe14abf"></a>誰? ( Who )<br  /></li>
+<li><a id="org6e74d04"></a>什麼? ( What )<br  /></li>
+<li><a id="orgdf45665"></a>何處? ( Where )<br  /></li>
+<li><a id="org2b4817f"></a>何時? ( When )<br  /></li>
+<li><a id="org3716f81"></a>何以? ( Why )<br  /></li></ul></li>
+<li><a id="orge9bf1c3"></a>接著就是整理並稍作排序<br  /><ul class="org-ul"><li><a id="org48c41e0"></a>不重要的可以陸續劃線刪除<br  /></li>
+<li><a id="org60ae4c1"></a>類似的可以整合為一點<br  /></li></ul></li>
+<li><a id="orga104434"></a>沉澱一段時間，例如一個晚上再來面對<br  /></li>
+<li><a id="org2c9f89b"></a>對於列表中覺得重要但是不清楚的，可以上網搜尋或詢問專家<br  /></li>
+<li><a id="org3a3295b"></a>若是比較難以理性判斷的項目，可與親朋好友討論<br  /><div class="outline-text-6" id="text-org3a3295b">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org5a5902b" class="outline-2">
+<h2 id="org5a5902b">行程清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_70_">第70頁</span></span></h2>
+<div class="outline-text-2" id="text-org5a5902b">
+</div><div id="outline-container-org1ceaee3" class="outline-3">
+<h3 id="org1ceaee3">可以依據不同活動設計不同清單</h3>
+<div class="outline-text-3" id="text-org1ceaee3">
+</div><ul class="org-ul"><li><a id="org65d1f4f"></a>考慮不失禮貌的穿著<br  /></li>
+<li><a id="org1b88d1f"></a>考慮個人習慣所需攜帶的東西<br  /><ul class="org-ul"><li><a id="orge1090ba"></a>衛浴用品<br  /></li>
+<li><a id="org66a5120"></a>衣服鞋襪<br  /></li>
+<li><a id="org7a5dd80"></a>珠寶首飾<br  /></li>
+<li><a id="orge2dd282"></a>３Ｃ產品<br  /></li>
+<li><a id="org7bb3697"></a>書籍讀物<br  /></li>
+<li><a id="org29d6697"></a>文件資料<br  /></li></ul></li>
+<li><a id="org3b87189"></a>考慮活動主題對應需要準備的物品<br  /></li>
+<li><a id="org762b402"></a>【日常慣例】的確認<br  /><ul class="org-ul"><li><a id="org8cd50e7"></a>想想每天固定都會做些什麼事，確定都有帶到對應物品<br  /></li></ul></li>
+<li><a id="orgbe852b4"></a>氣象預查<br  /><div class="outline-text-6" id="text-orgbe852b4">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org1960a0b" class="outline-2">
+<h2 id="org1960a0b">研究清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_80_">第80頁</span></span></h2>
+<div class="outline-text-2" id="text-org1960a0b">
+</div><div id="outline-container-org4e2ca67" class="outline-3">
+<h3 id="org4e2ca67">不論每天計畫做什麼，都可以幫助釐清各種細節</h3>
+<div class="outline-text-3" id="text-org4e2ca67">
+</div><ul class="org-ul"><li><a id="orgc31497f"></a>首先針對某些你想思考的問題或達到的目標列出出對應主題<br  /><ul class="org-ul"><li><a id="org4d64a7f"></a>例如想要結婚，列出：看房找房、規畫婚禮等<br  /></li></ul></li>
+<li><a id="orgeefa4de"></a>這個清單的目的，是不斷將大目標分解成小目標<br  /></li>
+<li><a id="org9f72570"></a>然後再將小目標安排到日常行程中<br  /><div class="outline-text-6" id="text-org9f72570">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org531575d" class="outline-2">
+<h2 id="org531575d">分類備忘清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_82_">第82頁</span></span></h2>
+<div class="outline-text-2" id="text-org531575d">
+</div><div id="outline-container-orgb042308" class="outline-3">
+<h3 id="orgb042308">分類備忘清單不一定是要完成的任務</h3>
+<div class="outline-text-3" id="text-orgb042308">
+</div><ul class="org-ul"><li><a id="org834d084"></a>例如有人向你推薦某個東西，你不一定要完成但不記下來百分之百會忘記<br  /></li>
+<li><a id="org222c082"></a>分類備忘清單的分類，必須是固定會需要的分類<br  /></li>
+<li><a id="orga3226ed"></a>可以放在隨身能查詢的地方，臨時想到可以立即查詢，例如手機APP<br  /><div class="outline-text-6" id="text-orga3226ed">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org3557093" class="outline-2">
+<h2 id="org3557093">日誌清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_87_">第87頁</span></span></h2>
+<div class="outline-text-2" id="text-org3557093">
+</div><div id="outline-container-org8c0314f" class="outline-3">
+<h3 id="org8c0314f">將過去一段時間的經歷用清單呈現</h3>
+<div class="outline-text-3" id="text-org8c0314f">
+</div><ul class="org-ul"><li><a id="org6dfc059"></a>首先清單可以寫下過去一段時間（可能是一年、半年或三個月）的經歷<br  /></li>
+<li><a id="orgf12c148"></a>接著列出 12 到 15 個今年的目標，嘗試完成他<br  /><div class="outline-text-6" id="text-orgf12c148">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org38c6187" class="outline-2">
+<h2 id="org38c6187">目標視覺化&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_89_">第89頁</span></span></h2>
+<div class="outline-text-2" id="text-org38c6187">
+</div><div id="outline-container-org7e6ebeb" class="outline-3">
+<h3 id="org7e6ebeb">願景版暫存你想做的事情與想去的地方</h3>
+<div class="outline-text-3" id="text-org7e6ebeb">
+</div><ul class="org-ul"><li><a id="org0314e8d"></a>願景版的位置<br  /><ul class="org-ul"><li><a id="org1521900"></a>框起來放在書桌<br  /></li>
+<li><a id="org1b7a01e"></a>放在3C產品桌面<br  /></li>
+<li><a id="org64f8961"></a>夾在隨身讀物當書籤用<br  /></li>
+<li><a id="org3a6456d"></a>放在手機APP中<br  /><div class="outline-text-7" id="text-org3a6456d">
+<hr  />
+</div></li></ul></li></ul>
+</div>
+</div>
+<div id="outline-container-orgef5cccd" class="outline-2">
+<h2 id="orgef5cccd">感激清單&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_94_">第94頁</span></span></h2>
+<div class="outline-text-2" id="text-orgef5cccd">
+</div><div id="outline-container-orgb869e7f" class="outline-3">
+<h3 id="orgb869e7f">感激清單能協助抵禦負面情緒</h3>
+<div class="outline-text-3" id="text-orgb869e7f">
+</div><ul class="org-ul"><li><a id="orga0e54ed"></a>感激清單紀錄看到會覺得開心的事情<br  /></li>
+<li><a id="org8e46a0c"></a>包含所有會莫名其妙讓你覺得感激的事情（發生過的事情）<br  /><div class="outline-text-6" id="text-org8e46a0c">
+<hr  />
+</div></li></ul>
+</div>
+</div>
+<div id="outline-container-org8ee473b" class="outline-2">
+<h2 id="org8ee473b">清單的列法&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_99_">第99頁</span></span></h2>
+<div class="outline-text-2" id="text-org8ee473b">
+</div><div id="outline-container-orgaa005e8" class="outline-3">
+<h3 id="orgaa005e8">清單和吃藥一樣需要「最佳劑量」</h3>
+<div class="outline-text-3" id="text-orgaa005e8">
+</div><ul class="org-ul"><li><a id="org8bb93ca"></a>我們必須要找到適合自己的劑量，來讓我們覺得運籌帷幄<br  /></li>
+<li><a id="org2268331"></a>(1) 檢視清單<br  /><ul class="org-ul"><li><a id="org22cf229"></a>分清楚輕重緩急<br  /></li>
+<li><a id="org49c3a86"></a>確定每一點都是自己能務實可行<br  /></li>
+<li><a id="org7b7608b"></a>目標的焦點要具體<br  /></li>
+<li><a id="org3720126"></a>多用動詞描述，避免只是寫下關鍵字<br  /></li></ul></li>
+<li><a id="org43a1681"></a>(2) 壓縮清單<br  /><ul class="org-ul"><li><a id="org60cdb7f"></a>累積小勝，放多一點難度低的項目在清單中<br  /></li>
+<li><a id="org41e8650"></a>別擠一塊，可以將清單分成多個清單<br  /></li></ul></li>
+<li><a id="org70458e1"></a>(3) 授權清單<br  /><ul class="org-ul"><li><a id="org4f9d5cc"></a>不是每件事都要自己做，可以請別人做<br  /></li>
+<li><a id="orge50416d"></a>對於被動需要完成的事情要學會說不<br  /><ul class="org-ul"><li><a id="org90e426c"></a>準備罐頭訊息拒絕別人<br  /><ul class="org-ul"><li><a id="org08f56ae"></a>沒辦法完成這個工作，但某某某應該很適合<br  /></li>
+<li><a id="org446fa30"></a>可以過一／二／三周之後再詢問我嗎<br  /><ul class="org-ul"><li><a id="org06e3760"></a>切記勿高估自己的空閒時間<br  /></li></ul></li></ul></li></ul></li></ul></li>
+<li><a id="org66fea06"></a>(4) 設定期限<br  /><ul class="org-ul"><li><a id="orge17cf3c"></a>設定期限能較容易早點開始和保留彈性<br  /></li></ul></li>
+<li><a id="org289ce84"></a>(5) 獎勵自己<br  /><ul class="org-ul"><li><a id="org3b6f061"></a>試著給自己劃掉清單上的事項給予一些獎勵<br  /></li>
+<li><a id="org87e09cd"></a>讓自己保持期待的心情去完成<br  /><ul class="org-ul"><li><a id="org4933030"></a>例如做完之後可以獎勵自己一杯咖啡<br  /><div class="outline-text-8" id="text-org4933030">
+<hr  />
+</div></li></ul></li></ul></li></ul>
+</div>
+</div>
+<div id="outline-container-orgbb77586" class="outline-2">
+<h2 id="orgbb77586">倒推在生活中的運用&#xa0;&#xa0;&#xa0;<span class="tag"><span class="_186_">第186頁</span></span></h2>
+<div class="outline-text-2" id="text-orgbb77586">
+</div><div id="outline-container-org930073e" class="outline-3">
+<h3 id="org930073e">基本上任何事情都可以用倒推的</h3>
+<div class="outline-text-3" id="text-org930073e">
+</div><ul class="org-ul"><li><a id="org35ae638"></a>想好特定活動需要多少時間填滿<br  /></li>
+<li><a id="org15d64e3"></a>從活動結售時間倒推到活動開始<br  /></li>
+<li><a id="org15dd521"></a>估計每個事件占用的時間<br  /></li>
+<li><a id="org445f373"></a>時間爆錶就開始取捨與調整<br  /></li>
+<li><a id="org8b90b0e"></a>確定行程後就可以照表操課<br  /></li></ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">&#26085;&#26399;: 2016-02-06</p>
+<p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
+<p class="date">Created: 2017-02-06 Mon 09:21</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

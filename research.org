@@ -65,7 +65,13 @@
 #+RESULTS:
 [[file:images/graphviz-example.png]]
 
-
+* 關注關鍵字
+** time series
+** financ-
+** pred-
+** neural network
+** RNN
+** LSTM
 
 
 * 用 Eamacs 做研究

@@ -20,53 +20,6 @@
 
 
 * Today
-** 2017-02-02 Thu
-*** Work
-***** START setup @timeSeries ( original @TSData )
-      - State "START"      from              [2017-02-02 Thu 14:47] \\
-        start after finish database setting
-      :LOGBOOK:
-      CLOCK: [2017-02-02 Thu 14:46]--[2017-02-02 Thu 15:06] =>  0:20
-      :END:
-****** <2017-02-02 Thu 12:55> start to build @timeSeries class
-****** <2017-02-02 Thu 13:11> now I will look @TSData
-****** <2017-02-02 Thu 13:23> now I will checkout "minastir-database" because I need to use database
-****** <2017-02-02 Thu 14:45> okay now I am back, and I will update minastir-database
-****** <2017-02-02 Thu 14:58> update finished, now I wil rebuild ts class
-****** <2017-02-02 Thu 15:05> I think this task can be suspend because database is good to use
-***** DONE setup repo "minastir-database" ( original TSData, so TSData will seperate to two part )
-      - State "DONE"       from "START"      [2017-02-02 Thu 14:44]
-      - State "START"      from              [2017-02-02 Thu 13:27] \\
-        start!
-      :LOGBOOK:
-      CLOCK: [2017-02-02 Thu 13:24]--[2017-02-02 Thu 14:45] =>  1:21
-      :END:
-***** setuo @signal ( original @TSSignal )
-      :LOGBOOK:
-      CLOCK: [2017-02-02 Thu 15:07]--[2017-02-02 Thu 16:39] =>  1:32
-      :END:
-****** <2017-02-02 Thu 15:07> okay now I am going to simplify original class code
-****** <2017-02-02 Thu 15:40> now I will test LSTM model output combine signal
-****** <2017-02-02 Thu 16:15> take a break, restart now 
-****** <2017-02-02 Thu 16:38> face some problem, so change to another work
-***** LSTM -> USDJPY M5/M10 , label:price-change(4bar,5bar,6bar,7bar,8bar)
-      :LOGBOOK:
-      CLOCK: [2017-02-02 Thu 16:57]
-      :END:
-****** <2017-02-02 Thu 16:57> create a new repo "pretty-kitchen" 
-******  
-*** Problem
-***** <2017-02-02 Thu 15:08> do we need to create a repo for signal handling? 
-****** <2017-02-02 Thu 15:09> yes I think so, because the limit of model is signal, model can not do anymore behaviour.
-****** <2017-02-02 Thu 15:11> so we have to let signal handling work for another file
-****** <2017-02-02 Thu 16:37> still have problem about signal calc, how to calc right signal?
-*** Try
-*** Plan
-***** we need to check all repo on gitlab and decide how to organise them
-***** I think our repo need a std README ( like TODO, who will need this repo )
-***** rolling 
-
-
 
 
 * 工作流
