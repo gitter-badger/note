@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+<head>
+<!-- 2017-02-06 Mon 23:23 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clojure for Machine Learning 筆記</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="fatfingererr - www.ffe.tw" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Clojure for Machine Learning 筆記</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#37636;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org8fd2e5d">關於筆記</a></li>
+<li><a href="#org244cb10">開發環境</a>
+<ul>
+<li><a href="#orge10024e">1. 安裝 NightCode</a></li>
+<li><a href="#org0340772">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</a></li>
+<li><a href="#orge18c5df">3. 選擇專案要存放的目錄與輸入專案名稱</a></li>
+</ul>
+</li>
+<li><a href="#org99090ad">矩陣</a>
+<ul>
+<li><a href="#org9b0b452">下載矩陣函式庫，並在專案中引入</a></li>
+<li><a href="#org30eb2a6">開啟互動式命令行介面 REPL</a></li>
+<li><a href="#orge70142c">建立矩陣 matrix</a></li>
+<li><a href="#orgbacda5b">定義矩陣 def</a></li>
+<li><a href="#org4d0be53">顯示定義的矩陣 pm</a></li>
+<li><a href="#org0093b6c">確認是否為矩陣 matrix?</a></li>
+<li><a href="#orgb7cc6e2">得到矩陣的行數與列數 row-count &amp; column-count</a></li>
+<li><a href="#orgfdc9b5a">自定義方陣生成函數</a></li>
+</ul>
+</li>
+<li><a href="#org68b6343">todo</a></li>
+<li><a href="#org6f09872">參考資料</a></li>
+</ul>
+</div>
+</div>
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/blob/master/clojure-for-machine-learning.org" class="fa fa-github"> GitHub</a></div>
+
+<hr  />
+<div id="outline-container-org8fd2e5d" class="outline-2">
+<h2 id="org8fd2e5d">關於筆記</h2>
+<div class="outline-text-2" id="text-org8fd2e5d">
+</div><ul class="org-ul"><li><a id="orgcbdb885"></a>這份筆記主要是對書籍 <a href="https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning">Clojure for Machine Learning</a> 的個人筆記<br  /></li>
+<li><a id="org4ebb738"></a>筆記中的實際操作是在 Windows 10 使用 <a href="https://github.com/oakes/Nightcode">NightCode 2.0.0</a> 完成<br  /></li>
+<li><a id="orgdda6265"></a>筆記內容會著重在 Neural Network 的部分<br  /></li>
+<li><a id="org537aae4"></a>在 Clojure 語言上使用是初學者，有任何建議或批評請不吝給予指教，謝謝！<br  /><div class="outline-text-6" id="text-org537aae4">
+<hr  />
+</div></li></ul>
+</div>
+<div id="outline-container-org244cb10" class="outline-2">
+<h2 id="org244cb10">開發環境</h2>
+<div class="outline-text-2" id="text-org244cb10">
+</div><div id="outline-container-orge10024e" class="outline-3">
+<h3 id="orge10024e">1. 安裝 NightCode</h3>
+<div class="outline-text-3" id="text-orge10024e">
+</div><ul class="org-ul"><li><a id="org8c69ca8"></a>請到 <a href="https://sekao.net/nightcode/"><a href="https://sekao.net/nightcode/">https://sekao.net/nightcode/</a></a> 選擇符合作業系統的版本下載<br  /><ul class="org-ul"><li><a id="org4bd723a"></a>2017-02-06：目前到版本 2.3.0<br  /></li></ul></li></ul>
+</div>
+<div id="outline-container-org0340772" class="outline-3">
+<h3 id="org0340772">2. 開啟 NightCode 在左上角點選 Start &gt; Console App</h3>
+</div>
+<div id="outline-container-orge18c5df" class="outline-3">
+<h3 id="orge18c5df">3. 選擇專案要存放的目錄與輸入專案名稱</h3>
+<div class="outline-text-3" id="text-orge18c5df">
+</div><div id="outline-container-org2ae9a12" class="outline-4">
+<h4 id="org2ae9a12">～ 恭喜你！成功建立了一個 Clojure 專案 ～</h4>
+<div class="outline-text-4" id="text-org2ae9a12">
+<hr  />
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org99090ad" class="outline-2">
+<h2 id="org99090ad">矩陣</h2>
+<div class="outline-text-2" id="text-org99090ad">
+</div><div id="outline-container-org9b0b452" class="outline-3">
+<h3 id="org9b0b452">下載矩陣函式庫，並在專案中引入</h3>
+<div class="outline-text-3" id="text-org9b0b452">
+</div><ul class="org-ul"><li><a id="orga558433"></a>於 NightCode 左側檔案樹中，點開專案目錄點選 project.clj<br  /></li>
+<li><a id="orged2c871"></a>在 project.clj 中將 :dependencies 後加入矩陣函式庫 core.matrix<br  /></li>
+<li><a id="org75f0966"></a>2017-02-06：目前 core.matrix 版本為 0.57.0<br  /><div class="outline-text-6" id="text-org75f0966">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #a45bad;">:dependencies</span> <span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #ce537a; font-weight: bold;">org.clojure</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span>clojure <span style="color: #2d9574;">"1.8.0"</span><span style="color: #bc6ec5;">]</span>
+               <span style="color: #bc6ec5;">[</span><span style="color: #ce537a; font-weight: bold;">net.mikera</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span>core.matrix <span style="color: #2d9574;">"0.57.0"</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>&#12288; <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#35531;&#28155;&#21152;&#36889;&#19968;&#34892;, &#30041;&#24847;&#25324;&#34399;</span>
+</pre>
+</div>
+</div></li>
+<li><a id="org6a5b587"></a>接著點選 src &gt; 專案目錄名稱 &gt; core.clj 在專案中使用含式庫<br  /><div class="outline-text-6" id="text-org6a5b587">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">ns</span> &#23560;&#26696;&#21517;&#31281;<span style="color: #bc6ec5;">.core</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">:use</span> <span style="color: #ce537a; font-weight: bold;">clojure.core.matrix</span><span style="color: #bc6ec5;">)</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#35531;&#28155;&#21152;&#36889;&#19968;&#34892;</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">:gen-class</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+
+<div id="outline-container-org30eb2a6" class="outline-3">
+<h3 id="org30eb2a6">開啟互動式命令行介面 REPL</h3>
+<div class="outline-text-3" id="text-org30eb2a6">
+</div><ul class="org-ul"><li><a id="org8eb5625"></a>點選 NightCode 中間下方 Run with REPL 開啟互動命令行介面<br  /></li>
+<li><a id="org85f3feb"></a>你應該會看到一個等待輸入的命令行<br  /><div class="outline-text-6" id="text-org85f3feb">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">Running</span> with REPL...
+<span style="color: #ce537a; font-weight: bold;">Compiling</span> <span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>
+<span style="color: #bc6ec5;">nREPL</span> server started on port <span style="color: #a45bad;">64499</span> on host <span style="color: #a45bad;">127.0.0.1</span> - <span style="color: #ce537a; font-weight: bold;">nrepl:/</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span>127.0.0.1:64499
+REPL-y <span style="color: #a45bad;">0.3.7</span>, <span style="color: #bc6ec5;">nREPL</span> <span style="color: #a45bad;">0.2.12</span>
+<span style="color: #ce537a; font-weight: bold;">Clojure</span> <span style="color: #a45bad;">1.8.0</span>
+<span style="color: #ce537a; font-weight: bold;">Java</span> <span style="color: #ce537a; font-weight: bold;">HotSpot</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">TM</span><span style="color: #4f97d7;">)</span> <span style="color: #a45bad;">64-Bit</span> <span style="color: #ce537a; font-weight: bold;">Server</span> <span style="color: #a45bad;">VM</span> <span style="color: #a45bad;">1.8.0_121-b13</span>
+    Docs: <span style="color: #4f97d7;">(</span>doc function-name-here<span style="color: #4f97d7;">)</span>
+          <span style="color: #4f97d7;">(</span>find-doc <span style="color: #2d9574;">"part-of-name-here"</span><span style="color: #4f97d7;">)</span>
+  Source: <span style="color: #4f97d7;">(</span>source function-name-here<span style="color: #4f97d7;">)</span>
+ Javadoc: <span style="color: #4f97d7;">(</span>javadoc java-object-or-class-here<span style="color: #4f97d7;">)</span>
+    Exit: Control+D or <span style="color: #4f97d7;">(</span>exit<span style="color: #4f97d7;">)</span> or <span style="color: #4f97d7;">(</span>quit<span style="color: #4f97d7;">)</span>
+ Results: <span style="color: #ce537a; font-weight: bold;">Stored</span> in vars <span style="color: #4f97d7;">*1</span>, <span style="color: #4f97d7;">*2</span>, <span style="color: #4f97d7;">*3</span>, an exception in <span style="color: #4f97d7;">*e</span>
+&#23560;&#26696;&#21517;&#31281;.core=&gt;
+</pre>
+</div>
+</div></li>
+<li><a id="org1682be8"></a>我使用的專案名稱是 clojure-for-machine-learning<br  /></li></ul>
+</div>
+
+<div id="outline-container-orge70142c" class="outline-3">
+<h3 id="orge70142c">建立矩陣 matrix</h3>
+<div class="outline-text-3" id="text-orge70142c">
+</div><ul class="org-ul"><li><a id="orgfd02590"></a>類神經網路不可或缺的基本元素－矩陣，試著輸入吧<br  /><div class="outline-text-6" id="text-orgfd02590">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>matrix <span style="color: #bc6ec5;">[</span><span style="color: #2d9574;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #2d9574;">]</span> <span style="color: #2d9574;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span> <span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-orgbacda5b" class="outline-3">
+<h3 id="orgbacda5b">定義矩陣 def</h3>
+<div class="outline-text-3" id="text-orgbacda5b">
+</div><ul class="org-ul"><li><a id="org2e4d59f"></a>嘗試來定義一個矩陣 A<br  /></li>
+<li><a id="org840221f"></a>通常在 Clojure 中定義的名稱往往都是小寫，這裡為了直覺起見用大寫<br  /><div class="outline-text-6" id="text-org840221f">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #7590db;">A</span> <span style="color: #bc6ec5;">(</span>matrix <span style="color: #2d9574;">[</span><span style="color: #67b11d;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #67b11d;">]</span> <span style="color: #67b11d;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #67b11d;">]</span><span style="color: #2d9574;">]</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+#'<span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span><span style="color: #b2b2b2; background-color: #292b2e;">/</span><span style="color: #a45bad;">A</span>
+</pre>
+</div>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org4d0be53" class="outline-3">
+<h3 id="org4d0be53">顯示定義的矩陣 pm</h3>
+<div class="outline-text-3" id="text-org4d0be53">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>pm <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">[</span><span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">0</span> <span style="color: #a45bad;">1</span> <span style="color: #a45bad;">2</span><span style="color: #bc6ec5;">]</span>
+ <span style="color: #bc6ec5;">[</span><span style="color: #a45bad;">3</span> <span style="color: #a45bad;">4</span> <span style="color: #a45bad;">5</span><span style="color: #bc6ec5;">]</span><span style="color: #4f97d7;">]</span>
+<span style="color: #a45bad;">nil</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org0093b6c" class="outline-3">
+<h3 id="org0093b6c">確認是否為矩陣 matrix?</h3>
+<div class="outline-text-3" id="text-org0093b6c">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>matrix? <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
+<span style="color: #a45bad;">true</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb7cc6e2" class="outline-3">
+<h3 id="orgb7cc6e2">得到矩陣的行數與列數 row-count &amp; column-count</h3>
+<div class="outline-text-3" id="text-orgb7cc6e2">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>row-count <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
+<span style="color: #a45bad;">2</span>
+<span style="color: #ce537a; font-weight: bold;">clojure-for-machine-learning.core</span>=&gt; <span style="color: #4f97d7;">(</span>column-count <span style="color: #a45bad;">A</span><span style="color: #4f97d7;">)</span>
+<span style="color: #a45bad;">3</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfdc9b5a" class="outline-3">
+<h3 id="orgfdc9b5a">自定義方陣生成函數</h3>
+<div class="outline-text-3" id="text-orgfdc9b5a">
+</div><div id="outline-container-orgb720b32" class="outline-4">
+<h4 id="orgb720b32"><span class="todo TODO">TODO</span> 簡單說明 let / # / -&gt; 功能</h4>
+<div class="outline-text-4" id="text-orgb720b32">
+<div class="org-src-container">
+<pre class="src src-clojure"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defn</span> <span style="color: #bc6ec5; font-weight: bold;">square-mat</span>
+    <span style="color: #2aa1ae;">"Creates a square matrix of size n x n whose elements are all e"</span>
+    <span style="color: #bc6ec5;">[</span>n e<span style="color: #bc6ec5;">]</span>
+    <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">let</span> <span style="color: #2d9574;">[</span>repeater #<span style="color: #67b11d;">(</span>repeat n <span style="color: #7590db;">%</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">]</span>
+    <span style="color: #2d9574;">(</span>matrix <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">-&gt;</span> e repeater repeater<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+
+
+
+
+
+
+
+
+
+<hr  />
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-org68b6343" class="outline-2">
+<h2 id="org68b6343">todo</h2>
+<div class="outline-text-2" id="text-org68b6343">
+</div><ul class="org-ul"><li><a id="org074329e"></a>補多一點圖片，最好還有操作的 gif<br  /></li>
+<li><a id="org6cef765"></a>善用 readtheorg 的各種資訊方塊<br  /></li></ul>
+</div>
+
+
+
+
+
+<div id="outline-container-org6f09872" class="outline-2">
+<h2 id="org6f09872">參考資料</h2>
+<div class="outline-text-2" id="text-org6f09872">
+<ol class="org-ol">
+<li><a href="https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning">Wali, A. (2014). Clojure for Machine Learning. Packt Publishing Ltd.</a></li>
+</ol>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
+<p class="date">Created: 2017-02-06 Mon 23:23</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

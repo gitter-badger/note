@@ -1,0 +1,143 @@
+#+TITLE:     Clojure for Machine Learning 筆記
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+#+STARTUP:   showall
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right"><a href="https://github.com/fatfingererr/note/blob/master/clojure-for-machine-learning.org" class="fa fa-github"> GitHub</a></div>
+#+end_EXPORT
+
+-----
+* 關於筆記
+***** 這份筆記主要是對書籍 [[https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning][Clojure for Machine Learning]] 的個人筆記
+***** 筆記中的實際操作是在 Windows 10 使用 [[https://github.com/oakes/Nightcode][NightCode 2.0.0]] 完成
+***** 筆記內容會著重在 Neural Network 的部分
+***** 在 Clojure 語言上使用是初學者，有任何建議或批評請不吝給予指教，謝謝！
+
+-----
+* 開發環境
+** 1. 安裝 NightCode
+***** 請到 [[https://sekao.net/nightcode/][https://sekao.net/nightcode/]] 選擇符合作業系統的版本下載
+****** 2017-02-06：目前到版本 2.3.0
+** 2. 開啟 NightCode 在左上角點選 Start > Console App 
+** 3. 選擇專案要存放的目錄與輸入專案名稱
+*** ～ 恭喜你！成功建立了一個 Clojure 專案 ～
+
+
+ -----
+* 矩陣
+** 下載矩陣函式庫，並在專案中引入
+***** 於 NightCode 左側檔案樹中，點開專案目錄點選 project.clj
+***** 在 project.clj 中將 :dependencies 後加入矩陣函式庫 core.matrix
+***** 2017-02-06：目前 core.matrix 版本為 0.57.0
+
+#+BEGIN_SRC clojure
+:dependencies [[org.clojure/clojure "1.8.0"]
+               [net.mikera/core.matrix "0.57.0"]]　 ;; 請添加這一行, 留意括號
+#+END_SRC
+***** 接著點選 src > 專案目錄名稱 > core.clj 在專案中使用含式庫
+#+BEGIN_SRC clojure
+(ns 專案名稱.core
+  (:use clojure.core.matrix) ;; 請添加這一行
+  (:gen-class))
+#+END_SRC
+
+
+** 開啟互動式命令行介面 REPL
+***** 點選 NightCode 中間下方 Run with REPL 開啟互動命令行介面
+***** 你應該會看到一個等待輸入的命令行
+
+#+BEGIN_SRC clojure
+Running with REPL...
+Compiling clojure-for-machine-learning.core
+nREPL server started on port 64499 on host 127.0.0.1 - nrepl://127.0.0.1:64499
+REPL-y 0.3.7, nREPL 0.2.12
+Clojure 1.8.0
+Java HotSpot(TM) 64-Bit Server VM 1.8.0_121-b13
+    Docs: (doc function-name-here)
+          (find-doc "part-of-name-here")
+  Source: (source function-name-here)
+ Javadoc: (javadoc java-object-or-class-here)
+    Exit: Control+D or (exit) or (quit)
+ Results: Stored in vars *1, *2, *3, an exception in *e
+專案名稱.core=> 
+#+END_SRC
+***** 我使用的專案名稱是 clojure-for-machine-learning 
+
+** 建立矩陣 matrix
+***** 類神經網路不可或缺的基本元素－矩陣，試著輸入吧
+
+#+BEGIN_SRC clojure
+clojure-for-machine-learning.core=> (matrix [[0 1 2] [3 4 5]])
+[[0 1 2] [3 4 5]]
+#+END_SRC
+
+** 定義矩陣 def
+***** 嘗試來定義一個矩陣 A
+***** 通常在 Clojure 中定義的名稱往往都是小寫，這裡為了直覺起見用大寫
+
+#+BEGIN_SRC clojure
+clojure-for-machine-learning.core=> (def A (matrix [[0 1 2] [3 4 5]]))
+#'clojure-for-machine-learning.core/A
+#+END_SRC
+
+** 顯示定義的矩陣 pm
+
+#+BEGIN_SRC clojure
+clojure-for-machine-learning.core=> (pm A)
+[[0 1 2]
+ [3 4 5]]
+nil
+#+END_SRC
+
+** 確認是否為矩陣 matrix?
+
+#+BEGIN_SRC clojure
+clojure-for-machine-learning.core=> (matrix? A)
+true
+#+END_SRC
+
+** 得到矩陣的行數與列數 row-count & column-count
+
+#+BEGIN_SRC clojure
+clojure-for-machine-learning.core=> (row-count A)
+2
+clojure-for-machine-learning.core=> (column-count A)
+3
+#+END_SRC
+
+** 自定義方陣生成函數
+*** TODO 簡單說明 let / # / -> 功能
+
+ #+BEGIN_SRC clojure
+ (defn square-mat
+     "Creates a square matrix of size n x n whose elements are all e"
+     [n e]
+     (let [repeater #(repeat n %)]
+     (matrix (-> e repeater repeater))))
+ #+END_SRC
+
+
+
+
+
+
+
+
+
+
+          -----
+* todo
+***** 補多一點圖片，最好還有操作的 gif
+***** 善用 readtheorg 的各種資訊方塊
+
+
+
+
+
+* 參考資料
+1. [[https://www.packtpub.com/big-data-and-business-intelligence/clojure-machine-learning][Wali, A. (2014). Clojure for Machine Learning. Packt Publishing Ltd.]]

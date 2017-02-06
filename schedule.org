@@ -100,3 +100,15 @@
   <2017-02-04 Sat 19:30-22:00>
 
 http://pellaeon-a9aa66.kktix.cc/events/33c3-sharing
+* Clojure Taiwan 二月聚會 BYOP
+  :PROPERTIES:
+  :LOCATION: 摩茲工寮, 台北市中正區八德路一段 94 號 3F, Taipei, 台北市, tw, 100
+  :LINK: [[https://www.google.com/calendar/event?eid=XzZ0bG5hcXJsZTVwNmNwYjRkaG1qNHBocGVobzZzb2ppNmRpNnVwM2hkdGxtZ3JyNWUxcDZhcGo5ZHBxN2NxYmFlZ3M3NHJwbDY4cTNjY3JkY2tybmNkcjllOW5qZ3ByamVnbzc2cGptZTFpNmUgZmF0ZmluZ2VyZXJyQG0][Go to gcal web page]]
+  :ID: _6tlnaqrle5p6cpb4dhmj4phpeho6soji6di6up3hdtlmgrr5e1p6apj9dpq7cqbaegs74rpl68q3ccrdckrncdr9e9njgprjego76pjme1i6e
+  :END:
+
+  <2017-02-20 Mon 19:00-22:00>
+
+如要查看系統自動為您建立的活動詳細資訊 (例如本活動)，請使用官方 Google 日曆應用程式：https://g.co/calendar
+
+這項活動是根據您在 Gmail 中收到的電子郵件建立而成。https://mail.google.com/mail?extsrc=cal&plid=ACUX6DMJosTyKle4j118VWA-13iwOhdCshwP-hA

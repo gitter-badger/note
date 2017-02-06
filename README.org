@@ -1,7 +1,6 @@
 #+TITLE:     Fatfingererr 筆記本
 #+AUTHOR:    fatfingererr - www.ffe.tw
 #+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
-#+DATE:      2015-04-28
 #+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
 #+SETUPFILE: theme-readtheorg.setup
