@@ -1,17 +1,20 @@
-#+TITLE:     〈為什麼菁英都是清單控〉書摘
-#+AUTHOR:    fatfingererr - www.ffe.tw
+#+TITLE:     《為什麼菁英都是清單控》書摘
+#+AUTHOR:    fatfingererr
 #+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
-#+DATE:      2016-02-06
+#+DATE:      2017-02-08
 #+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
 #+SETUPFILE: theme-readtheorg.setup
-#+STARTUP:   showall
 
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
-<div class="right"><a href="https://github.com/fatfingererr/note/book-listful-thinking.org" class="fa fa-github"> GitHub</a></div>
-<br/>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/book-listful-thinking.org" class="fa fa-github"> GitHub</a>
+</div>
 #+end_EXPORT
+
+-----
 
 當初買這本書的動機就是因為自己也是一個清單控，因此把這本書中我覺得重要的點摘錄下來，主要是給自己偶爾查詢用的。這本書我受益最多的地方是在最後一點「倒推法」和利弊得失表，因為以前紀錄清單都沒有針對重要決定紀錄紀錄利弊，而倒推法則是會經常忘記的一個違反直覺的方法，因為正常都是一路往後安排，除非有Deadline，那沒有Deadline的事情也要用倒推法看起來就要練習。
 
