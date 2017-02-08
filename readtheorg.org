@@ -261,16 +261,16 @@ graph graphname {
 - 尚待補全
 
 
-      -----
-      #+begin_note
-      右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
-      #+end_note
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
 
-      #+BEGIN_EXPORT html
-      <script>
-      ((window.gitter = {}).chat = {}).options = {
-      room: 'fatfingererr-notes/Lobby'
-      };
-      </script>
-      <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-      #+END_EXPORT
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT
