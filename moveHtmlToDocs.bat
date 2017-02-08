@@ -7,6 +7,7 @@ IF EXIST "*.html" (
 )
 IF EXIST "images" (    
     robocopy "images" "docs/images"  /E /IS /MOVE
+    mkdir images
 )
 IF EXIST "js" (    
     robocopy "js" "docs/js"  /E /IS /MOVE

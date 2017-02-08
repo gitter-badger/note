@@ -142,37 +142,37 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 ** Badges
  - [[http://shields.io/][ Shields.io: Quality metadata badges for open source projects]]
 
- #+BEGIN_EXPORT html
- <a href="http://opensource.org/licenses/GPL-3.0">
- <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
- </a>
- <br/><br/>
- #+end_export
+#+BEGIN_EXPORT html
+<a href="http://opensource.org/licenses/GPL-3.0">
+<img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+<br/><br/>
+#+end_export
 
- #+BEGIN_SRC emacs-lisp
- #+begin_export html
- <a href="http://opensource.org/licenses/GPL-3.0">
-     <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
- </a>
- #+end_export
- #+END_SRC
+#+BEGIN_SRC emacs-lisp
+,#+begin_export html
+<a href="http://opensource.org/licenses/GPL-3.0">
+<img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+,#+end_export
+#+END_SRC
 
 ** Donate
 
- #+begin_export html
- <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
- <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
- </a>
- <br/><br/>
- #+end_export
+#+begin_export html
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+<br/><br/>
+#+end_export
 
- #+BEGIN_SRC emacs-lisp
- #+begin_export html
- <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
- <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
- </a>
- #+end_export
- #+END_SRC
+#+BEGIN_SRC emacs-lisp
+,#+begin_export html
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+,#+end_export
+#+END_SRC
 
 -----
 * GitHub repo card
@@ -180,13 +180,14 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 #+begin_export html
 <div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
 <script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
+<br/><br/>
 #+end_export
 
 #+BEGIN_SRC emacs-lisp
-#+begin_export html
+,#+begin_export html
 <div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
 <script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
-#+end_export
+,#+end_export
 #+END_SRC
 
 
