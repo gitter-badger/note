@@ -251,6 +251,7 @@ graph graphname {
     b -- c;
     b -- d;
     d -- a;
+    c -- d;
 }
 #+END_SRC
 

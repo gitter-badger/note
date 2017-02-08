@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
 <head>
-<!-- 2017-02-09 Thu 00:24 -->
+<!-- 2017-02-09 Thu 00:31 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>readtheorg 語法筆記</title>
@@ -315,6 +315,16 @@
  pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
 <style type="text/css">
  pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -369,23 +379,23 @@ for the JavaScript code in this tag.
 <h2>&#30446;&#37636;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org026aee5">GitHub 連結</a></li>
-<li><a href="#org73f8fcc">sidebar 側欄小區塊</a></li>
-<li><a href="#orgc7f8078">藍色資訊區塊 Note</a></li>
-<li><a href="#org95600b8">橘色警告區塊 Admonitiontodo</a></li>
-<li><a href="#org226f772">橘色警告區塊 Warning</a></li>
-<li><a href="#org949fa5f">綠色資訊區塊 Tip</a></li>
-<li><a href="#org991a640">自訂巨集 Macro (記得空行換行)</a></li>
-<li><a href="#org6580c19">Tag</a>
+<li><a href="#orgbfa30ab">GitHub 連結</a></li>
+<li><a href="#orgceaf036">sidebar 側欄小區塊</a></li>
+<li><a href="#org6f75cb5">藍色資訊區塊 Note</a></li>
+<li><a href="#orgd27e661">橘色警告區塊 Admonitiontodo</a></li>
+<li><a href="#orgca4ad23">橘色警告區塊 Warning</a></li>
+<li><a href="#orga77e1b0">綠色資訊區塊 Tip</a></li>
+<li><a href="#orgb392cd3">自訂巨集 Macro (記得空行換行)</a></li>
+<li><a href="#org58ed77d">Tag</a>
 <ul>
-<li><a href="#org45f101d">Badges</a></li>
-<li><a href="#orge0e6714">Donate</a></li>
+<li><a href="#org3251fd3">Badges</a></li>
+<li><a href="#org1e80c90">Donate</a></li>
 </ul>
 </li>
-<li><a href="#org1a0f9a2">GitHub repo card</a></li>
-<li><a href="#org11f7fb2">ditaa</a></li>
-<li><a href="#orgaa6800b">Graphviz</a></li>
-<li><a href="#org6efe99a">參考資料</a></li>
+<li><a href="#orgd573357">GitHub repo card</a></li>
+<li><a href="#org4d29e62">ditaa</a></li>
+<li><a href="#org3783966">Graphviz</a></li>
+<li><a href="#orga9d72a6">參考資料</a></li>
 </ul>
 </div>
 </div>
@@ -400,9 +410,9 @@ for the JavaScript code in this tag.
 <li>這裡主要紀錄個人使用 org-export 輸出 html 常用的語法格式</li>
 </ul>
 
-<div id="outline-container-org026aee5" class="outline-2">
-<h2 id="org026aee5">GitHub 連結</h2>
-<div class="outline-text-2" id="text-org026aee5">
+<div id="outline-container-orgbfa30ab" class="outline-2">
+<h2 id="orgbfa30ab">GitHub 連結</h2>
+<div class="outline-text-2" id="text-orgbfa30ab">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+Begin_EXPORT html
 &lt;div class=<span style="color: #2d9574;">"right"</span>&gt;
@@ -420,9 +430,9 @@ for the JavaScript code in this tag.
 <hr  />
 </div>
 </div>
-<div id="outline-container-org73f8fcc" class="outline-2">
-<h2 id="org73f8fcc">sidebar 側欄小區塊</h2>
-<div class="outline-text-2" id="text-org73f8fcc">
+<div id="outline-container-orgceaf036" class="outline-2">
+<h2 id="orgceaf036">sidebar 側欄小區塊</h2>
+<div class="outline-text-2" id="text-orgceaf036">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+begin_sidebar
 *You will learn to:*
@@ -474,9 +484,9 @@ for the JavaScript code in this tag.
 <hr  />
 </div>
 </div>
-<div id="outline-container-orgc7f8078" class="outline-2">
-<h2 id="orgc7f8078">藍色資訊區塊 Note</h2>
-<div class="outline-text-2" id="text-orgc7f8078">
+<div id="outline-container-org6f75cb5" class="outline-2">
+<h2 id="org6f75cb5">藍色資訊區塊 Note</h2>
+<div class="outline-text-2" id="text-org6f75cb5">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+begin_note
 The ~ALT_TITLE~ property allows to set an alternate title <span style="color: #4f97d7;">(</span>shorter, for example<span style="color: #4f97d7;">)</span>
@@ -495,9 +505,9 @@ for a given headline in the table of contents and other running heads.
 <hr  />
 </div>
 </div>
-<div id="outline-container-org95600b8" class="outline-2">
-<h2 id="org95600b8">橘色警告區塊 Admonitiontodo</h2>
-<div class="outline-text-2" id="text-org95600b8">
+<div id="outline-container-orgd27e661" class="outline-2">
+<h2 id="orgd27e661">橘色警告區塊 Admonitiontodo</h2>
+<div class="outline-text-2" id="text-orgd27e661">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+begin_admonitiontodo
 Admonitiontodo
@@ -514,9 +524,9 @@ Admonitiontodo
 <hr  />
 </div>
 </div>
-<div id="outline-container-org226f772" class="outline-2">
-<h2 id="org226f772">橘色警告區塊 Warning</h2>
-<div class="outline-text-2" id="text-org226f772">
+<div id="outline-container-orgca4ad23" class="outline-2">
+<h2 id="orgca4ad23">橘色警告區塊 Warning</h2>
+<div class="outline-text-2" id="text-orgca4ad23">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+begin_warning
 Double dollar signs <span style="color: #4f97d7;">(</span>~$$~<span style="color: #4f97d7;">)</span> should not be used.
@@ -533,9 +543,9 @@ Double dollar signs (<code>$$</code>) should not be used.
 <hr  />
 </div>
 </div>
-<div id="outline-container-org949fa5f" class="outline-2">
-<h2 id="org949fa5f">綠色資訊區塊 Tip</h2>
-<div class="outline-text-2" id="text-org949fa5f">
+<div id="outline-container-orga77e1b0" class="outline-2">
+<h2 id="orga77e1b0">綠色資訊區塊 Tip</h2>
+<div class="outline-text-2" id="text-orga77e1b0">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+begin_tip
 If you have tables <span style="color: #4f97d7;">(</span>for example<span style="color: #4f97d7;">)</span> that you want to ignore during export, one possibility
@@ -556,9 +566,9 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 <hr  />
 </div>
 </div>
-<div id="outline-container-org991a640" class="outline-2">
-<h2 id="org991a640">自訂巨集 Macro (記得空行換行)</h2>
-<div class="outline-text-2" id="text-org991a640">
+<div id="outline-container-orgb392cd3" class="outline-2">
+<h2 id="orgb392cd3">自訂巨集 Macro (記得空行換行)</h2>
+<div class="outline-text-2" id="text-orgb392cd3">
 <div class="org-src-container">
 <pre class="src src-emacs-lisp">#+MACRO: color @@html:&lt;span style=<span style="color: #2d9574;">"color: $1"</span>&gt;$2&lt;/span&gt;@@
 
@@ -579,12 +589,12 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 <hr  />
 </div>
 </div>
-<div id="outline-container-org6580c19" class="outline-2">
-<h2 id="org6580c19">Tag</h2>
-<div class="outline-text-2" id="text-org6580c19">
-</div><div id="outline-container-org45f101d" class="outline-3">
-<h3 id="org45f101d">Badges</h3>
-<div class="outline-text-3" id="text-org45f101d">
+<div id="outline-container-org58ed77d" class="outline-2">
+<h2 id="org58ed77d">Tag</h2>
+<div class="outline-text-2" id="text-org58ed77d">
+</div><div id="outline-container-org3251fd3" class="outline-3">
+<h3 id="org3251fd3">Badges</h3>
+<div class="outline-text-3" id="text-org3251fd3">
 <ul class="org-ul">
 <li><a href="http://shields.io/"> Shields.io: Quality metadata badges for open source projects</a></li>
 </ul>
@@ -605,9 +615,9 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 </div>
 </div>
 
-<div id="outline-container-orge0e6714" class="outline-3">
-<h3 id="orge0e6714">Donate</h3>
-<div class="outline-text-3" id="text-orge0e6714">
+<div id="outline-container-org1e80c90" class="outline-3">
+<h3 id="org1e80c90">Donate</h3>
+<div class="outline-text-3" id="text-org1e80c90">
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
 <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
 </a>
@@ -626,9 +636,9 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 </div>
 </div>
 </div>
-<div id="outline-container-org1a0f9a2" class="outline-2">
-<h2 id="org1a0f9a2">GitHub repo card</h2>
-<div class="outline-text-2" id="text-org1a0f9a2">
+<div id="outline-container-orgd573357" class="outline-2">
+<h2 id="orgd573357">GitHub repo card</h2>
+<div class="outline-text-2" id="text-orgd573357">
 <div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
 <script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
 <br/><br/>
@@ -645,9 +655,9 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 <hr  />
 </div>
 </div>
-<div id="outline-container-org11f7fb2" class="outline-2">
-<h2 id="org11f7fb2">ditaa</h2>
-<div class="outline-text-2" id="text-org11f7fb2">
+<div id="outline-container-org4d29e62" class="outline-2">
+<h2 id="org4d29e62">ditaa</h2>
+<div class="outline-text-2" id="text-org4d29e62">
 <ul class="org-ul">
 <li>留意路徑目錄必須存在不然會有錯誤</li>
 </ul>
@@ -678,9 +688,9 @@ is to use <b>comment blocks</b> or <code>:noexport:</code> subtrees.  Another po
 </div>
 </div>
 
-<div id="outline-container-orgaa6800b" class="outline-2">
-<h2 id="orgaa6800b">Graphviz</h2>
-<div class="outline-text-2" id="text-orgaa6800b">
+<div id="outline-container-org3783966" class="outline-2">
+<h2 id="org3783966">Graphviz</h2>
+<div class="outline-text-2" id="text-org3783966">
 <ul class="org-ul">
 <li>更詳細的操作請見<a href="file://c:/note/graphviz.html">Graphviz 語法筆記</a></li>
 </ul>
@@ -709,9 +719,9 @@ graph graphname {
 <hr  />
 </div>
 </div>
-<div id="outline-container-org6efe99a" class="outline-2">
-<h2 id="org6efe99a">參考資料</h2>
-<div class="outline-text-2" id="text-org6efe99a">
+<div id="outline-container-orga9d72a6" class="outline-2">
+<h2 id="orga9d72a6">參考資料</h2>
+<div class="outline-text-2" id="text-orga9d72a6">
 <ul class="org-ul">
 <li>尚待補全</li>
 </ul>
@@ -737,7 +747,7 @@ room: 'fatfingererr-notes/Lobby'
 <div id="postamble" class="status">
 <p class="date">&#26085;&#26399;: 2017-02-09</p>
 <p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
-<p class="date">Created: 2017-02-09 Thu 00:24</p>
+<p class="date">Created: 2017-02-09 Thu 00:31</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
