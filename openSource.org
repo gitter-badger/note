@@ -38,19 +38,23 @@
 
 
    -----
+
+-----
 * 參考資料
 ***** 1. [[http://www.infoq.com/cn/interviews/how-to-make-open-source-meaningful][章文嵩：怎样做开源才有意义？]]
+***** TODO 2. [[https://github.com/hueitan/blog/blob/master/articles/%E6%88%91%E5%9C%A8%20GitHub%20%E4%B8%8A%E5%AD%B8%E7%BF%92%20Open%20Source.md][blog/我在 GitHub 上學習 Open Source.md at master · hueitan/blog · GitHub]]
 
-      -----
-      #+begin_note
-      右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
-      #+end_note
+      
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
 
-      #+BEGIN_EXPORT html
-      <script>
-      ((window.gitter = {}).chat = {}).options = {
-      room: 'fatfingererr-notes/Lobby'
-      };
-      </script>
-      <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-      #+END_EXPORT
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT

@@ -1,11 +1,22 @@
-#+TITLE:     org html 主題 readtheorg
+#+TITLE:     readtheorg 語法筆記
 #+AUTHOR:    fatfingererr - www.ffe.tw
-#+EMAIL:     (concat "fniessen" at-sign "pirilampo.org")
-#+LANGUAGE:  zh_TW
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-09
+#+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
 #+SETUPFILE: theme-readtheorg.setup
 
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/readtheorg.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
+
 -----
+- 這裡主要紀錄個人使用 org-export 輸出 html 常用的語法格式
+
 * GitHub 連結
 
 #+BEGIN_SRC emacs-lisp
@@ -127,47 +138,41 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 {{{color(red, This other text is in red.)}}}
 
 -----
-* tag
-*** badges
-- [[http://shields.io/][ Shields.io: Quality metadata badges for open source projects]]
+* Tag
+** Badges
+ - [[http://shields.io/][ Shields.io: Quality metadata badges for open source projects]]
 
-#+BEGIN_EXPORT html
-<a href="http://opensource.org/licenses/GPL-3.0">
-<img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
-</a>
-<br/><br/>
-#+end_export
+ #+BEGIN_EXPORT html
+ <a href="http://opensource.org/licenses/GPL-3.0">
+ <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+ </a>
+ <br/><br/>
+ #+end_export
 
-#+BEGIN_SRC emacs-lisp
-#+begin_export html
-<a href="http://opensource.org/licenses/GPL-3.0">
-    <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
-</a>
-#+end_export
-#+END_SRC
+ #+BEGIN_SRC emacs-lisp
+ #+begin_export html
+ <a href="http://opensource.org/licenses/GPL-3.0">
+     <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+ </a>
+ #+end_export
+ #+END_SRC
 
-*** donate
+** Donate
 
-#+begin_export html
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
-<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
-</a>
-<br/><br/>
-#+end_export
+ #+begin_export html
+ <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+ <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+ </a>
+ <br/><br/>
+ #+end_export
 
-#+BEGIN_SRC emacs-lisp
-#+begin_export html
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
-<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
-</a>
-#+end_export
-#+END_SRC
-
-
-** http://www.issuestats.com/
-** https://gitter.im/
-** https://codeclimate.com/
-** https://coveralls.io/
+ #+BEGIN_SRC emacs-lisp
+ #+begin_export html
+ <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+ <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+ </a>
+ #+end_export
+ #+END_SRC
 
 -----
 * GitHub repo card
@@ -189,7 +194,23 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 * ditaa
 - 留意路徑目錄必須存在不然會有錯誤
 
-#+BEGIN_EXPORT html
+#+BEGIN_SRC emacs-lisp
+,#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa.png :cmdline -r
+      +--------+   +-------+    +-------+
+      |        | --+ ditaa +--> |       |
+      |  Text  |   +-------+    |diagram|
+      |Document|   |!magic!|    |       |
+      |     {d}|   |       |    |       |
+      +---+----+   +-------+    +-------+
+          :                         ^
+          |       Lots of work      |
+          +-------------------------+
+,#+END_SRC
+
+,#+RESULTS:
+[[file:images/orgmode-babel-ditaa.png]]
+#+END_SRC
+
 #+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa.png :cmdline -r
       +--------+   +-------+    +-------+
       |        | --+ ditaa +--> |       |
@@ -204,21 +225,52 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 
 #+RESULTS:
 [[file:images/orgmode-babel-ditaa.png]]
-#+END_EXPORT
 
-#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa.png :cmdline -r
-      +--------+   +-------+    +-------+
-      |        | --+ ditaa +--> |       |
-      |  Text  |   +-------+    |diagram|
-      |Document|   |!magic!|    |       |
-      |     {d}|   |       |    |       |
-      +---+----+   +-------+    +-------+
-          :                         ^
-          |       Lots of work      |
-          +-------------------------+
+* Graphviz 
+
+- 更詳細的操作請見[[/note/graphviz.html][Graphviz 語法筆記]]
+
+#+BEGIN_SRC emacs-lisp
+,#+BEGIN_SRC dot :file images/simple-graph.png
+graph graphname { 
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
+.#+END_SRC
+
+,#+RESULTS:
+[[file:images/simple-graph.png]]
+#+END_SRC
+
+#+BEGIN_SRC dot :file images/simple-graph.png
+graph graphname { 
+    a -- b; 
+    b -- c;
+    b -- d;
+    d -- a;
+}
 #+END_SRC
 
 #+RESULTS:
-[[file:images/orgmode-babel-ditaa.png]]
+[[file:images/simple-graph.png]]
+
+-----
+* 參考資料
+- 尚待補全
 
 
+      -----
+      #+begin_note
+      右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+      #+end_note
+
+      #+BEGIN_EXPORT html
+      <script>
+      ((window.gitter = {}).chat = {}).options = {
+      room: 'fatfingererr-notes/Lobby'
+      };
+      </script>
+      <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+      #+END_EXPORT
