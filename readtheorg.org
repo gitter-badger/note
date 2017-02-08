@@ -8,6 +8,15 @@
 -----
 * GitHub 連結
 
+#+BEGIN_SRC emacs-lisp
+#+Begin_EXPORT html
+<div class="right">
+  <a href="https://github.com/fatfingererrfniessen/org-html-themes/blob/master/demo/example.org" class="fa fa-github"> Edit on GitHub</a>
+</div>
+#+end_EXPORT
+#+END_SRC
+
+
 #+Begin_EXPORT html
 <div class="right">
   <a href="https://github.com/fatfingererrfniessen/org-html-themes/blob/master/demo/example.org" class="fa fa-github"> Edit on GitHub</a>
@@ -16,6 +25,8 @@
 
 -----
 * sidebar 側欄小區塊
+
+#+BEGIN_SRC emacs-lisp
 #+begin_sidebar
 *You will learn to:*
 
@@ -24,7 +35,16 @@
 - create custom code blocks
 - and much more!
 #+end_sidebar
+#+END_SRC
 
+#+begin_sidebar
+*You will learn to:*
+
+- write your docs in Org mode
+- create tables
+- create custom code blocks
+- and much more!
+#+end_sidebar
 
 *You will learn to:*
 
@@ -76,7 +96,7 @@ Double dollar signs (~$$~) should not be used.
 #+end_warning
 
 -----
-* 綠色資訊區塊 tip
+* 綠色資訊區塊 Tip
 #+BEGIN_SRC emacs-lisp
 #+begin_tip
 If you have tables (for example) that you want to ignore during export, one possibility
@@ -108,27 +128,42 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 
 -----
 * tag
-** http://shields.io/
+*** badges
+- [[http://shields.io/][ Shields.io: Quality metadata badges for open source projects]]
+
+#+BEGIN_EXPORT html
+<a href="http://opensource.org/licenses/GPL-3.0">
+<img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
+</a>
+<br/><br/>
+#+end_export
+
 #+BEGIN_SRC emacs-lisp
 #+begin_export html
 <a href="http://opensource.org/licenses/GPL-3.0">
-  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
-</a>
-<br/>
-<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
-  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+    <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
 </a>
 #+end_export
 #+END_SRC
+
+*** donate
+
 #+begin_export html
-<a href="http://opensource.org/licenses/GPL-3.0">
-  <img src="http://img.shields.io/:license-gpl-blue.svg" alt=":license-gpl-blue.svg" />
-</a>
-<br/>
 <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
-  <img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
+</a>
+<br/><br/>
+#+end_export
+
+#+BEGIN_SRC emacs-lisp
+#+begin_export html
+<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VCVAS6KPDQ4JC&lc=BE&item_number=refcard%2dorg%2dmode&currency_code=EUR&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted">
+<img src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" alt="btn_donate_LG.gif" />
 </a>
 #+end_export
+#+END_SRC
+
+
 ** http://www.issuestats.com/
 ** https://gitter.im/
 ** https://codeclimate.com/
@@ -136,21 +171,26 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
 
 -----
 * GitHub repo card
+
+#+begin_export html
+<div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
+<script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
+#+end_export
+
 #+BEGIN_SRC emacs-lisp
 #+begin_export html
 <div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
 <script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
 #+end_export
 #+END_SRC
-#+begin_export html
-<div class="github-widget" data-repo="fatfingererr/.spacemacs.d"></div>
-<script type="text/javascript" src="GitHub-jQuery-Repo-Widget/jquery.githubRepoWidget.min.js"></script>
-#+end_export
+
 
 ------
 * ditaa
+- 留意路徑目錄必須存在不然會有錯誤
 
-#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa2.png :cmdline -r
+#+BEGIN_EXPORT html
+#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa.png :cmdline -r
       +--------+   +-------+    +-------+
       |        | --+ ditaa +--> |       |
       |  Text  |   +-------+    |diagram|
@@ -162,12 +202,23 @@ is to use *comment blocks* or ~:noexport:~ subtrees.  Another possibility is to
           +-------------------------+
 #+END_SRC
 
-#+RESULTS: [[images/orgmode-babel-ditaa2.png]]
+#+RESULTS:
+[[file:images/orgmode-babel-ditaa.png]]
+#+END_EXPORT
 
-
-#+BEGIN_SRC calc :exports both
-x*2+x=4
+#+BEGIN_SRC ditaa :file :file images/orgmode-babel-ditaa.png :cmdline -r
+      +--------+   +-------+    +-------+
+      |        | --+ ditaa +--> |       |
+      |  Text  |   +-------+    |diagram|
+      |Document|   |!magic!|    |       |
+      |     {d}|   |       |    |       |
+      +---+----+   +-------+    +-------+
+          :                         ^
+          |       Lots of work      |
+          +-------------------------+
 #+END_SRC
 
-#+results:
+#+RESULTS:
+[[file:images/orgmode-babel-ditaa.png]]
+
 
