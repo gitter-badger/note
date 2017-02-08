@@ -26,6 +26,7 @@
     (org-html-export-to-html)
     (save-window-excursion
         (async-shell-command "moveHtmlToDocs") nil 0)
+    (dired-create-directory "images")
     (ffe/auto-git-push)
 )
 #+END_SRC
