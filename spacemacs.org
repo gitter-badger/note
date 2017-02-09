@@ -1,18 +1,25 @@
-#+TITLE:     Emacs 個人筆記
+#+TITLE:     Spacemacs 學習筆記
 #+AUTHOR:    fatfingererr - www.ffe.tw
 #+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
-#+DATE:      2015-04-28
+#+DATE:      2017-02-09
 #+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
-
 #+SETUPFILE: theme-readtheorg.setup
 
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
 <div class="right">
-  <a href="https://github.com/fatfingererr/note/blob/master/emacs.org" class="fa fa-github"> GitHub</a>
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/spacemacs.org" class="fa fa-github"> GitHub</a>
 </div>
 #+end_EXPORT
+
+-----
+
+#+begin_warning
+筆記尚未有條理地整理過，下方若有參考資料可先行閱讀
+#+end_warning
+
 
 * org-mode
 
@@ -965,7 +972,7 @@ test again
 *** 怎麼用helm呢
 *** defer 的用法
 *** 為什麼上下左右不好用:因為在C-u重複時不好按
-* TODO yyoyo
+* TODO todo
 **** 什麼是 interactive
 
 **** 什麼是 setq 為什麼是 set + q 
@@ -973,9 +980,25 @@ test again
 
 
 
-* Learnrr Emacs in 21 Days
-  :PROPERTIES:
-  :SLIDE:    segue dark quote
-  :ASIDE:    right bottom
-  :ARTICLE:  flexbox vleft auto-fadein
-  :END:
+
+
+
+-----
+* 參考資料
+***** TODO 1. [[http://www.tonyballantyne.com/EmacsWritingTips.html][My Emacs Writing Setup]]
+
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT
+
+
