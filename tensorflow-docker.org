@@ -1,0 +1,108 @@
+#+TITLE:     Tensorflow Docker 筆記
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-09
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/tensorflow-docker.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
+
+-----
+
+#+begin_warning
+筆記還在紀錄中尚未上傳，下方若有參考資料可先行閱讀
+#+end_warning
+
+
+1. 你先去下载Docker Toolbox, 然后先安装~
+https://www.docker.com/docker-toolbox
+2. 然后安装完之后会有 Quickstart 点开来,他有点像是命令列
+   接着你可能顺利进入, 也可能被显示要你开启BIOS的错误讯息 (没有错误请跳3)
+2a. 你就要开机进到BIOS画面(开电脑的时候立即按F1, F2, F10, F11, F12可以进入的系统画面)
+2b. 进到BIOS画面到各个分类中寻找"虚拟化技术"(visual technology)从停用改启用
+3. 然后回到电脑在打开Quickstart 就会看到 Docker 的鲸鱼图案
+4. 接着在Docker的指令列中输入 docker run b.gcr.io/tensorflow/tensorflow-full
+5. 等一下下, 他就会安装好, 你就可以执行基本功能了!(后面几篇文档的教学就可以执行了)
+
+2016年1月23日1回复
+rcwangtw#6
+
+#5@rcwangtw
+刚刚漏了后续步骤怕不够周延,在做简单补充
+6. 安装完tensorflow-full之后,执行如下
+docker run -it b.gcr.io/tensorflow/tensorflow
+这样就进入拉!
+7. 接着开启python,也就是在指令列输入
+python
+然后你就会看到"&gt;&gt;"开头, 就是进入python了,就可以执行简单功能了
+
+
+
+
+
+* 進入 tensorflow docker
+
+***** 更新 apt-get
+
+#+BEGIN_SRC shell
+apt-get -y update
+#+END_SRC
+
+***** 安裝 Git
+
+#+BEGIN_SRC shell
+apt-get install git
+#+END_SRC
+
+***** 更新 pip
+
+#+BEGIN_SRC shell
+pip install --upgrade pip
+#+END_SRC
+
+***** 更新 tensorflow
+
+#+BEGIN_SRC shell
+pip install tensorflow --upgrade
+
+#+END_SRC
+
+***** 
+
+***** 
+
+* 看到 ImportError: No module named XXXX
+
+***** 執行 pip install XXXX
+
+
+
+
+
+
+
+    -----
+* 參考資料
+***** TODO 1. [[http://wiki.jikexueyuan.com/project/tensorflow-zh/][TensorFlow官方文档中文版_TensorFlow中文教程_TensorFlow开发中文手册 PDF 下载-极客学院Wiki]]
+
+
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT

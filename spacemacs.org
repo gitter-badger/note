@@ -21,10 +21,6 @@
 #+end_warning
 
 
-* org-mode
-
-
-
 * Learn Emacs in 21 Days
   :PROPERTIES:
   :SLIDE:    segue dark quote

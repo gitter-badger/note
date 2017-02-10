@@ -1,0 +1,58 @@
+#+TITLE:     Caffe 學習筆記
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-09
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/caffe.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
+
+-----
+
+#+begin_warning
+筆記還在紀錄中尚未上傳，下方若有參考資料可先行閱讀
+#+end_warning
+
+
+
+
+
+
+
+
+
+
+-----
+* 參考資料
+***** 1. [[http://darren1231.pixnet.net/blog/post/328443879-deep-learning-model--caffe-%E4%BD%BF%E7%94%A8%E6%95%99%E5%AD%B8][Deep learning model--caffe 使用教學 @ 我的小小AI 天地 :: 痞客邦 PIXNET ::]]
+***** 2. (有圖介紹) [[http://city.shaform.com/blog/2016/02/26/caffe.html][Caffe 程式閱讀筆記 - 翼之都, City of Wings]]
+***** 3. (感覺新手友好)  [[http://suanfazu.com/t/caffe/281][Caffe 深度学习框架上手教程 - Caffe - 算法组]]
+***** 4. (比較) [[https://www.zhihu.com/question/27982282][深度学习caffe的代码怎么读？ - 机器学习 - 知乎]]
+***** 5. [[http://frank19900731.github.io/wx/2014-12-04-diy-deep-learning-for-vision-a-tutorial-with-caffe-bao-gao-bi-ji.html][DIY Deep Learning for Vision: A Tutorial with Caffe 报告笔记 - Blog of 太极儒]]
+***** 6. (系列文) [[http://www.cnblogs.com/denny402/tag/caffe/][caffe - 标签 - denny402 - 博客园]]
+***** 7. [[http://blog.sina.com.cn/s/blog_80ce3a550102v7ey.html][CNN工具安装和使用(caffe+convNet)_wuqiseu_新浪博客]]
+***** 
+
+
+
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+    <script>
+    ((window.gitter = {}).chat = {}).options = {
+    room: 'fatfingererr-notes/Lobby'
+    };
+    </script>
+    <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+    #+END_EXPORT
+

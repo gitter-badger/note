@@ -1,0 +1,66 @@
+#+TITLE:     身為 Quant 與我的一天
+#+AUTHOR:    fatfingererr
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-10
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/what-is-it-like-to-be-a-quant-5440637fb2be.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
+
+-----
+* 1. 許多人都誤會了
+** 為什麼會想寫這篇文章
+- 由於最近 (2016) 參加了許多開源活動認識很多科技業的朋友，不免俗一定會談論到彼此的工作
+- 因為個人工作相較比較少見，許多朋友又會有一些不太正確的理解，或是奇怪的刻板印象
+- 但有時候口頭上也講不太清楚，科技業朋友也不太懂，因此寫篇文章是我想到比較方便的形式
+** 也請見諒...
+- 會分享一些自己工作方面更深入的技術細節，但是也請 *盡量不要轉載本篇文章*
+- 不是說要裝神祕，而是希望大家更關注彼此參與的開源專案與技術的學習歷程，而非工作隱私
+- 這篇文章同時也感謝許多朋友與我分享科技業的工作內容，分享工作上的點點滴滴，受益良多
+- 然而所處行業同業間差異性極大，為客戶解決問題的方法也大相逕庭，多數資訊僅限於我的認知
+
+#+begin_warning
+我有簽保密協議 (Non Disclosure Agreement, NDA) 也會確保底下內容沒有違反協議。
+不需要擔心的同時，我也會盡量把我的一天工作說的更詳細，更從技術面角度出發。
+非技術面的部份若寫的含糊，那就是我能分享的底線了，還請多多包涵，謝謝。
+#+end_warning
+
+* 2. 開始之前
+** 外商在台灣
+***** 我在一家外商資產管理公司，台灣只有我與幾名同事
+***** 那麼為什麼我在台灣而且人少少，說來話長就不解釋了，個人因素
+***** 我們管理的資產主要是外匯，同時搭配各種金融商品做資金與風險管理
+***** 外匯市場只會在周末停止交易，我們的券商是瑞士公司，有時候也會看瑞士時間
+***** 瑞士與倫敦兩地時差三小時，還有日光節約時間的問題，系統都要考量這些彈性因素
+
+* 3. 每月初到月中
+** 平日
+
+
+
+
+
+
+
+
+* 
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT
