@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+<head>
+<!-- 2017-02-10 Fri 15:54 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Matlab Caffe 配置筆記</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="fatfingererr" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Matlab Caffe 配置筆記</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#37636;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org18091fb">安裝 Visual Studio Community 2015</a></li>
+<li><a href="#orgdf28dfd">安裝 nVidia CUDA</a></li>
+<li><a href="#orgbbb1abc">安裝 nVidia cuDNN</a></li>
+<li><a href="#org2db91c8">安裝 Microsoft/caffe</a></li>
+<li><a href="#org2ef5e97">開啟 Visual Studio 2015</a></li>
+<li><a href="#orgb2140ca">參考資料</a></li>
+<li><a href="#org7c92683"></a></li>
+</ul>
+</div>
+</div>
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/matlab-caffe.org" class="fa fa-github"> GitHub</a>
+</div>
+
+<hr  />
+
+<div id="outline-container-org18091fb" class="outline-2">
+<h2 id="org18091fb">安裝 Visual Studio Community 2015</h2>
+<div class="outline-text-2" id="text-org18091fb">
+<ul class="org-ul">
+<li>下載地址：<a href="https://www.visualstudio.com/zh-hant/downloads/">Downloads | Visual Studio Official Site</a></li>
+<li>不用登入，選擇 Visual Studio Community 2015 下載社區版</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgdf28dfd" class="outline-2">
+<h2 id="orgdf28dfd">安裝 nVidia CUDA</h2>
+<div class="outline-text-2" id="text-orgdf28dfd">
+<ul class="org-ul">
+<li>下載地址：<a href="https://developer.nvidia.com/cuda-downloads">CUDA 8.0 Downloads | NVIDIA Developer</a></li>
+<li>使用版本為 8.0.61</li>
+<li>離線安裝的檔案蠻大的 1G 左右
+<ul class="org-ul">
+<li>可以選擇 Installer Type 為 network 下載網路連線安裝版的 exe</li>
+<li>個人下載 network 版本一直連不到 network，所以下載 local 離線安裝</li>
+<li>一直下一頁，正常安裝到結束就關掉，後面開啟的視窗都不要管關閉即可</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbbb1abc" class="outline-2">
+<h2 id="orgbbb1abc">安裝 nVidia cuDNN</h2>
+<div class="outline-text-2" id="text-orgbbb1abc">
+<ul class="org-ul">
+<li>下載地址：<a href="https://developer.nvidia.com/rdp/cudnn-download">cuDNN Download | NVIDIA Developer</a></li>
+<li>要加入 nVidia 會員，要到信箱收確認信</li>
+<li>使用版本為 cuDNN v5 for CUDA 8.0 中的 cuDNN v5 Library for Windows 10</li>
+<li>點開始直接打 cmd 開啟 cmd 找你的 CUDA 安裝路徑，輸入：</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">C:\Users\&#20320;&#30340;&#21517;&#23383;&gt;echo %CUDA_PATH%
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>把 cuDNN 下載壓縮檔解壓縮到這個路徑底下，名字改成 cuDNN
+<ul class="org-ul">
+<li>cuDNN 目錄裡面應該要有個資料夾叫 cuda 而不是直接 cuda 資料夾解壓縮出來</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2db91c8" class="outline-2">
+<h2 id="org2db91c8">安裝 Microsoft/caffe</h2>
+<div class="outline-text-2" id="text-org2db91c8">
+<ul class="org-ul">
+<li>你得會用 git 請 clone 到你的資料夾底下，這邊稱做 ms-caffe</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash">git clone https://github.com/Microsoft/caffe.git ms-caffe
+<span style="color: #4f97d7;">cd</span> ms-caffe
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>在目錄 ms-caffe/Windows 中找 CommonSettings.props.example</li>
+<li>複製一份然後把名字改成沒有 example</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-bash"><span style="color: #4f97d7;">cd</span> windows
+copy CommonSettings.props.example CommonSettings.props
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>開啟 CommonSettings.props</li>
+<li>搜尋 cuDnnPath 找到 cuDnnPath 標籤，添加 cuDNN 路徑</li>
+<li>同時搜尋 CudaVersion 標籤並更新 CUDA 版本到 8.0</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-xml">...
+&lt;<span style="color: #bc6ec5; font-weight: bold;">cuDnnPath</span>&gt;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\cuDNN&lt;/<span style="color: #bc6ec5; font-weight: bold;">cuDnnPath</span>&gt;
+&lt;<span style="color: #bc6ec5; font-weight: bold;">CudaVersion</span>&gt;8.0&lt;/<span style="color: #bc6ec5; font-weight: bold;">CudaVersion</span>&gt;
+...
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>搜尋 MatlabDir 找到 MatlabDir 標籤，添加 Matlab 路徑</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-xml">...
+&lt;<span style="color: #bc6ec5; font-weight: bold;">MatlabDir</span>&gt;C:\Program Files\MATLAB\R2016a&lt;/<span style="color: #bc6ec5; font-weight: bold;">MatlabDir</span>&gt;
+...
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>搜尋 MatlabSupport 找到 MatlabSupport 標籤，設定為 true 支援 Matlab</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-xml">...
+&lt;<span style="color: #bc6ec5; font-weight: bold;">MatlabSupport</span>&gt;true&lt;/<span style="color: #bc6ec5; font-weight: bold;">MatlabSupport</span>&gt;
+...
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2ef5e97" class="outline-2">
+<h2 id="org2ef5e97">開啟 Visual Studio 2015</h2>
+<div class="outline-text-2" id="text-org2ef5e97">
+<ul class="org-ul">
+<li>你要有 Microsoft 帳號，沒有就辦一個吧</li>
+<li>他會要你做一堆奇怪的設定，你就跟著做就對了，例如要你開一個 Visual Studio 的 project</li>
+<li>反正你只要開啟視窗就好了，開啟 Visual Studio 視窗之後選擇「檔案／開啟／檔案&#x2026;」</li>
+<li>選擇 ms-caffe/windows 中的 caffe.sln 開啟</li>
+<li>在 Visual Studio 上方工具列點選「建置／建置專案」</li>
+</ul>
+
+
+<div class="warning">
+<p>
+筆記還在紀錄中尚未完全完成，下方若有參考資料可先行閱讀
+</p>
+
+</div>
+
+<hr  />
+</div>
+</div>
+<div id="outline-container-orgb2140ca" class="outline-2">
+<h2 id="orgb2140ca">參考資料</h2>
+<div class="outline-text-2" id="text-orgb2140ca">
+</div><ul class="org-ul"><li><a id="org05f8229"></a>1. <a href="http://blog.csdn.net/ws_20100/article/details/50525879">caffe的Matlab接口的使用方法 - Schr&amp;#246;dinger's Cat - 博客频道 - CSDN.NET</a><br  /></li>
+<li><a id="org8a13bd0"></a>2. <a href="http://blog.csdn.net/kkk584520/article/details/49475633">在MATLAB下调试Caffe - 卜居  - 博客频道 - CSDN.NET</a><br  /></li>
+<li><a id="org706d10c"></a>3. <a href="http://blog.sina.com.cn/s/blog_a5fdbf010102w3av.html">Caffe学习之一：Caffe的配置和编译<sub>debug</sub><sub>新浪博客</sub></a><br  /></li>
+<li><a id="orgae852b8"></a>4. <a href="http://blog.itpub.net/16582684/viewspace-1268749/">Matlab 使用caffe示例-std1984-ITPUB博客</a><br  /></li>
+<li><a id="org05006fb"></a>5. <a href="https://read01.com/J05737.html">caffe windows  Matlab - 壹讀</a><br  /></li>
+<li><a id="orgfd8156a"></a>6. <a href="https://www.zhihu.com/question/52471448">caffe中训练出来的model怎么样提取出来在matlab中使用？ - 机器学习 - 知乎</a><br  /></li>
+<li><a id="org965c7c6"></a>7. <a href="http://www.cnblogs.com/laiqun/p/6031925.html">ubuntu下 编译Caffe的Matlab接口 - QQLQ - 博客园</a><br  /></li>
+<li><a id="orgb022475"></a>8. <a href="http://coldmooon.github.io/2015/07/09/caffe/">Caffe 安装错误记录及解决办法 - Coldmooon's Blog</a><br  /></li>
+<li><a id="org4ef0b2c"></a>9. <a href="https://www.zybuluo.com/hanxiaoyang/note/526510">caffe MATLAB 图像识别 - 作业部落 Cmd Markdown 编辑阅读器</a><br  /></li>
+<li><a id="org2290e31"></a>10. <a href="http://www.dongcoder.com/detail-100486.html">	caffe在windows 下的配置及matlab接口编译（无GPU）-懂客-dongcoder.com</a><br  /></li>
+<li><a id="org7ba5673"></a>11. <a href="http://jesse1029.pixnet.net/blog/post/46006115-caffe">【紀錄】簡單記錄一下Caffe的Note @ A little space in my mind :: 痞客邦 PIXNET ::</a><br  /></li>
+<li><a id="org5218183"></a>12. (推薦) <a href="http://www.tqcto.com/article/framework/9204.html">windows 10 下 Caffe + Matlab 部署 - web开发 - 爱上编程技术博客</a><br  /></li>
+<li><a id="org9f22f76"></a>13. (SDK未安裝會遇到的BUG) <a href="http://stackoverflow.com/questions/31981810/error-building-sample-driver-an-sdk-corresponding-to-wdk-version-8-1-was-not">visual studio - Error building sample driver: An SDK corresponding to WDK version '8.1' was not found - Stack Overflow</a><br  /></li>
+<li><a id="org0a3f102"></a>14. (原本想用WDK10而查詢到的資訊) <a href="https://msdn.microsoft.com/windows/hardware/drivers/develop/converting-wdk-8-1-projects-to-wdk-10">Converting WDK 8.1 Projects to WDK 10</a><br  /></li>
+<li><a id="orgad4a866"></a>15. (14點的中文版本) <a href="https://msdn.microsoft.com/zh-cn/library/windows/hardware/mt270257(v=vs.85).aspx">将 WDK 8.1 项目转换为 WDK 10 (Windows Drivers)</a><br  /></li>
+<li><a id="orge8c5d4c"></a>16. (提到WDK10可能會遇到問題建議用WDK8.1) <a href="http://stackoverflow.com/questions/31981810/error-building-sample-driver-an-sdk-corresponding-to-wdk-version-8-1-was-not">visual studio - Error building sample driver: An SDK corresponding to WDK version '8.1' was not found - Stack Overflow</a><br  /></li>
+<li><a id="orgc55bdd9"></a>17. (為什麼Visual Studio 2015沒有被caffe支持) <a href="https://github.com/BVLC/caffe/issues/3966">When will Visual Studio 2015 be supported? · Issue #3966 · BVLC/caffe · GitHub</a><br  /></li>
+<li><a id="org4c12468"></a>18. <a href="http://www.aichengxu.com/other/1386439.htm">Caffe+Win使用笔记 - 爱程序网</a><br  /></li>
+<li><a id="org8eee462"></a>19. <a href="http://caffecn.cn/">Caffe中国用户社区</a><br  /></li>
+<li><a id="org1e4b28a"></a>20. (error<sub>C2220</sub> 解法) <a href="http://stackoverflow.com/questions/18225636/error-c2220-warning-treated-as-error-no-object-file-generated">c++ - error C2220: warning treated as error - no 'object' file generated - Stack Overflow</a><br  /></li>
+<li><a id="orga23135d"></a>21. (正確解法) <a href="https://github.com/BVLC/caffe/issues/3904">compile error on caffe windows · Issue #3904 · BVLC/caffe · GitHub</a><br  /></li>
+<li><a id="org1ac76a6"></a>22. (正確解法) <a href="http://www.cnblogs.com/zjutzz/p/5948566.html">【caffe】无法找到gpu/mxGPUArray.h: No such file or directory - ChrisZZ - 博客园</a><br  /></li>
+<li><a id="org50a699a"></a>23. (正確解法) <a href="http://caffecn.cn/?/question/414">微软caffe的matlab接口:undefined function or variable 'caffe_' - Caffe中国用户社区</a><br  /></li></ul>
+</div>
+
+<div id="outline-container-org7c92683" class="outline-2">
+<h2 id="org7c92683"></h2>
+<div class="outline-text-2" id="text-org7c92683">
+<hr  />
+<div class="note">
+<p>
+右下角的 <b>OPEN CHAT</b> 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+</p>
+
+</div>
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">&#26085;&#26399;: 2017--</p>
+<p class="author">&#20316;&#32773;: fatfingererr</p>
+<p class="date">Created: 2017-02-10 Fri 15:54</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

@@ -21,6 +21,7 @@
 - 不用登入，選擇 Visual Studio Community 2015 下載社區版
 
 
+
 * 安裝 nVidia CUDA 
 - 下載地址：[[https://developer.nvidia.com/cuda-downloads][CUDA 8.0 Downloads | NVIDIA Developer]]
 - 使用版本為 8.0.61
@@ -61,10 +62,12 @@ copy CommonSettings.props.example CommonSettings.props
 
 - 開啟 CommonSettings.props
 - 搜尋 cuDnnPath 找到 cuDnnPath 標籤，添加 cuDNN 路徑
+- 同時搜尋 CudaVersion 標籤並更新 CUDA 版本到 8.0
 
 #+BEGIN_SRC xml
 ...
 <cuDnnPath>C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v8.0\cuDNN</cuDnnPath>
+<CudaVersion>8.0</CudaVersion>
 ...
 #+END_SRC
 
@@ -84,6 +87,12 @@ copy CommonSettings.props.example CommonSettings.props
 ...
 #+END_SRC
 
+* 開啟 Visual Studio 2015 
+- 你要有 Microsoft 帳號，沒有就辦一個吧
+- 他會要你做一堆奇怪的設定，你就跟著做就對了，例如要你開一個 Visual Studio 的 project
+- 反正你只要開啟視窗就好了，開啟 Visual Studio 視窗之後選擇「檔案／開啟／檔案...」
+- 選擇 ms-caffe/windows 中的 caffe.sln 開啟
+- 在 Visual Studio 上方工具列點選「建置／建置專案」
 
 
 #+begin_warning
@@ -103,19 +112,30 @@ copy CommonSettings.props.example CommonSettings.props
 ***** 9. [[https://www.zybuluo.com/hanxiaoyang/note/526510][caffe MATLAB 图像识别 - 作业部落 Cmd Markdown 编辑阅读器]]
 ***** 10. [[http://www.dongcoder.com/detail-100486.html][	caffe在windows 下的配置及matlab接口编译（无GPU）-懂客-dongcoder.com]]
 ***** 11. [[http://jesse1029.pixnet.net/blog/post/46006115-caffe][【紀錄】簡單記錄一下Caffe的Note @ A little space in my mind :: 痞客邦 PIXNET ::]]
-***** 12. (推薦) [[http://www.tqcto.com/article/framework/9204.html][windows 10 下 Caffe + Matlab 部署 - web开发 - 爱上编程技术博客]]
+***** 12. (推薦) [[http://www.tqcto.com/article/framework/9204.html][windows 10 下 Caffe + Matlab 部署 - web开发 - 爱上编程技术博客]] 
+***** 13. (SDK未安裝會遇到的BUG) [[http://stackoverflow.com/questions/31981810/error-building-sample-driver-an-sdk-corresponding-to-wdk-version-8-1-was-not][visual studio - Error building sample driver: An SDK corresponding to WDK version '8.1' was not found - Stack Overflow]]
+***** 14. (原本想用WDK10而查詢到的資訊) [[https://msdn.microsoft.com/windows/hardware/drivers/develop/converting-wdk-8-1-projects-to-wdk-10][Converting WDK 8.1 Projects to WDK 10]]
+***** 15. (14點的中文版本) [[https://msdn.microsoft.com/zh-cn/library/windows/hardware/mt270257(v=vs.85).aspx][将 WDK 8.1 项目转换为 WDK 10 (Windows Drivers)]]
+***** 16. (提到WDK10可能會遇到問題建議用WDK8.1) [[http://stackoverflow.com/questions/31981810/error-building-sample-driver-an-sdk-corresponding-to-wdk-version-8-1-was-not][visual studio - Error building sample driver: An SDK corresponding to WDK version '8.1' was not found - Stack Overflow]]
+***** 17. (為什麼Visual Studio 2015沒有被caffe支持) [[https://github.com/BVLC/caffe/issues/3966][When will Visual Studio 2015 be supported? · Issue #3966 · BVLC/caffe · GitHub]]
+***** 18. [[http://www.aichengxu.com/other/1386439.htm][Caffe+Win使用笔记 - 爱程序网]]
+***** 19. [[http://caffecn.cn/][Caffe中国用户社区]]
+***** 20. (error_C2220 解法) [[http://stackoverflow.com/questions/18225636/error-c2220-warning-treated-as-error-no-object-file-generated][c++ - error C2220: warning treated as error - no 'object' file generated - Stack Overflow]]
+***** 21. (正確解法) [[https://github.com/BVLC/caffe/issues/3904][compile error on caffe windows · Issue #3904 · BVLC/caffe · GitHub]]
+***** 22. (正確解法) [[http://www.cnblogs.com/zjutzz/p/5948566.html][【caffe】无法找到gpu/mxGPUArray.h: No such file or directory - ChrisZZ - 博客园]]
+***** 23. (正確解法) [[http://caffecn.cn/?/question/414][微软caffe的matlab接口:undefined function or variable 'caffe_' - Caffe中国用户社区]]
 
+* 
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
 
-     -----
-     #+begin_note
-     右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
-     #+end_note
-
-     #+BEGIN_EXPORT html
-     <script>
-     ((window.gitter = {}).chat = {}).options = {
-     room: 'fatfingererr-notes/Lobby'
-     };
-     </script>
-     <script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-     #+END_EXPORT
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT
