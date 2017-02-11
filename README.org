@@ -15,6 +15,10 @@
 
 * 筆記列表
 
+| [[/note/hoplon.html][Hoplon 學習筆記]] | GitHub | PDF |
+|                 |        |     |
+|                 |        |     |
+
 [[http://www.ffe.tw/note/emacs.html][emacs]]
 
 -----

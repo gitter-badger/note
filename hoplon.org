@@ -16,6 +16,14 @@
 
 -----
 
+* 安裝 Boot
+***** TODO 由於我已經安裝過了，還沒有重新安裝紀錄如何安裝。
+
+* 
+
+
+
+* 
 #+begin_warning
 筆記還在紀錄中尚未上傳，下方若有參考資料可先行閱讀
 #+end_warning
@@ -29,7 +37,7 @@
 
 
 
------
+   -----
 * 參考資料
 ***** 1. 官方文件 [[https://github.com/hoplon/hoplon/wiki/Get-Started][Get Started · hoplon/hoplon Wiki · GitHub]]
 
