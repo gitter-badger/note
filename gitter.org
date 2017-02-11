@@ -1,0 +1,52 @@
+#+TITLE:     Gitter 學習筆記
+#+AUTHOR:    fatfingererr - www.ffe.tw
+#+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
+#+DATE:      2017-02-08
+#+LANGUAGE:  zh-TW
+#+OPTIONS:   H:4 num:nil toc:2
+#+SETUPFILE: theme-readtheorg.setup
+
+#+begin_EXPORT html
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/gitter.org" class="fa fa-github"> GitHub</a>
+</div>
+#+end_EXPORT
+
+-----
+
+#+begin_warning
+筆記還在紀錄中尚未上傳，下方若有參考資料可先行閱讀
+#+end_warning
+
+
+
+
+
+
+
+
+
+
+-----
+* 參考資料
+***** TODO 1. [[https://github.com/f2etw/weekly-collection/wiki/Gitter-%E4%B8%AD%E5%AF%A6%E7%94%A8%E8%A8%8E%E8%AB%96%E6%8A%80%E5%B7%A7][Gitter 中實用討論技巧 · f2etw/weekly-collection Wiki · GitHub]]
+***** TODO 2. [[http://blog.jobbole.com/103096/][Github 徽章整理 - 文章 - 伯乐在线]]
+***** TODO 3. [[http://coldnew.github.io/blog/2015/11-23_clojure_irc_gitter_bot/][ 使用 clojure 寫 irc 與 gitter 機器人 | coldnew's blog ]]
+***** TODO 4. [[https://github.com/hueitan/blog/blob/master/articles/%E6%88%91%E5%9C%A8%20GitHub%20%E4%B8%8A%E5%AD%B8%E7%BF%92%20Open%20Source%EF%BC%8D%E5%BE%BD%E7%AB%A0%E7%AF%87.md][blog/我在 GitHub 上學習 Open Source－徽章篇.md at master · hueitan/blog · GitHub]]
+
+
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+<script>
+  ((window.gitter = {}).chat = {}).options = {
+    room: 'fatfingererr-notes/Lobby'
+  };
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT

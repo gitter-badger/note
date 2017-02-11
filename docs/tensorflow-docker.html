@@ -3,12 +3,12 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
 <head>
-<!-- 2017-02-09 Thu 00:06 -->
+<!-- 2017-02-09 Thu 15:16 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>開源學習筆記</title>
+<title>Tensorflow Docker 筆記</title>
 <meta name="generator" content="Org mode" />
-<meta name="author" content="fatfingererr" />
+<meta name="author" content="fatfingererr - www.ffe.tw" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
   .title  { text-align: center;
@@ -187,112 +187,6 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
 <style type="text/css">
  pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
-<style type="text/css">
- pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -342,39 +236,26 @@ for the JavaScript code in this tag.
 </head>
 <body>
 <div id="content">
-<h1 class="title">開源學習筆記</h1>
+<h1 class="title">Tensorflow Docker 筆記</h1>
 <div id="table-of-contents">
 <h2>&#30446;&#37636;</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org51b935a">怎樣做開源才有意義？</a></li>
-<li><a href="#org66ce992">參考資料</a></li>
+<li><a href="#orgf84f725">參考資料</a></li>
 </ul>
 </div>
 </div>
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
 <div class="right">
 <a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-<a href="https://github.com/fatfingererr/note/blob/master/openSource.org" class="fa fa-github"> GitHub</a>
+<a href="https://github.com/fatfingererr/note/blob/master/tensorflow-docker.org" class="fa fa-github"> GitHub</a>
 </div>
 
 <hr  />
 
-<div id="outline-container-org51b935a" class="outline-2">
-<h2 id="org51b935a">怎樣做開源才有意義？</h2>
-<div class="outline-text-2" id="text-org51b935a">
-</div><ul class="org-ul"><li><a id="org9564ef8"></a>作者：前阿里雲CTO章文嵩<br  /></li>
-<li><a id="orgb8b7c21"></a>開源的價值<br  /><div class="outline-text-6" id="text-orgb8b7c21">
-<ul class="org-ul">
-<li>開源往往有一個「共用」價值</li>
-<li>因此可以挪到其他應用場景復用的，開源才有意義</li>
-<li>所以開源往往也是相對偏底層與基礎的東西</li>
-<li>或者公司項目已經有足夠大的競爭優勢，那開源也有可能</li>
-</ul>
-
 <div class="warning">
 <p>
-筆記目前只寫了一些，下方若有參考資料可先行閱讀
+筆記還在紀錄中尚未上傳，下方若有參考資料可先行閱讀
 </p>
 
 </div>
@@ -389,15 +270,10 @@ for the JavaScript code in this tag.
 
 
 <hr  />
-
-<hr  />
-</div></li></ul>
-</div>
-<div id="outline-container-org66ce992" class="outline-2">
-<h2 id="org66ce992">參考資料</h2>
-<div class="outline-text-2" id="text-org66ce992">
-</div><ul class="org-ul"><li><a id="org94efe23"></a>1. <a href="http://www.infoq.com/cn/interviews/how-to-make-open-source-meaningful">章文嵩：怎样做开源才有意义？</a><br  /></li>
-<li><a id="org16e84ad"></a><span class="todo TODO">TODO</span> 2. <a href="https://github.com/hueitan/blog/blob/master/articles/%E6%88%91%E5%9C%A8%20GitHub%20%E4%B8%8A%E5%AD%B8%E7%BF%92%20Open%20Source.md">blog/我在 GitHub 上學習 Open Source.md at master · hueitan/blog · GitHub</a><br  /><div class="outline-text-6" id="text-org16e84ad">
+<div id="outline-container-orgf84f725" class="outline-2">
+<h2 id="orgf84f725">參考資料</h2>
+<div class="outline-text-2" id="text-orgf84f725">
+</div><ul class="org-ul"><li><a id="orgf5291e3"></a><span class="todo TODO">TODO</span> 1. <a href="http://wiki.jikexueyuan.com/project/tensorflow-zh/">TensorFlow官方文档中文版<sub>TensorFlow中文教程</sub><sub>TensorFlow开发中文手册</sub> PDF 下载-极客学院Wiki</a><br  /><div class="outline-text-6" id="text-orgf5291e3">
 <hr  />
 <div class="note">
 <p>
@@ -416,9 +292,9 @@ room: 'fatfingererr-notes/Lobby'
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="date">&#26085;&#26399;: 2017-02-08</p>
-<p class="author">&#20316;&#32773;: fatfingererr</p>
-<p class="date">Created: 2017-02-09 Thu 00:06</p>
+<p class="date">&#26085;&#26399;: 2017-02-09</p>
+<p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
+<p class="date">Created: 2017-02-09 Thu 15:16</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

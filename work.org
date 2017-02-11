@@ -22,8 +22,6 @@
 * Today
 ** 2017-02-06 Mon
 ***** look clockwork RNN
-
-
 ***** 
 
 

@@ -15,9 +15,6 @@
 
 * 筆記列表
 
-  #+ATTR_HTML: title="Join the chat at https://gitter.im/fatfingererr-notes/Lobby"
-  [[https://gitter.im/fatfingererr-notes/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge][file:https://badges.gitter.im/fatfingererr-notes/Lobby.svg]]
-
 [[http://www.ffe.tw/note/emacs.html][emacs]]
 
 -----
@@ -29,6 +26,9 @@
     (org-html-export-to-html)
     (save-window-excursion
         (async-shell-command "moveHtmlToDocs") nil 0)
+    (if (file-directory-p "images")
+        ()
+        (dired-create-directory "images"))
     (ffe/auto-git-push)
 )
 #+END_SRC

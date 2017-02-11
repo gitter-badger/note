@@ -1,21 +1,22 @@
 #+TITLE:     Graphviz 基本操作
-#+AUTHOR:    fatfingererr - www.ffe.tw
+#+AUTHOR:    fatfingererr
 #+EMAIL:     (concat "fatfingererr" at-sign "gmail.com")
 #+DATE:      2017-02-03
 #+LANGUAGE:  zh-TW
 #+OPTIONS:   H:4 num:nil toc:2
 #+SETUPFILE: theme-readtheorg.setup
-#+STARTUP:   showall
-
+y
 #+begin_EXPORT html
 <script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
-<div class="right"><a href="https://github.com/fatfingererr/note/graphviz.org" class="fa fa-github"> GitHub</a></div>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/graphviz.org" class="fa fa-github"> GitHub</a>
+</div>
 #+end_EXPORT
 
-
-
-* 簡單的圖例
-
+-----
+* graph - Simple Graph
+- 簡單的圖例
 #+BEGIN_SRC shell
 graph graphname { 
     a -- b; 
@@ -34,7 +35,8 @@ graph graphname {
 }
 #+END_SRC
 
-* Rank Direction : Left to Right
+* rankdir - Rank Direction
+- 從左至右的構圖
 #+BEGIN_SRC shell
 graph graphname {
     rankdir=LR;  //Rank Direction Left to Right
@@ -58,7 +60,8 @@ graph graphname {
 #+RESULTS:
 [[file:images/simple-left-to-right.png]]
 
-* 簡單的有向圖
+* digraph - Digraph 
+- 簡單的有向圖
 #+BEGIN_SRC shell
 digraph graphname{
     a -> b;
@@ -126,17 +129,34 @@ digraph graphname {
 [[file:simple-digraph-with-color.png]]
 
 
-* 參考資料
+#+begin_warning
+筆記可能還會不定期增加，下方若有 TODO 的參考資料可先行閱讀
+#+end_warning
 
-1. [[http://casatwy.com/shi-yong-dotyu-yan-he-graphvizhui-tu-fan-yi.html][使用DOT语言和Graphviz绘图(翻译) - Casa Taloyum]]
-   - 很不錯的詳細介紹，本筆記多數來自於此
-2. [[http://hustlijian.github.io/tutorial/2015/05/29/graphviz-learn.html][绘图工具graphviz学习使用 | lijian]]
-3. [[https://www.ibm.com/developerworks/cn/aix/library/au-aix-graphviz/][使用 Graphviz 生成自动化系统图]]
-4. [[http://blog.csdn.net/stormdpzh/article/details/14648827][DOT + graphviz 轻松画图神器 - stormdpzh的专栏 - 博客频道 - CSDN.NET]]
-5. [[http://icodeit.org/2012/01/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/][使用graphviz绘制流程图 - I code it]]
-6. [[https://program-think.blogspot.com/2016/02/opensource-review-graphviz.html][开源项目：【自动】绘图工具 Graphviz——《太子党关系网络》就是用它制作]]
-7. [[http://www.magicsite.cn/blog/other/other162165.html][绘图神器  —— Graphviz dot 语言介绍]]
-8. [[http://www.coin163.com/it/x2164633625352757490][Graphviz简介 - Coin163]]
-9. [[http://www.cnblogs.com/sld666666/archive/2010/06/25/1765510.html][利用Graphviz 画结构图 - sld666666 - 博客园]]
-10. [[http://www.aichengxu.com/other/10659814.htm][graphviz dot简介 - 爱程序网]]
-11. [[http://workspace.fx114.net/qa-209-148563.aspx][DOT + graphviz 轻松画图]]
+-----
+* 參考資料
+***** 1. [[http://casatwy.com/shi-yong-dotyu-yan-he-graphvizhui-tu-fan-yi.html][使用DOT语言和Graphviz绘图(翻译) - Casa Taloyum]]
+***** TODO 2. [[http://hustlijian.github.io/tutorial/2015/05/29/graphviz-learn.html][绘图工具graphviz学习使用 | lijian]]
+***** TODO 3. [[https://www.ibm.com/developerworks/cn/aix/library/au-aix-graphviz/][使用 Graphviz 生成自动化系统图]]
+***** TODO 4. [[http://blog.csdn.net/stormdpzh/article/details/14648827][DOT + graphviz 轻松画图神器 - stormdpzh的专栏 - 博客频道 - CSDN.NET]]
+***** TODO 5. [[http://icodeit.org/2012/01/%E4%BD%BF%E7%94%A8graphviz%E7%BB%98%E5%88%B6%E6%B5%81%E7%A8%8B%E5%9B%BE/][使用graphviz绘制流程图 - I code it]]
+***** TODO 6. [[https://program-think.blogspot.com/2016/02/opensource-review-graphviz.html][开源项目：【自动】绘图工具 Graphviz——《太子党关系网络》就是用它制作]]
+***** TODO 7. [[http://www.magicsite.cn/blog/other/other162165.html][绘图神器  —— Graphviz dot 语言介绍]]
+***** TODO 8. [[http://www.coin163.com/it/x2164633625352757490][Graphviz简介 - Coin163]]
+***** TODO 9. [[http://www.cnblogs.com/sld666666/archive/2010/06/25/1765510.html][利用Graphviz 画结构图 - sld666666 - 博客园]]
+***** TODO 10. [[http://www.aichengxu.com/other/10659814.htm][graphviz dot简介 - 爱程序网]]
+***** TODO 11. [[http://workspace.fx114.net/qa-209-148563.aspx][DOT + graphviz 轻松画图]]
+
+-----
+#+begin_note
+右下角的 *OPEN CHAT* 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+#+end_note
+
+#+BEGIN_EXPORT html
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+#+END_EXPORT

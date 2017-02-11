@@ -1,0 +1,2146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW" xml:lang="zh-TW">
+<head>
+<!-- 2017-02-09 Thu 10:37 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Spacemacs 學習筆記</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="fatfingererr - www.ffe.tw" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<style type="text/css">
+ pre.src {background-color: #292b2e; color: #b2b2b2;}</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Spacemacs 學習筆記</h1>
+<div id="table-of-contents">
+<h2>&#30446;&#37636;</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org72e56d5">org-mode</a></li>
+<li><a href="#org5657783">Learn Emacs in 21 Days</a>
+<ul>
+<li><a href="#org9baee17">常用的熱鍵</a></li>
+<li><a href="#org92ec6bb">setq 與 setq-default 差別</a></li>
+<li><a href="#org4817299">Git 管理然後扔掉輩分tuda 檔案</a></li>
+<li><a href="#orgfeb4e23">electric-indent-mode</a></li>
+<li><a href="#orgc3f9cbf">開啟的時候是全螢幕的</a></li>
+<li><a href="#orgcbed108">加鉤子：Major Mode 啟動會啟動所有鉤子</a></li>
+<li><a href="#org8e9dcbf">delete-selection-mode</a></li>
+<li><a href="#orgfec3477">code-block 中打開 block buffer</a></li>
+<li><a href="#org77adfdc">Org-mode</a></li>
+<li><a href="#org8b03c8b">define-advice</a></li>
+<li><a href="#org7670dd6">magit</a></li>
+<li><a href="#org458c8c9">occur</a></li>
+<li><a href="#org5bbad2b">popwin</a></li>
+<li><a href="#org197e457">imenu</a></li>
+<li><a href="#org7fb2be2">expand-region (M-m v)</a></li>
+<li><a href="#org45d39c0">iedit-mode</a></li>
+<li><a href="#org685a995">創建 Layer</a></li>
+<li><a href="#org20fe0a1">Org-pomodoro (esc-RET p)</a></li>
+<li><a href="#org15ccf86">customize-group</a></li>
+<li><a href="#org312d27e">Org-capture (C-c c)</a></li>
+<li><a href="#org8271875">insert-chrome-web-url</a></li>
+<li><a href="#org9fd4da0">dired :shitf+6 回到上面</a></li>
+<li><a href="#org040e1de">editalbe dired (C-c C-q)</a></li>
+<li><a href="#orgc353393">helm-ag (一次修改整個 folder多個檔)</a></li>
+<li><a href="#orgca3103c">yasnippet ( M-m i s )</a></li>
+<li><a href="#org093975b">delete backward ( C-backspc )</a></li>
+<li><a href="#org457462b">Evil-mode (class7)</a></li>
+<li><a href="#orgf4bc1d6">org-mode insert code block ( &lt;s + tab )</a></li>
+<li><a href="#org61a7aca">whichkey-mode ( M-m )</a></li>
+<li><a href="#orgd0e469c">serach org node ( C-c a s)</a></li>
+<li><a href="#org3b5813e">mwe-log-commands</a></li>
+<li><a href="#orga96c87e">Universal args ( C-u )</a></li>
+<li><a href="#orgc17e880">Macro 聚集or宏</a></li>
+<li><a href="#org1fa109c">use-package</a></li>
+<li><a href="#org924326e">pretty print ( pp 指令 )</a></li>
+<li><a href="#org6d1d867">company-mode　</a></li>
+<li><a href="#orgbf287f8">group backend</a></li>
+<li><a href="#orga1f81d4">這裡開始是 spacemacs</a></li>
+<li><a href="#org5353552">.spacemacs.d</a></li>
+<li><a href="#org79f26d5">spacemacs 增加啟動速度</a></li>
+<li><a href="#orgcf2e5a2">fullscreen</a></li>
+<li><a href="#org5032463">dotspacemacs-excluded-packages</a></li>
+<li><a href="#org50bf16f">查找各種 layer ( M-m h spc )</a></li>
+<li><a href="#orgc2f1b47">還不會用 layer 之前先用 user-config 當作 init.el</a></li>
+<li><a href="#org44c9ff0">讓 customize-group 的個人設定存到 .spacemacs.d 當作 custom.elpa</a></li>
+<li><a href="#org62badf3">安裝 doom-themes</a></li>
+<li><a href="#org58d37c3">dotspacemacs-themes</a></li>
+<li><a href="#orgb31c0af"><span class="todo TODO">TODO</span> M-x align-regexp</a></li>
+<li><a href="#org0b46a2e">自訂自己的 layer</a></li>
+<li><a href="#org448a9d8">修改狀態列波浪區隔變成 powerline arrow</a></li>
+<li><a href="#org5e774b3">ERROR : enabling flyspell mode</a></li>
+<li><a href="#org2c6164d">leader-key</a></li>
+<li><a href="#orgfe414b4">use-package 的 macroexpand</a></li>
+<li><a href="#org4223be3">help ( M-m h SPC )</a></li>
+<li><a href="#org5eef898">post-init 與 pre-init</a></li>
+<li><a href="#org12a65a9">:location 用法</a></li>
+<li><a href="#org9f0867c">沒有在 melpa 上的 package 安裝方法</a></li>
+<li><a href="#org96f2e8c">大量配置需要重新設定 ( layer.el )</a></li>
+<li><a href="#orgfb5def6">查詢目前所有生成的變數與文檔 ( M-m h d v )</a></li>
+<li><a href="#org8376b41">查詢目前所有的keymap (M-m h d k )</a></li>
+<li><a href="#orgccfc30e">文件內搜尋 (M-s o)</a></li>
+<li><a href="#orgdace2ef">自訂配置的方向</a></li>
+<li><a href="#orgb9bb7ad">檔案處理的相關操作</a></li>
+<li><a href="#org2c7c7f2">buffer 的相關操作</a></li>
+<li><a href="#org0246c7b">hack elisp 的叫巧</a></li>
+<li><a href="#org3383c11">Advice</a></li>
+<li><a href="#org47fa22a">edebug - elisp-debug (C-x X &#x2026;)</a></li>
+<li><a href="#org59380bf">自己做 minor mode</a></li>
+<li><a href="#org7db0998">layer design</a></li>
+<li><a href="#org26ba79c">prelude/purcell/prelude/abo-abo/github/spacemacs/Elisp入門(葉文斌,2007)翻譯得不錯,2-3小時看完</a></li>
+<li><a href="#org2059c01"><span class="todo TODO">TODO</span> twitter 應該也要個 org 一個禮拜搜索一兩次</a></li>
+<li><a href="#org2f51af7"><span class="todo TODO">TODO</span> 仿照 lambda 一樣做一些特殊符號</a></li>
+<li><a href="#orgbf0b305">prodigy 方便啟動 web 服務</a></li>
+<li><a href="#org532dc82">Deft 可以搜索配置</a></li>
+<li><a href="#org8d752c5">emacs 做 data analysis 的各種 hack 找看看</a></li>
+<li><a href="#org98bff05">Dired Mode</a></li>
+<li><a href="#org0c14305">Layout 功能 ( M-m l )</a></li>
+<li><a href="#org45d476f">window 操作 ( M-m ** )</a></li>
+<li><a href="#orgaa59a44">project 操作 ( M-m p ** )</a></li>
+<li><a href="#org82f0f98"><span class="todo TODO">TODO</span> 針對不同螢幕數啟用不同layout</a></li>
+<li><a href="#orgdc59f27">Ctags for auto-completion (感覺我用不到)</a></li>
+<li><a href="#orgcaf094f">ielm ( 可綁個 global key)</a></li>
+<li><a href="#org2fbf5e3">lispy ( vi-like Paredit )</a></li>
+<li><a href="#orgf0ee2af">看山人 keybinding 了解怎麼自己來綁定</a></li>
+<li><a href="#org186eed3">reddit 訂閱大神 blog</a></li>
+<li><a href="#org8054ed1"><span class="todo TODO">TODO</span> GTD(Get Thing Done)工具</a></li>
+<li><a href="#orgc07aa1f"><span class="todo TODO">TODO</span> 文學編程</a></li>
+<li><a href="#org8773286"><span class="todo TODO">TODO</span> arxiv 在 emacs 中的用法</a></li>
+<li><a href="#org316f4ef"><span class="todo TODO">TODO</span> etag 用法</a></li>
+<li><a href="#org7ed42f8"><span class="todo TODO">TODO</span> Highlight-symbol-mode</a></li>
+<li><a href="#org9cf8b77">快速開啟 .spacemacs.d 的 init.el ( M-m f e d)</a></li>
+<li><a href="#org028a66a">fasd (一直裝不起來以後再研究)</a></li>
+<li><a href="#orgaa51955">command-log-mode ( C-c o )</a></li>
+<li><a href="#orge413289">telegram 與 emacs/IRC</a></li>
+<li><a href="#org07d05c8">給當前目錄底下的文件建立特別設置</a></li>
+<li><a href="#org743b7e4">latex 顯示 有沒有套件呢</a></li>
+<li><a href="#orgbf07611">bookmark 怎麼用呢</a></li>
+<li><a href="#org7a0968e">外匯的cal 怎麼用呢</a></li>
+<li><a href="#orgb6cb49d">檔案裡面怎麼跳轉函數呢</a></li>
+<li><a href="#orgce07e1d">counsel-git</a></li>
+<li><a href="#org41271ad">安裝 package 之前可以先查是否有安裝了 ( M-m h SPC )</a></li>
+<li><a href="#orgb8d36e0">更多的工作</a></li>
+<li><a href="#org608e41b">think</a></li>
+</ul>
+</li>
+<li><a href="#orge28bab0"><span class="todo TODO">TODO</span> todo</a></li>
+<li><a href="#orgb8b9a64">參考資料</a></li>
+</ul>
+</div>
+</div>
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+<div class="right">
+<a href="https://www.ffe.tw/series.html" class="fa fa-home"> Blog</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="https://github.com/fatfingererr/note/blob/master/spacemacs.org" class="fa fa-github"> GitHub</a>
+</div>
+
+<hr  />
+
+<div class="warning">
+<p>
+筆記尚未有條理地整理過，下方若有參考資料可先行閱讀
+</p>
+
+</div>
+
+
+<div id="outline-container-org72e56d5" class="outline-2">
+<h2 id="org72e56d5">org-mode</h2>
+</div>
+
+
+
+<div id="outline-container-org5657783" class="outline-2">
+<h2 id="org5657783">Learn Emacs in 21 Days</h2>
+<div class="outline-text-2" id="text-org5657783">
+<a href="https://github.com/emacs-china/Spacemacs-rocks">GitHub : emacs-china/Spacemacs-rocks</a>
+</div>
+
+<div id="outline-container-org9baee17" class="outline-3">
+<h3 id="org9baee17">常用的熱鍵</h3>
+<div class="outline-text-3" id="text-org9baee17">
+<ul class="org-ul">
+<li>C-v : view next screen</li>
+<li>M-v : view previs screen</li>
+<li>C-l : middle screen</li>
+
+<li>C-P : 前一行</li>
+<li>C-b : 向後</li>
+<li>C-f : 向前</li>
+<li>C-n : 後一行</li>
+
+<li>M-f : 前一個標點</li>
+<li>M-b : 後一個標點</li>
+
+<li>C-a : 移到行首</li>
+<li>C-e : 移到行末</li>
+
+<li>C-j : enter</li>
+</ul>
+
+
+
+
+<ul class="org-ul">
+<li>M-a :</li>
+<li>M-e :</li>
+
+<li>C-h k :</li>
+<li>C-h v :</li>
+<li>C-h f :</li>
+</ul>
+
+<p>
+(+ 2 2)
+</p>
+
+<p>
+(setq my-name "yoyoyoyo")
+(message my-name)
+</p>
+
+<p>
+(defun my-func ()
+   (interactive)
+   (message "     , %s" my-name))
+</p>
+
+<p>
+(my-func)
+</p>
+
+<p>
+(global-set-key (kbd "&lt;f2&gt;") 'my-func)
+</p>
+
+<p>
+其實經常會忘記這些熱鍵,但這些熱鍵還不錯
+</p>
+
+
+<p>
+(defun open-my-init-file ()
+    (interactive)
+    (find-file "~/.emacs.d/init.el"))
+</p>
+
+<p>
+(global-set-key (kbd "&lt;f2&gt;") 'open-my-init-file)
+</p>
+
+<p>
+這是很重要的,隨時hack Emacs 進去init 改config
+</p>
+
+<p>
+Company install and 自動補全
+</p>
+
+<p>
+(global-company-mode t)
+1 和 t 是一樣的
+</p>
+
+<p>
+install happen 
+</p>
+
+<p>
+C-h m 顯示所有 minor mode
+</p>
+</div>
+
+<div id="outline-container-orgbb4dccc" class="outline-4">
+<h4 id="orgbb4dccc">滑鼠變成 bar</h4>
+<div class="outline-text-4" id="text-orgbb4dccc">
+<p>
+(setq-default cursor-type 'bar)
+</p>
+
+
+<p>
+C-x C-r 最近使用的檔案
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org92ec6bb" class="outline-3">
+<h3 id="org92ec6bb">setq 與 setq-default 差別</h3>
+<div class="outline-text-3" id="text-org92ec6bb">
+<ul class="org-ul">
+<li>setq 只影響當前 buffer</li>
+<li>setq-default 是影響全部的值</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4817299" class="outline-3">
+<h3 id="org4817299">Git 管理然後扔掉輩分tuda 檔案</h3>
+<div class="outline-text-3" id="text-org4817299">
+<p>
+(setq make-backup-files nil)
+</p>
+
+<p>
+就不會產生 tuda 檔案
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orgfeb4e23" class="outline-3">
+<h3 id="orgfeb4e23">electric-indent-mode</h3>
+<div class="outline-text-3" id="text-orgfeb4e23">
+<p>
+(electric-indent-mode t)
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc3f9cbf" class="outline-3">
+<h3 id="orgc3f9cbf">開啟的時候是全螢幕的</h3>
+<div class="outline-text-3" id="text-orgc3f9cbf">
+<p>
+(setq initial-frame-alist (quote ((fullscreen, maximized))))
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcbed108" class="outline-3">
+<h3 id="orgcbed108">加鉤子：Major Mode 啟動會啟動所有鉤子</h3>
+<div class="outline-text-3" id="text-orgcbed108">
+<p>
+(add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org8e9dcbf" class="outline-3">
+<h3 id="org8e9dcbf">delete-selection-mode</h3>
+<div class="outline-text-3" id="text-org8e9dcbf">
+<p>
+(delete-selection-mode t)
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgfec3477" class="outline-3">
+<h3 id="orgfec3477">code-block 中打開 block buffer</h3>
+<div class="outline-text-3" id="text-orgfec3477">
+<p>
+在 #+BEGIN<sub>SRC</sub> 到 #+END<sub>SRC</sub> 中按 C-c ' 進入 block buffer
+就可以在 code block 的語言的 major-mode 來做, 可以有些高亮
+按 C-c '回來
+</p>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">require</span> '<span style="color: #a45bad;">org</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org77adfdc" class="outline-3">
+<h3 id="org77adfdc">Org-mode</h3>
+<div class="outline-text-3" id="text-org77adfdc">
+<p>
+C-c C-t 切換 TODO/DONE
+</p>
+
+<p>
+C-c C-e org 導出
+</p>
+
+<p>
+M-Ret 指令都要换掉变成 esc-Ret
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b03c8b" class="outline-3">
+<h3 id="org8b03c8b">define-advice</h3>
+<div class="outline-text-3" id="text-org8b03c8b">
+<p>
+lisp 的 macro , 可以類比於一個模板, 類似JAVA的AOT
+</p>
+
+<p>
+example:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>defun-advice show-paren-function <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7;">:around</span> <span style="color: #2d9574;">(</span>fn<span style="color: #2d9574;">)</span> fix-show-paren-function<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2d9574;">"Highlight enclosing parens."</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">cond</span> <span style="color: #2d9574;">(</span><span style="color: #67b11d;">(</span>looking-at-p <span style="color: #2d9574;">"\\s("</span><span style="color: #67b11d;">)</span> <span style="color: #67b11d;">(</span>funcall fn<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span>
+        <span style="color: #2d9574;">(</span>t <span style="color: #67b11d;">(</span><span style="color: #4f97d7; font-weight: bold;">save-excursion</span>
+             <span style="color: #b1951d;">(</span><span style="color: #4f97d7; font-weight: bold;">ignore-errors</span> <span style="color: #4f97d7;">(</span>backward-up-lost<span style="color: #4f97d7;">)</span><span style="color: #b1951d;">)</span>
+             <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">funcall &#26371;&#21628;&#21483;&#20989;&#25976;</span>
+             <span style="color: #b1951d;">(</span>funcall fn<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7670dd6" class="outline-3">
+<h3 id="org7670dd6">magit</h3>
+<div class="outline-text-3" id="text-org7670dd6">
+<p>
+M-m g s -&gt; unstage 前面按 s
+M-m g i : init
+s-1
+tab to view diffs 
+</p>
+
+
+<p>
+c c -&gt; c-c c-c commit
+</p>
+</div>
+
+<div id="outline-container-org2a606aa" class="outline-4">
+<h4 id="org2a606aa">commits in action</h4>
+<div class="outline-text-4" id="text-org2a606aa">
+<p>
+Ammend (c - a ) stage之後還沒commit的修改添加進去已經stage的東西, 一些臨時操作很有用
+第一行不要超過72字符, 好處是看gitlog不會被截斷
+更詳細的說明要空一行再添加
+</p>
+
+<p>
+M-m g s -&gt; l l 可以看 commit 消息
+</p>
+
+<p>
+set-upstream 這樣之後 git push 就不用再加上分支了
+</p>
+
+<p>
+squash ( r l ) 當有兩個 commit 還沒 push 想結合起來變成一個的時候
+</p>
+
+<p>
+test test
+test test
+</p>
+
+<p>
+reset ( l l # ) l l 進入到當前分支, 把游標放到要回退的 commit 再按 # 
+</p>
+
+<p>
+select 行 commit : 在 unstage 的檔案前面按 tab 然後滑到要選的行前面按 v 就可以開始選, 選完按 s 做 stage
+文件前面按 x 就可以直接丟掉, 或是 v 進入選擇模式, 
+</p>
+
+<p>
+revert 
+</p>
+
+<p>
+以後再多練習囉
+</p>
+</div>
+</div>
+
+<div id="outline-container-org89b3e8d" class="outline-4">
+<h4 id="org89b3e8d">bench</h4>
+<div class="outline-text-4" id="text-org89b3e8d">
+<p>
+b B -&gt; 從哪個分支再建立一個分支出來
+b b  切換到其他分支
+m m merge回來分支
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org458c8c9" class="outline-3">
+<h3 id="org458c8c9">occur</h3>
+<div class="outline-text-3" id="text-org458c8c9">
+<ul class="org-ul">
+<li>M-s o 輸入東西就會搜尋這個檔案中的這個東西出現的地方</li>
+<li>會記憶上次你搜尋的東西</li>
+<li>在 Occur-mode 底下你可以按 e 就可以進入 Occur-Edit mode 可以直接改rrr</li>
+<li>比起一般編輯器用 find and replace 會快很多</li>
+<li>occur-dwim</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5bbad2b" class="outline-3">
+<h3 id="org5bbad2b">popwin</h3>
+<div class="outline-text-3" id="text-org5bbad2b">
+<ul class="org-ul">
+<li>執行 customize-gruop 然後搜尋 popwin</li>
+<li>popwin 中可以設定 Popup Window 的位置和大小</li>
+<li>最後用 C-x C-s 儲存設定</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org197e457" class="outline-3">
+<h3 id="org197e457">imenu</h3>
+<div class="outline-text-3" id="text-org197e457">
+<ul class="org-ul">
+<li>會列出現在這裡面所有的函數, 在 org 中可以依 outline 跳躍</li>
+<li>在 counsel 中也可以用 imenu : counsel-imenu (需安裝)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7fb2be2" class="outline-3">
+<h3 id="org7fb2be2">expand-region (M-m v)</h3>
+<div class="outline-text-3" id="text-org7fb2be2">
+<ul class="org-ul">
+<li>用滑鼠選擇區塊很慢</li>
+<li>一般來說用 C-x sp 慢慢滑範圍選取，或 M-shift-f 一個個詞跳</li>
+<li>M-m v 從游標位置左右擴充做選取，適合要選擇一個區塊的時候</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org45d39c0" class="outline-3">
+<h3 id="org45d39c0">iedit-mode</h3>
+<div class="outline-text-3" id="text-org45d39c0">
+<ul class="org-ul">
+<li>在一個單字或變量前面執行 iedit-mode 就會全文件對應的單字或變量一起改</li>
+<li>搭配 expand-region 就會很方便</li>
+<li>可在 customize-group 中修改 Face</li>
+</ul>
+
+<p>
+rrrrrrhelrrrrrrryoyoylo
+</p>
+
+
+
+<p>
+rrrrrrhelrrrrrrryoyoylo      
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org685a995" class="outline-3">
+<h3 id="org685a995">創建 Layer</h3>
+<div class="outline-text-3" id="text-org685a995">
+<p>
+M-x configuration-layer/create-layer
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org20fe0a1" class="outline-3">
+<h3 id="org20fe0a1">Org-pomodoro (esc-RET p)</h3>
+<div class="outline-text-3" id="text-org20fe0a1">
+<ul class="org-ul">
+<li>一樣可以到 customize-group 有很多可以修改
+<ul class="org-ul">
+<li>TODO 做個各國開盤時間倒數</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org15ccf86" class="outline-3">
+<h3 id="org15ccf86">customize-group</h3>
+<div class="outline-text-3" id="text-org15ccf86">
+<ul class="org-ul">
+<li>都會放到 custom.el</li>
+</ul>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org312d27e" class="outline-3">
+<h3 id="org312d27e">Org-capture (C-c c)</h3>
+<div class="outline-text-3" id="text-org312d27e">
+<ul class="org-ul">
+<li>快速記筆記的方法</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq org-capture-templates
+ '<span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">(</span><span style="color: #2d9574;">"i"</span> <span style="color: #2d9574;">"Idea"</span> entry <span style="color: #67b11d;">(</span>file+headline <span style="color: #2d9574;">"~/note/idea.org"</span> <span style="color: #2d9574;">"Idea"</span><span style="color: #67b11d;">)</span>
+  <span style="color: #2d9574;">"* </span><span style="color: #cc9393;">TODO</span><span style="color: #2d9574;"> [#B] %?\n %i\n"</span>
+  <span style="color: #4f97d7;">:empty-lines</span> <span style="color: #a45bad;">1</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>只要按 C-c c 就會自動幫你紀錄</li>
+<li>Todo / notes / blog ideas / code snippet / work / chrome / links / Journal Entry</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org8271875" class="outline-3">
+<h3 id="org8271875">insert-chrome-web-url</h3>
+</div>
+
+
+<div id="outline-container-org9fd4da0" class="outline-3">
+<h3 id="org9fd4da0">dired :shitf+6 回到上面</h3>
+</div>
+
+
+<div id="outline-container-org040e1de" class="outline-3">
+<h3 id="org040e1de">editalbe dired (C-c C-q)</h3>
+<div class="outline-text-3" id="text-org040e1de">
+<p>
+就可以直接在 dired 上面批次修改檔名
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc353393" class="outline-3">
+<h3 id="orgc353393">helm-ag (一次修改整個 folder多個檔)</h3>
+<div class="outline-text-3" id="text-orgc353393">
+<p>
+search speed: ag &gt; pt &gt; ack &gt; grep
+windows 10 下支持了 ag 那 windows 也可以使用 pt
+</p>
+
+<p>
+helm加載速度不夠, 城市太多的時候, 搜索速度很低
+但是helm-ag很好用
+</p>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div id="outline-container-orgca3103c" class="outline-3">
+<h3 id="orgca3103c">yasnippet ( M-m i s )</h3>
+<div class="outline-text-3" id="text-orgca3103c">
+<ul class="org-ul">
+<li>指令 yas-insert-snippet 可以對經常使用的文字或程式碼段落建立模板</li>
+<li>根據不同 major-mode 你會在 private layer 中建立放模板檔案的不同資料夾</li>
+<li>模板中的 key 是敲 M-m i s &lt;key&gt; 用的，可以多個字母</li>
+<li>name 是在 M-m i s 中尋找時幫助你更精確找到對應模板</li>
+<li>模板可放多個 $1 表示模板建立後的游標位置</li>
+<li>TODO : $0 $2 的意思還沒弄明白
+<ul class="org-ul">
+<li>參考：<a href="http://oremacs.com/2015/01/30/auto-yasnippet/">http://oremacs.com/2015/01/30/auto-yasnippet/</a></li>
+</ul></li>
+<li>TODO : 轉換首字母大寫
+<ul class="org-ul">
+<li>參考:<a href="http://emacs.stackexchange.com/questions/12613/convert-the-first-character-to-uppercase-capital-letter-using-yasnippet">http://emacs.stackexchange.com/questions/12613/convert-the-first-character-to-uppercase-capital-letter-using-yasnippet</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org093975b" class="outline-3">
+<h3 id="org093975b">delete backward ( C-backspc )</h3>
+</div>
+
+
+<div id="outline-container-org457462b" class="outline-3">
+<h3 id="org457462b">Evil-mode (class7)</h3>
+</div>
+
+
+<div id="outline-container-orgf4bc1d6" class="outline-3">
+<h3 id="orgf4bc1d6">org-mode insert code block ( &lt;s + tab )</h3>
+</div>
+
+<div id="outline-container-org61a7aca" class="outline-3">
+<h3 id="org61a7aca">whichkey-mode ( M-m )</h3>
+</div>
+
+
+<div id="outline-container-orgd0e469c" class="outline-3">
+<h3 id="orgd0e469c">serach org node ( C-c a s)</h3>
+</div>
+
+
+<div id="outline-container-org3b5813e" class="outline-3">
+<h3 id="org3b5813e">mwe-log-commands</h3>
+<div class="outline-text-3" id="text-org3b5813e">
+<ul class="org-ul">
+<li>可以記錄你打字的效率</li>
+<li>package-install mwe-log-commands</li>
+<li>使用命令 M-x mwe:open-log-command-buffer</li>
+</ul>
+
+
+<p>
+rrgrgr
+</p>
+
+<p>
+<a href="file">file</a>
+</p>
+
+<p>
+happpy~ gogo~ yoyo~
+</p>
+
+
+
+<p>
+test
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-orga96c87e" class="outline-3">
+<h3 id="orga96c87e">Universal args ( C-u )</h3>
+<div class="outline-text-3" id="text-orga96c87e">
+<ul class="org-ul">
+<li>可以重複執行命令</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgc17e880" class="outline-3">
+<h3 id="orgc17e880">Macro 聚集or宏</h3>
+<div class="outline-text-3" id="text-orgc17e880">
+<ul class="org-ul">
+<li>透過解釋器，生成程式碼的程式碼</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#20808;&#20196;&#19968;&#20491;&#35722;&#25976;&#28858; 1, &#21487;&#29992; C-c C-e eval &#30475;&#30475;</span>
+<span style="color: #4f97d7;">(</span>setq my-var <span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#20877;&#23450;&#32681;&#19968;&#20491; macro</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defmacro</span> <span style="color: #bc6ec5; font-weight: bold;">inc</span> <span style="color: #bc6ec5;">(</span>var<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>list 'setq var <span style="color: #2d9574;">(</span>list '1+ var<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>inc my-var<span style="color: #4f97d7;">)</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#25105;&#20497;&#21487;&#20197;&#25226; inc &#36889;&#20491; macro &#23637;&#38283;, &#30475;&#30475;&#26159;&#20160;&#40636;</span>
+<span style="color: #4f97d7;">(</span>macroexpand '<span style="color: #bc6ec5;">(</span>inc my-var<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#20294;&#26159;&#25105;&#20497;&#20063;&#21487;&#20197;&#23450;&#32681;&#20989;&#25976;&#36948;&#21040;&#36889;&#20491;&#25928;&#26524;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">inc-v2</span> <span style="color: #bc6ec5;">(</span>var<span style="color: #bc6ec5;">)</span>
+  <span style="color: #bc6ec5;">(</span>setq var <span style="color: #2d9574;">(</span>1+ var<span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7;">(</span>inc-v2 my-var<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>那 macro 和 function 有什麼差別呢?
+<ul class="org-ul">
+<li>macro 展開完表達式之後，才會解釋並執行</li>
+<li>function 則是會先執行</li>
+<li>macro 返回的是表達式，返回之後就會立即執行</li>
+<li>function 返回的是值</li>
+</ul></li>
+
+<li>backquote : 在 macro 中提前 eval</li>
+
+<li>macroexpand-all : 展開所有級的macro ( macro of macro )</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org1fa109c" class="outline-3">
+<h3 id="org1fa109c">use-package</h3>
+<div class="outline-text-3" id="text-org1fa109c">
+<ul class="org-ul">
+<li>更安全的 require
+<ul class="org-ul">
+<li>無效的 require 在 use-package 不會報錯</li>
+<li>可以透過 macroexpand 看 use-package 做什麼事情</li>
+</ul></li>
+<li>init : 想在使用package之前先設定一些東西, 不讓設定亂散在各個地方</li>
+<li>config :</li>
+<li>load :</li>
+<li>refer :</li>
+<li>bind : 也可以綁定 kbd</li>
+<li>ensure : true-&gt;沒有的話會自動去安裝(會從最新去下載)
+<ul class="org-ul">
+<li>如果不想要最新版怎辦? :pin melpa-stable
+<ul class="org-ul">
+<li>要用 melpa-stable 要
+<ul class="org-ul">
+<li>(source "melpa-stable" "<a href="http://elpa......../melpa-stable/">http://elpa......../melpa-stable/</a>")</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">use-package</span> <span style="color: #a45bad;">xxxx</span>
+    <span style="color: #4f97d7;">:init</span>
+    <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">progn</span>
+      <span style="color: #2d9574;">(</span>setq my-name <span style="color: #2d9574;">"ffe"</span><span style="color: #2d9574;">)</span>
+      <span style="color: #2d9574;">(</span>setq my-age <span style="color: #2d9574;">"20"</span><span style="color: #2d9574;">)</span>
+    <span style="color: #4f97d7;">:config</span>
+    <span style="color: #2d9574;">(</span>setq my-dog <span style="color: #2d9574;">"peter"</span><span style="color: #2d9574;">)</span>
+<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org924326e" class="outline-3">
+<h3 id="org924326e">pretty print ( pp 指令 )</h3>
+<div class="outline-text-3" id="text-org924326e">
+<ul class="org-ul">
+<li>pretty print the lisp Object</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d1d867" class="outline-3">
+<h3 id="org6d1d867">company-mode　</h3>
+<div class="outline-text-3" id="text-org6d1d867">
+<ul class="org-ul">
+<li>當打幾個字母自動補全的時候, 推薦的補全字詞稱作 frontend 所有補全字詞稱作 backends</li>
+<li>company-backends 指令是返回列表，因為裡面放了各種 company 自動補全分類</li>
+<li>在這個列表中，會依序去找合適於當前 major-mode 的自動補全</li>
+<li>找到之後就會給予當前自動補全的項</li>
+<li>其中 company-dabrev 擺在最後查詢，因為它會找所有當前打開的 buffer 的字詞協助補全, 除了 scrach buffer</li>
+<li>也可以到 customize-group 看 company-dabrev 設定搜尋的 buffer 範圍, 建議 all,因為在 org 下要記錄其他 buffer 的資訊這樣比較方便</li>
+<li>也可以手動激活各種 company-XXXX 例如打路徑時可以激活 company-files</li>
+<li>company-ispell 會調用英文字典自動補全</li>
+<li>想自己建立 company 可以看 company-ispell 的命令, 記得擺在 company-dabbrev 之前</li>
+<li>或是 add-hook 對 XXXX-mode-hook 住一個 company-backends</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-hook 'python-mode-hook
+   <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span><span style="color: #2d9574;">()</span>
+     <span style="color: #2d9574;">(</span>set <span style="color: #67b11d;">(</span>make-local-variable 'company-backends '<span style="color: #b1951d;">(</span>company-anaconda company-dabbrev<span style="color: #b1951d;">)</span><span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>自己做 backend : Writing the Simplest Emacs company-mode backend (這是系列文章,還有補全更多訊息)</li>
+<li><a href="http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend">http://sixty-north.com/blog/writing-the-simplest-emacs-company-mode-backend</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgbf287f8" class="outline-3">
+<h3 id="orgbf287f8">group backend</h3>
+<div class="outline-text-3" id="text-orgbf287f8">
+<ul class="org-ul">
+<li>當我們補全的時候，會希望在代碼時能補全代碼，在註解中補全註解，這就需要 group-backend</li>
+<li>例如 : '((company-anaconda company-dabbrev-code) company-dabbrev)</li>
+<li>由於在代碼中 company-anconda 擁有主權，因此會給予沒有補全的結果，而在註解中才會執行 company-dabbrev</li>
+</ul>
+</div>
+</div>
+
+
+
+<div id="outline-container-orga1f81d4" class="outline-3">
+<h3 id="orga1f81d4">這裡開始是 spacemacs</h3>
+</div>
+
+<div id="outline-container-org5353552" class="outline-3">
+<h3 id="org5353552">.spacemacs.d</h3>
+</div>
+
+
+<div id="outline-container-org79f26d5" class="outline-3">
+<h3 id="org79f26d5">spacemacs 增加啟動速度</h3>
+<div class="outline-text-3" id="text-org79f26d5">
+<ul class="org-ul">
+<li>從 FAQ 可得</li>
+<li>在 user-init 中添加</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq tramp-ssh-controlmaster-options
+      <span style="color: #2d9574;">"-o ControlMaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcf2e5a2" class="outline-3">
+<h3 id="orgcf2e5a2">fullscreen</h3>
+<div class="outline-text-3" id="text-orgcf2e5a2">
+<ul class="org-ul">
+<li>dotspacemacs-maximized-at-startup nil 改成 t</li>
+<li>而不是改 dotspacemacs-fullscreen-at-startup 這樣才會在當前螢幕最大化</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5032463" class="outline-3">
+<h3 id="org5032463">dotspacemacs-excluded-packages</h3>
+<div class="outline-text-3" id="text-org5032463">
+<ul class="org-ul">
+<li>需要去除掉的預設 package 可以在這邊新增</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org50bf16f" class="outline-3">
+<h3 id="org50bf16f">查找各種 layer ( M-m h spc )</h3>
+<div class="outline-text-3" id="text-org50bf16f">
+<ul class="org-ul">
+<li>查找 layer 之後進去會看到 readme.org</li>
+<li>每個 layer 都是需要 readme 這樣才能簡單了解是做什麼用</li>
+<li>有哪些 package 怎麼配置和有哪些快捷鍵</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc2f1b47" class="outline-3">
+<h3 id="orgc2f1b47">還不會用 layer 之前先用 user-config 當作 init.el</h3>
+</div>
+
+
+<div id="outline-container-org44c9ff0" class="outline-3">
+<h3 id="org44c9ff0">讓 customize-group 的個人設定存到 .spacemacs.d 當作 custom.elpa</h3>
+</div>
+
+<div id="outline-container-org62badf3" class="outline-3">
+<h3 id="org62badf3">安裝 doom-themes</h3>
+<div class="outline-text-3" id="text-org62badf3">
+<ul class="org-ul">
+<li>在 user-config 中 加上兩行:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq custom-file <span style="color: #bc6ec5;">(</span>expand-file-name <span style="color: #2d9574;">"custom.el"</span> dotspacemacs-directory<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>load custom-file 'no-error 'no-message<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org58d37c3" class="outline-3">
+<h3 id="org58d37c3">dotspacemacs-themes</h3>
+</div>
+
+<div id="outline-container-orgb31c0af" class="outline-3">
+<h3 id="orgb31c0af"><span class="todo TODO">TODO</span> M-x align-regexp</h3>
+</div>
+
+
+
+<div id="outline-container-org0b46a2e" class="outline-3">
+<h3 id="org0b46a2e">自訂自己的 layer</h3>
+<div class="outline-text-3" id="text-org0b46a2e">
+<ul class="org-ul">
+<li>每個 layer 都可以自訂一些變量 variable</li>
+<li>每一個 layer 底下會有 config.el (可以看better-defaults layer參考)</li>
+<li>在 config.el 中可以先令 defvar 為 nil 或預設值</li>
+<li>然後在 .spacemacs 中的 init.el 中的 configuration-layers 可以加上去:</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp">dotspacemacs-configuration-layers
+'<span style="color: #4f97d7;">(</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+  <span style="color: #bc6ec5;">(</span>ffe <span style="color: #4f97d7;">:variables</span> XXXXXXX t<span style="color: #bc6ec5;">)</span>
+  <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">...</span>
+<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>create-layer 在 .spacemacs.d 底下建立
+<ul class="org-ul">
+<li>package.el 主要是在 elpa 上面下載包</li>
+<li>funcs.el 主要是定義一些函數,也可以在 package.el 底下寫 use-package, 但是全局函數還是在 func.el 比較好</li>
+<li>keybindings.el 可以定義一些 keybindings</li>
+<li>config.el 聲明的變量是可以在 load layer 時去修改變量的, 或是聲明一些 global mode 或是默認的配置</li>
+<li>funcs 與keybindings 一般是成對出現的</li>
+<li>layers.el</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org448a9d8" class="outline-3">
+<h3 id="org448a9d8">修改狀態列波浪區隔變成 powerline arrow</h3>
+<div class="outline-text-3" id="text-org448a9d8">
+<ul class="org-ul">
+<li>在 user-config 中</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq powerline-default-separator 'arrow<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+<div id="outline-container-org5e774b3" class="outline-3">
+<h3 id="org5e774b3">ERROR : enabling flyspell mode</h3>
+</div>
+
+
+
+<div id="outline-container-org2c6164d" class="outline-3">
+<h3 id="org2c6164d">leader-key</h3>
+<div class="outline-text-3" id="text-org2c6164d">
+<ul class="org-ul">
+<li>可以在 use-package 中的 :init 後面設定</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>spacemacs/set-leader-keys <span style="color: #2d9574;">"key"</span> 'youdao-dictionary-search-at-point+<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>這樣只要按 M-m k e y 就能執行對應的函數了</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe414b4" class="outline-3">
+<h3 id="orgfe414b4">use-package 的 macroexpand</h3>
+<div class="outline-text-3" id="text-orgfe414b4">
+<ul class="org-ul">
+<li>把游標放在 use-package 前面 M-x macrostep-expand</li>
+<li>progn 是組合語句的意思</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org4223be3" class="outline-3">
+<h3 id="org4223be3">help ( M-m h SPC )</h3>
+</div>
+
+<div id="outline-container-org5eef898" class="outline-3">
+<h3 id="org5eef898">post-init 與 pre-init</h3>
+<div class="outline-text-3" id="text-org5eef898">
+<ul class="org-ul">
+<li>在建立 layer 之後, 如果想在 layer 中對已經讀取的 package 重新設定</li>
+<li>可以使用 post-init-XXXXX 來定義, 記得也要添加 package name 到 defconst</li>
+<li>一般來說執行順序是 pre-init 再來 init 再來 post-init 通常我們只會用到 post-init</li>
+<li>pre-init 例如可以先添加窗口, 或是先添加 hook, 基本上沒什麼太大區別</li>
+<li>post-init 因為已經有 requrie 了, 所以在做更動比較不會有問題</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org12a65a9" class="outline-3">
+<h3 id="org12a65a9">:location 用法</h3>
+<div class="outline-text-3" id="text-org12a65a9">
+<ul class="org-ul">
+<li>學習做 package 可以先看其他 package</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f0867c" class="outline-3">
+<h3 id="org9f0867c">沒有在 melpa 上的 package 安裝方法</h3>
+<div class="outline-text-3" id="text-org9f0867c">
+<ul class="org-ul">
+<li>到 Github 上面去他的 el 裡面看 provide 後面的名字</li>
+<li>在自己的 XXX-packages 裡面用 recipe 來做</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defconst</span> <span style="color: #7590db;">XXXX-packages</span>
+    <span style="color: #bc6ec5;">(</span>&lt;&#22871;&#20214;&#21517;&#31281;&gt; <span style="color: #4f97d7;">:location</span> <span style="color: #2d9574;">(</span>recipe <span style="color: #4f97d7;">:fetcher</span> github <span style="color: #4f97d7;">:repo</span> <span style="color: #2d9574;">"who/packageName"</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span>
+<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>記得也要建立對應的 init 的 defun</li>
+<li>這樣安裝有好處, 可以先這樣測試在還沒上 melpa 之前安裝是不是有問題</li>
+<li>或是有些套件還在開發中還沒上 melpa 也可以透過這個方式安裝他的 package</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org96f2e8c" class="outline-3">
+<h3 id="org96f2e8c">大量配置需要重新設定 ( layer.el )</h3>
+<div class="outline-text-3" id="text-org96f2e8c">
+<ul class="org-ul">
+<li>當很多套件你都需要做某些修改，就可以在 layer.el 而不在 init.el 中來做</li>
+<li>例如 remove-layer 然後接上套件名稱, 就不會執行該 layer 的套件 init 與 config</li>
+<li>例如不同 layer 會打架, layer.el 專門適合處理 layer 與 package 層級的處理</li>
+<li>也可以在 .spacemacs init.el 中 excluded-packages 中去除</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgfb5def6" class="outline-3">
+<h3 id="orgfb5def6">查詢目前所有生成的變數與文檔 ( M-m h d v )</h3>
+</div>
+
+<div id="outline-container-org8376b41" class="outline-3">
+<h3 id="org8376b41">查詢目前所有的keymap (M-m h d k )</h3>
+</div>
+
+<div id="outline-container-orgccfc30e" class="outline-3">
+<h3 id="orgccfc30e">文件內搜尋 (M-s o)</h3>
+</div>
+
+<div id="outline-container-orgdace2ef" class="outline-3">
+<h3 id="orgdace2ef">自訂配置的方向</h3>
+<div class="outline-text-3" id="text-orgdace2ef">
+<ul class="org-ul">
+<li>自訂 mode line</li>
+<li>大量排除用不到的 package ( 可能有 bug, 或是降低啟動速度 )</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb9bb7ad" class="outline-3">
+<h3 id="orgb9bb7ad">檔案處理的相關操作</h3>
+<div class="outline-text-3" id="text-orgb9bb7ad">
+<ul class="org-ul">
+<li>M-m f f : Find File</li>
+<li>M-m p f : 在當前目錄以下搜尋文件
+<ul class="org-ul">
+<li>山人有 hack</li>
+</ul></li>
+<li>M-m f o : 用外部軟體開啟檔案 ( 例如開 html )</li>
+<li>M-m f D : 刪除當前文件並關閉buffer</li>
+<li>M-m f r : 最近使用的文件</li>
+<li>M-m f R : 重命名當前buffer的文件</li>
+<li>M-m f e l : 開啟 emacs 讀取的 el 文件</li>
+<li>M-m f b : 開啟書籤</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2c7c7f2" class="outline-3">
+<h3 id="org2c7c7f2">buffer 的相關操作</h3>
+<div class="outline-text-3" id="text-org2c7c7f2">
+<ul class="org-ul">
+<li>M-m b . : 進入前後 buffer 選擇(n/p前進後退), 類似 alt-tab 選好按 q 結束 (hydra)</li>
+<li>M-m b h : 進入 home</li>
+<li>M-m b N : 開新的空白文件</li>
+<li>M-m b m : 刪除除了目前 buffer 以外的 buffer</li>
+<li>M-m b R : 復原自尚未儲存最初的結果</li>
+<li>M-m TAB : 直接切換 buffer, 類似 alt-tab</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0246c7b" class="outline-3">
+<h3 id="org0246c7b">hack elisp 的叫巧</h3>
+<div class="outline-text-3" id="text-org0246c7b">
+<ol class="org-ol">
+<li>hooks 在 major or minor mode 都可以 hook</li>
+</ol>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>add-hook 'xxx-mode-hook .....<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+當一個 minor mode 啟用的時候, 他不會回傳 nil
+</p>
+
+<ol class="org-ol">
+<li>write elisp 的基礎
+
+<ul class="org-ul">
+<li>Generic tips</li>
+</ul></li>
+
+<li>regexp-quote</li>
+</ol>
+</div>
+</div>
+
+
+<div id="outline-container-org3383c11" class="outline-3">
+<h3 id="org3383c11">Advice</h3>
+<div class="outline-text-3" id="text-org3383c11">
+<ul class="org-ul">
+<li>可以在執行前後</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defun</span> <span style="color: #bc6ec5; font-weight: bold;">XXXXX</span> <span style="color: #bc6ec5;">(</span>x<span style="color: #bc6ec5;">)</span>
+ <span style="color: #bc6ec5;">(</span>message <span style="color: #2d9574;">"in XXXXX"</span><span style="color: #bc6ec5;">)</span>
+ <span style="color: #bc6ec5;">(</span>+ x <span style="color: #a45bad;">1</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defadvice</span> <span style="color: #bc6ec5; font-weight: bold;">XXXXX</span> <span style="color: #bc6ec5;">(</span>before my-XXXXX-hack activate<span style="color: #bc6ec5;">)</span>
+<span style="color: #bc6ec5;">(</span>message <span style="color: #2d9574;">"before XXXXX"</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">after &#23601;&#26371;&#22312;&#24460;&#38754;&#20986;&#29694;</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#33509;&#35201;&#21435;&#25481; defadvice</span>
+<span style="color: #4f97d7;">(</span>ad-deactivate 'XXXXX<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;;</span>
+<span style="color: #4f97d7;">(</span>ad-activate 'XXXXX<span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">&#38500;&#20102; before/after &#36996;&#26377; around</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">defadvice</span> <span style="color: #bc6ec5; font-weight: bold;">XXXXX</span> <span style="color: #bc6ec5;">(</span>around my-XXXXX-around activate<span style="color: #bc6ec5;">)</span>
+<span style="color: #bc6ec5;">(</span>setq ad-return-value
+<span style="color: #2d9574;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> <span style="color: #67b11d;">(</span>= x <span style="color: #a45bad;">1</span><span style="color: #67b11d;">)</span>
+<span style="color: #a45bad;">42</span>
+<span style="color: #67b11d;">(</span>+ <span style="color: #a45bad;">1</span> ad-do-it<span style="color: #67b11d;">)</span><span style="color: #2d9574;">)</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">42</span>
+<span style="color: #4f97d7;">(</span>XXXXX <span style="color: #a45bad;">3</span><span style="color: #4f97d7;">)</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">5</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>Advice 就像插在中間</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org47fa22a" class="outline-3">
+<h3 id="org47fa22a">edebug - elisp-debug (C-x X &#x2026;)</h3>
+<div class="outline-text-3" id="text-org47fa22a">
+<ul class="org-ul">
+<li>(debug)</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org59380bf" class="outline-3">
+<h3 id="org59380bf">自己做 minor mode</h3>
+<div class="outline-text-3" id="text-org59380bf">
+<ul class="org-ul">
+<li>很重要</li>
+<li><a href="http://nullprogram.com/blog/2013/02/06/">http://nullprogram.com/blog/2013/02/06/</a></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">define-minor-mode</span>
+  XXXXXXX-mode
+  <span style="color: #4f97d7;">:global</span> t
+  <span style="color: #4f97d7;">:init-value</span> nil
+  <span style="color: #4f97d7;">:lighter</span> <span style="color: #2d9574;">" SS"</span> <span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">mode-line &#39023;&#31034;&#30340;&#26481;&#35199;</span>
+  <span style="color: #bc6ec5;">(</span><span style="color: #4f97d7; font-weight: bold;">if</span> XXXXXXX-mode 
+        .............<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">define-global-minor-mode</span>
+   YYYY1-mode YYYY2-mode YYYY3-mode
+   <span style="color: #4f97d7;">:group</span> 'XXXXXXX<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>通常散落在各地的 global-set-key 可能因為啟動加載之後被 minor mode 覆蓋掉</li>
+<li>因此可以用一個自己為名稱的 minor-mode 來設定 global-set-key 做最後啟動</li>
+<li>這樣就能避免 global-set-key 被覆蓋掉</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org7db0998" class="outline-3">
+<h3 id="org7db0998">layer design</h3>
+<div class="outline-text-3" id="text-org7db0998">
+<ul class="org-ul">
+<li>單依職責原則: 5 個 layer
+<ul class="org-ul">
+<li>在 layer.el 聲明好
+<ul class="org-ul">
+<li>better-defaults</li>
+<li>misc</li>
+<li>org</li>
+<li>programming</li>
+<li>ui</li>
+</ul></li>
+</ul></li>
+
+<li>每個 layer 裡面
+<ul class="org-ul">
+<li>config.el</li>
+<li>funcs.el</li>
+<li>layers.el</li>
+<li>packages</li>
+</ul></li>
+</ul>
+
+<p>
+保持 user-config 盡量少
+</p>
+<ul class="org-ul">
+<li>若要最後加仔的, 或是最高優先集的, 放到這裡</li>
+<li>臨時配置也是放在這, 使用一段時間會在搬到 layer 裡面</li>
+<li>啟動等寬字體</li>
+<li>加一些 hook</li>
+<li>設定 custom-file 並讀取且不要顯示 error 或 message</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq custom-file <span style="color: #bc6ec5;">(</span>expand-file-name <span style="color: #2d9574;">"custom.el"</span> dotspacemacs-directory<span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">(</span>load custom-file 'no-error 'no-message<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+經常同步 dev 分支到最新
+</p>
+
+<ul class="org-ul">
+<li>user-init
+<ul class="org-ul">
+<li>添加各種 source 的源</li>
+<li>忽略或提示一些啟動時的資訊</li>
+<li>忽略在編譯時的警告</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>better-default
+<ul class="org-ul">
+<li>lambda 變成 lambda 符號</li>
+<li>clojure 會更多在用</li>
+</ul></li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>global-prettify-symbols-mode <span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span>
+<span style="color: #2aa1ae; background-color: #292e34;">;; </span><span style="color: #2aa1ae; background-color: #292e34;">lambda &#26371;&#35722;&#25104;&#31526;&#34399;</span>
+<span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">lambda</span> ....<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>fill-column ( C-x f)</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>setq-default fill-column <span style="color: #a45bad;">80</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>check large file
+<ul class="org-ul">
+<li>例如大於 500K 的文件, 例如 log 只需要瀏覽就行了</li>
+<li>不需要開到其他 mode 可以只用 fundamental mode</li>
+<li>避免不必要的文法解析, emacs 又是單線程就會很卡</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org26ba79c" class="outline-3">
+<h3 id="org26ba79c">prelude/purcell/prelude/abo-abo/github/spacemacs/Elisp入門(葉文斌,2007)翻譯得不錯,2-3小時看完</h3>
+<div class="outline-text-3" id="text-org26ba79c">
+<ul class="org-ul">
+<li>reddit</li>
+<li>twitter 一兩禮拜搜索關鍵字</li>
+<li>github 牛人</li>
+<li>RSS訂閱: planet emacsen shacha chua</li>
+<li>youtube: emacsrock, emacs hangout(shacha chua),</li>
+<li>每一段時間去查看 custom-group 的設置, 很多默認行為多數考慮依般情況, 瞭解可以知道怎麼零食修改, 也不用去看他的程式碼, 這個裡面是作者希望怎麼擴展</li>
+<li>不太爽有沒有辦法更高效, 一直思考</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2059c01" class="outline-3">
+<h3 id="org2059c01"><span class="todo TODO">TODO</span> twitter 應該也要個 org 一個禮拜搜索一兩次</h3>
+</div>
+
+
+<div id="outline-container-org2f51af7" class="outline-3">
+<h3 id="org2f51af7"><span class="todo TODO">TODO</span> 仿照 lambda 一樣做一些特殊符號</h3>
+</div>
+<div id="outline-container-orgbf0b305" class="outline-3">
+<h3 id="orgbf0b305">prodigy 方便啟動 web 服務</h3>
+</div>
+
+<div id="outline-container-org532dc82" class="outline-3">
+<h3 id="org532dc82">Deft 可以搜索配置</h3>
+</div>
+
+
+
+
+
+
+
+
+<div id="outline-container-org8d752c5" class="outline-3">
+<h3 id="org8d752c5">emacs 做 data analysis 的各種 hack 找看看</h3>
+</div>
+<div id="outline-container-org98bff05" class="outline-3">
+<h3 id="org98bff05">Dired Mode</h3>
+</div>
+
+
+<div id="outline-container-org0c14305" class="outline-3">
+<h3 id="org0c14305">Layout 功能 ( M-m l )</h3>
+<div class="outline-text-3" id="text-org0c14305">
+<ul class="org-ul">
+<li>M-m l l 選擇 layer</li>
+<li>M-m l tab 可以在不同 layout 切換</li>
+<li>M-m l o 自定義 layout</li>
+<li>可以在 post-init 某些 mode 之後定義 custom layout</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-emacs-lisp"><span style="color: #4f97d7;">(</span>spacemacs|define-custom-layout <span style="color: #2d9574;">"@XXXXXXX"</span>
+    <span style="color: #4f97d7;">:binding</span> <span style="color: #2d9574;">"c"</span>
+    <span style="color: #4f97d7;">:body</span>
+...
+<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>當你這樣定義之後, 只要按 M-m l o 後接著按 binding 就會開啟對應 layout</li>
+<li>M-m l ? 了解更多 layout 細節資訊 再按一次 ? 就消失了</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org45d476f" class="outline-3">
+<h3 id="org45d476f">window 操作 ( M-m ** )</h3>
+<div class="outline-text-3" id="text-org45d476f">
+<ul class="org-ul">
+<li>M-m w . : Micro State ( Transient State ) 列出一些快捷鍵和簡單的說明</li>
+<li>M-m w u/U : 前一個 window 展開</li>
+<li>M-m w h : 游標亂點跑掉的時候，可以恢復</li>
+<li>M-m w l/r : 和右邊/左邊窗口切換</li>
+<li>M-m w w : 切換窗口</li>
+<li>M-m t g : 黃金分割窗口(很多窗口要開,又不方便關掉,但又需要專注一個)</li>
+<li>M-m t - : 游標永遠都在窗口正中間，方便跳轉(C-l 就不能用了)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa59a44" class="outline-3">
+<h3 id="orgaa59a44">project 操作 ( M-m p ** )</h3>
+<div class="outline-text-3" id="text-orgaa59a44">
+<ul class="org-ul">
+<li>M-m p f : 可以綁定一個方便的</li>
+<li>M-m p b : 每次都用 find-file 會很浪費時間, 如果你只在 project 操作 buffer</li>
+<li>M-m p p : 可以切換不同 project 的資料夾, 根據你訪問過文件就會新增</li>
+<li>M-m p l : 開始一個 project 並針對這個 project 開新的 layout</li>
+<li>find-file-in-project 在項目中查找, 可以來綁定, 會跳過不必要的系統文件, 可以去查看看他跳過那些文件</li>
+<li></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org82f0f98" class="outline-3">
+<h3 id="org82f0f98"><span class="todo TODO">TODO</span> 針對不同螢幕數啟用不同layout</h3>
+</div>
+
+
+
+
+<div id="outline-container-orgdc59f27" class="outline-3">
+<h3 id="orgdc59f27">Ctags for auto-completion (感覺我用不到)</h3>
+<div class="outline-text-3" id="text-orgdc59f27">
+<ul class="org-ul">
+<li>方便對大的程式碼庫進行跳轉</li>
+<li>一些動態語言無法用精確的語意補全, 也不需要</li>
+<li>可以先看 M-m h d v 看看 tags-table-list 的說明</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcaf094f" class="outline-3">
+<h3 id="orgcaf094f">ielm ( 可綁個 global key)</h3>
+<div class="outline-text-3" id="text-orgcaf094f">
+<ul class="org-ul">
+<li>M-x ielm 會開啟一個 elisp 的 console</li>
+<li>可以立即修改當前的各種 variable 可搭配 M-m h d v 使用</li>
+<li>還可以綁 shell</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2fbf5e3" class="outline-3">
+<h3 id="org2fbf5e3">lispy ( vi-like Paredit )</h3>
+<div class="outline-text-3" id="text-org2fbf5e3">
+<ul class="org-ul">
+<li>針對程式碼進行結構操作, 是使用LISP語言不得少的工具</li>
+<li>barf and slurp
+<ul class="org-ul">
+<li>當你打lisp 時可以啟動 lispy-mode 然後也可以搭配 command-log-mode (C-c o) 來看和練習</li>
+<li>當在一個輸入最末尾按 [ 會跳到前一個括號最頭, [ + d 會跳到前一個括號最尾</li>
+<li>接著按 &lt; 會讓括號往前縮一個吐(barf)出 arg , 按 &gt; 會讓括號擴展一個吃(slurp)掉 arg</li>
+</ul></li>
+<li>raise
+<ul class="org-ul">
+<li>這是讓一個括號擴展吃掉上一個層級的括號, 在括號按 r</li>
+</ul></li>
+<li>kill
+<ul class="org-ul">
+<li>按 C-k 會刪除括號中當前 arg 和後面所有 arg 若在函數上 kill 就會留下空括號</li>
+</ul></li>
+<li>copy yank
+<ul class="org-ul">
+<li>在左括號上按 m 會選擇整個括號內容, 並再按 n 會複製, 搭配 C-y 貼上(yank)</li>
+</ul></li>
+<li>ace
+<ul class="org-ul">
+<li>在右括號上按 a 會把括號中的各個變量位置前面顯示英文字母, 可以跳轉到該變量做操作</li>
+</ul></li>
+<li>up down
+<ul class="org-ul">
+<li>j/k 就可以在上下不同的表達式跳動, 但會在同一個層級裡面跳轉, 要跳到其他層級可以 2 h 跳兩次出去,</li>
+</ul></li>
+<li>lispy 前面可以加數字</li>
+<li>flow
+<ul class="org-ul">
+<li>f 跳進去括號裡面</li>
+</ul></li>
+<li>lispy-describe-inline
+<ul class="org-ul">
+<li>C-1 可以看到函數敘述</li>
+</ul></li>
+<li>lispy-arglist-inline
+<ul class="org-ul">
+<li>可設置快捷鍵</li>
+<li>C-2 可以看到函數使用要放入的 arg</li>
+</ul></li>
+<li>lispy-follow
+<ul class="org-ul">
+<li>F : 可以看到函數的定義, 進入到 el 檔案裡面</li>
+</ul></li>
+<li>split
+<ul class="org-ul">
+<li>可以用 C-j 分開並換行</li>
+<li>lispy-splice-sexp-killing-backward 把括號去掉</li>
+</ul></li>
+<li>alt-multiline &amp; oneline
+<ul class="org-ul">
+<li>[ m : 整理成多行, 註解會通通被提到最上頭外面</li>
+<li>[ O : [ 跳轉到括號最頭前, 然後把一個多行表達式變成一行</li>
+</ul></li>
+<li>wrap-round
+<ul class="org-ul">
+<li>lispy-wrap-round 就可以直接對一個單詞加上括號</li>
+</ul></li>
+<li>goto
+<ul class="org-ul">
+<li>g : 直接跳轉到指定當前文檔中其他括號</li>
+</ul></li>
+<li>eval
+<ul class="org-ul">
+<li>e : 就可以直接eval</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf0ee2af" class="outline-3">
+<h3 id="orgf0ee2af">看山人 keybinding 了解怎麼自己來綁定</h3>
+</div>
+<div id="outline-container-org186eed3" class="outline-3">
+<h3 id="org186eed3">reddit 訂閱大神 blog</h3>
+</div>
+<div id="outline-container-org8054ed1" class="outline-3">
+<h3 id="org8054ed1"><span class="todo TODO">TODO</span> GTD(Get Thing Done)工具</h3>
+</div>
+<div id="outline-container-orgc07aa1f" class="outline-3">
+<h3 id="orgc07aa1f"><span class="todo TODO">TODO</span> 文學編程</h3>
+</div>
+<div id="outline-container-org8773286" class="outline-3">
+<h3 id="org8773286"><span class="todo TODO">TODO</span> arxiv 在 emacs 中的用法</h3>
+</div>
+<div id="outline-container-org316f4ef" class="outline-3">
+<h3 id="org316f4ef"><span class="todo TODO">TODO</span> etag 用法</h3>
+</div>
+
+<div id="outline-container-org7ed42f8" class="outline-3">
+<h3 id="org7ed42f8"><span class="todo TODO">TODO</span> Highlight-symbol-mode</h3>
+</div>
+
+
+<div id="outline-container-org9cf8b77" class="outline-3">
+<h3 id="org9cf8b77">快速開啟 .spacemacs.d 的 init.el ( M-m f e d)</h3>
+<div class="outline-text-3" id="text-org9cf8b77">
+<ul class="org-ul">
+<li>如果是要在 .emacs.d 的話就要用 M-m f e i</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org028a66a" class="outline-3">
+<h3 id="org028a66a">fasd (一直裝不起來以後再研究)</h3>
+<div class="outline-text-3" id="text-org028a66a">
+<ul class="org-ul">
+<li>M-m f a d : 最近經常使用的目錄</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa51955" class="outline-3">
+<h3 id="orgaa51955">command-log-mode ( C-c o )</h3>
+<div class="outline-text-3" id="text-orgaa51955">
+<ul class="org-ul">
+<li>先安裝吧</li>
+</ul>
+</div>
+<div id="outline-container-org0128c00" class="outline-4">
+<h4 id="org0128c00"><span class="todo TODO">TODO</span> 固定輸出存到一個資料夾, 每個月去分析自己的使用狀況</h4>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-orge413289" class="outline-3">
+<h3 id="orge413289">telegram 與 emacs/IRC</h3>
+</div>
+<div id="outline-container-org07d05c8" class="outline-3">
+<h3 id="org07d05c8">給當前目錄底下的文件建立特別設置</h3>
+<div class="outline-text-3" id="text-org07d05c8">
+<ul class="org-ul">
+<li>M-m f v : 添加一個設定的變數, 他會在當前目錄下建立 .dir-locals.el 紀錄</li>
+<li>每次執行到包含有.dir-locals.el 的檔案的 buffer 就會自動啟動</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org743b7e4" class="outline-3">
+<h3 id="org743b7e4">latex 顯示 有沒有套件呢</h3>
+</div>
+
+<div id="outline-container-orgbf07611" class="outline-3">
+<h3 id="orgbf07611">bookmark 怎麼用呢</h3>
+</div>
+<div id="outline-container-org7a0968e" class="outline-3">
+<h3 id="org7a0968e">外匯的cal 怎麼用呢</h3>
+<div class="outline-text-3" id="text-org7a0968e">
+</div><div id="outline-container-org2e31369" class="outline-4">
+<h4 id="org2e31369"></h4>
+</div>
+</div>
+<div id="outline-container-orgb6cb49d" class="outline-3">
+<h3 id="orgb6cb49d">檔案裡面怎麼跳轉函數呢</h3>
+</div>
+<div id="outline-container-orgce07e1d" class="outline-3">
+<h3 id="orgce07e1d">counsel-git</h3>
+</div>
+
+<div id="outline-container-org41271ad" class="outline-3">
+<h3 id="org41271ad">安裝 package 之前可以先查是否有安裝了 ( M-m h SPC )</h3>
+</div>
+
+
+
+<div id="outline-container-orgb8d36e0" class="outline-3">
+<h3 id="orgb8d36e0">更多的工作</h3>
+<div class="outline-text-3" id="text-orgb8d36e0">
+<ul class="org-ul">
+<li>spacemacs 的文檔和 FAQ 一定要看</li>
+</ul>
+
+
+<ul class="org-ul">
+<li>預設 spacemacs 會在目錄下建立 .spacemacs 檔案，可以建立 .spacemacs.d 資料夾並把 .spacemacs 移入改名為 init.el 來做 github 管理</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org608e41b" class="outline-3">
+<h3 id="org608e41b">think</h3>
+<div class="outline-text-3" id="text-org608e41b">
+</div><div id="outline-container-org0292529" class="outline-4">
+<h4 id="org0292529">或許可以做個 company-matlab</h4>
+</div>
+<div id="outline-container-org2667508" class="outline-4">
+<h4 id="org2667508">prelude-search 好酷,可以搜尋網站</h4>
+</div>
+
+
+<div id="outline-container-org0278acf" class="outline-4">
+<h4 id="org0278acf">寫作者的編輯器裡面寫什麼呢</h4>
+</div>
+<div id="outline-container-org7e63f1d" class="outline-4">
+<h4 id="org7e63f1d">toggle 是什麼</h4>
+<div class="outline-text-4" id="text-org7e63f1d">
+<p>
+test again
+</p>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org26b2a2c" class="outline-4">
+<h4 id="org26b2a2c">ispell 的快捷鍵</h4>
+</div>
+
+<div id="outline-container-orgd73c98c" class="outline-4">
+<h4 id="orgd73c98c">仿照 yodao-directory 做個 quant-directory, 可以抄 bloomberg 的定義</h4>
+</div>
+<div id="outline-container-orgc9c3c4c" class="outline-4">
+<h4 id="orgc9c3c4c">怎麼用helm呢</h4>
+</div>
+<div id="outline-container-org3d61b51" class="outline-4">
+<h4 id="org3d61b51">defer 的用法</h4>
+</div>
+<div id="outline-container-orgdce6d0b" class="outline-4">
+<h4 id="orgdce6d0b">為什麼上下左右不好用:因為在C-u重複時不好按</h4>
+</div>
+</div>
+</div>
+<div id="outline-container-orge28bab0" class="outline-2">
+<h2 id="orge28bab0"><span class="todo TODO">TODO</span> todo</h2>
+<div class="outline-text-2" id="text-orge28bab0">
+</div><div id="outline-container-orgde98d94" class="outline-5">
+<h5 id="orgde98d94">什麼是 interactive</h5>
+</div>
+
+<div id="outline-container-org3972ca3" class="outline-5">
+<h5 id="org3972ca3">什麼是 setq 為什麼是 set + q</h5>
+<div class="outline-text-5" id="text-org3972ca3">
+<hr  />
+</div>
+</div>
+</div>
+<div id="outline-container-orgb8b9a64" class="outline-2">
+<h2 id="orgb8b9a64">參考資料</h2>
+<div class="outline-text-2" id="text-orgb8b9a64">
+</div><ul class="org-ul"><li><a id="org0cad4fd"></a><span class="todo TODO">TODO</span> 1. <a href="http://www.tonyballantyne.com/EmacsWritingTips.html">My Emacs Writing Setup</a><br  /><div class="outline-text-6" id="text-org0cad4fd">
+<hr  />
+<div class="note">
+<p>
+右下角的 <b>OPEN CHAT</b> 可以即時討論，歡迎留言給予建議與指教，也可以與我打個招呼
+</p>
+
+</div>
+
+<script>
+((window.gitter = {}).chat = {}).options = {
+room: 'fatfingererr-notes/Lobby'
+};
+</script>
+<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+</div></li></ul>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">&#26085;&#26399;: 2017-02-09</p>
+<p class="author">&#20316;&#32773;: fatfingererr - www.ffe.tw</p>
+<p class="date">Created: 2017-02-09 Thu 10:37</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
