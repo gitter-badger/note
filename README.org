@@ -15,6 +15,9 @@
 
 * 筆記列表
 
+| [[http://www.ffe.tw/note/hoplon.html][Hoplon 學習筆記]] | [[https://www.github.com/fatfingererr/note/blob/master/hoplon.org][GitHub]] | PDF |
+|                 |        |     |
+|                 |        |     |
 
 
 
